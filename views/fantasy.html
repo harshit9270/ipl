@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="./basic/favicon.png" type="image/x-icon">
+    <title>Iplfeverr | Chennai SuperKings</title>
+
+    <style>
+        body {
+            font-family: 'Cabin Condensed', sans-serif;
+            background-color: black;
+        }
+
+        #navbar {
+            font-family: 'Arvo', serif;
+            font-weight: 600;
+            position: fixed;
+            top: 0px;
+            z-index: 10;
+        }
+
+        #navbar ul li a:hover {
+            color: #c7edee;
+            background-color: black;
+        }
+
+
+
+        .myFloat:hover {
+            filter: saturate(10);
+        }
+
+        #float:hover {
+            transform: rotateY(180deg);
+        }
+
+        #footer {
+            margin-top: 90px;
+            background-color: #4b5d67;
+            font-family: 'Cairo', sans-serif;
+            /* text-align: center; */
+        }
+
+        .socials {
+            font-size: 2rem;
+            margin: 10px;
+        }
+
+        .socials:hover,
+        #footer ul li a:hover {
+            color: darkgoldenrod !important;
+        }
+
+        #left {
+            padding-left: 45px;
+            font-size: 1.3rem;
+        }
+
+        .plus {
+            margin: 10px 20px;
+            margin-left: 0;
+        }
+
+        .marLeft {
+            margin-left: 30px;
+        }
+
+        #container {
+            margin-top: 63px;
+            padding: 90px 0px;
+            padding-bottom: 10px;
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+            background: url('basic/aniBG.jpg') no-repeat center/cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        #right {
+            padding: 0px 30px;
+            padding-bottom: 30px;
+            box-shadow: 0px 0px 4px 1px black;
+            border-radius: 10px;
+            background-color: aliceblue;
+            margin: 4%;
+            max-width: 90%;
+        }
+
+        #left {
+            padding: 0px 30px;
+            padding-bottom: 30px;
+            box-shadow: 0px 0px 4px 1px black;
+            border-radius: 10px;
+            height: fit-content;
+            background-color: aliceblue;
+            margin: 4%;
+            max-width: 90%;
+        }
+
+        #LWK,
+        #LB,
+        #LAR,
+        #LBW,
+        #LY {
+            display: none;
+        }
+
+        .down {
+            font-size: 1.5rem;
+            margin-left: 10px;
+            margin-right: 20px;
+        }
+
+        .ref {
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: 650px) {
+            #container {
+                flex-direction: column;
+            }
+        }
+
+        #test {
+            color: whitesmoke;
+            background-color: #3c6382;
+            border: 2px solid whitesmoke;
+            border-radius: 10px;
+            outline: none;
+            padding: 6px;
+            cursor: pointer;
+        }
+
+        #test:hover {
+            color: black;
+            background-color: aliceblue;
+            border: 2px solid royalblue;
+        }
+
+        #toastReset {
+            color: cyan;
+            background: none;
+            cursor: pointer;
+            font-weight: 450;
+            border: none;
+            font-size: 1.3rem;
+            margin-left: 15px;
+        }
+
+        #toastReset:hover {
+            color: crimson;
+        }
+
+        #resultBox {
+            width: 65vw;
+            /* height: 70vh; */
+            background-color: black;
+            margin-top: 90px;
+            padding-bottom: 90px;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            border: 2px solid white;
+            display: none;
+        }
+
+        @media screen and (max-width: 650px) {
+            #box {
+                flex-direction: column;
+            }
+        }
+        @media screen and (max-width: 650px){
+            #logoText{
+                display: none;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- navbar -->
+
+    <nav id="navbar" style="background-color:#1b2a49;">
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo"><img src="basic/logo.png" alt="" style="width:70px;filter:invert(100%);"></a>
+          <a href="/" class="brand-logo" id="logoText" style="margin-left: 75px;font-size: 2rem;">Iplfeverr</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul id="main-menu" class="right hide-on-med-and-down">
+            <li><a href="/schedule">Schedule</a></li>
+            <li><a href="/standings">Standings</a></li>
+            <li><a href="/videos">Videos</a></li>
+            <li><a href="/fantasy">Fantasy</a></li>
+            <li><a href="/trivia">Trivia</a></li>
+            <li><a href="/info">Player Info</a></li>
+            <li><a href="/updates">News</a></li>
+            <li><a href="/teams">Teams</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+      <ul class="sidenav" id="mobile-demo" style="background-color:#1b2a49;color:white">
+        <br>
+        <li><a href="/schedule" style="color:white;">Schedule</a></li>
+        <li><a href="/standings" style="color:white;">Standings</a></li>
+        <li><a href="/videos" style="color:white">Videos</a></li>
+        <li><a href="/fantasy" style="color:white">Fantasy</a></li>
+        <li><a href="/trivia" style="color:white">Trivia</a></li>
+        <li><a href="/info" style="color:white">Player Info</a></li>
+        <li><a href="/updates" style="color:white">News</a></li>
+        <li><a href="/teams" style="color:white">Teams</a></li>
+      </ul>
+      
+    <div id="container">
+        <div id="left">
+            <h4 style="margin-bottom: 20px;">My Team</h4>
+            <h5>Choosen WK</h5>
+            <hr>
+            <div id="SWK">
+            </div>
+            <a class="btn-floating btn-small waves-effect waves-light blue ref" onclick='reset1()'><i
+                    class="fa fa-refresh"></i></a>
+            <h5>Choosen Batsman</h5>
+            <hr>
+            <div id="SB">
+            </div>
+            <a class="btn-floating btn-small waves-effect waves-light blue ref" onclick='reset2()'><i
+                    class="fa fa-refresh"></i></a>
+            <h5>Choosen All-Rounders</h5>
+            <hr>
+            <div id="SAR">
+            </div>
+            <a class="btn-floating btn-small waves-effect waves-light blue ref" onclick='reset3()'><i
+                    class="fa fa-refresh"></i></a>
+            <h5>Choosen Bowlers</h5>
+            <hr>
+            <div id="SBW">
+            </div>
+            <a class="btn-floating btn-small waves-effect waves-light blue ref" onclick='reset4()'><i
+                    class="fa fa-refresh"></i></a>
+            <h5>Choosen Youngesters</h5>
+            <hr>
+            <div id="SY">
+            </div>
+            <a class="btn-floating btn-small waves-effect waves-light blue ref" onclick='reset5()'><i
+                    class="fa fa-refresh"></i></a>
+        </div>
+        <div id="right">
+            <h4>Available Players</h4>
+            <hr>
+            <h5><button class="down"><i class="fa fa-chevron-up"></i></button>WicketKeepers</h5>
+            <div id="LWK">
+            </div>
+            <h5><button class="down"><i class="fa fa-chevron-up"></i></button>Batsman</h4>
+                <div id="LB">
+                </div>
+                <h5><button class="down"><i class="fa fa-chevron-up"></i></button>All-Rounders</h5>
+                <div id="LAR">
+                </div>
+                <h5><button class="down"><i class="fa fa-chevron-up"></i></button>Bowlers</h5>
+                <div id="LBW">
+                </div>
+                <h5><button class="down"><i class="fa fa-chevron-up"></i></button>Future Stars</h5>
+                <div id="LY">
+                </div>
+        </div>
+
+        <!-- ResultBox -->
+
+        <div id="resultBox">
+            <h2 style="text-align:center;color: cyan;">Team Summary</h2>
+            <div id="box" style="display: flex;justify-content: center;">
+                <div id="team" style="margin: 20px;font-size: 1.5rem;">
+
+                </div>
+                <div id="summary" style="margin: 20px;">
+                    <div id="sBox1">
+                        <h4 style="color:khaki;">Maximum Credits</h4>
+                    </div>
+                    <div id="sBox2">
+                        <h4 style="color:khaki;">Earned Credits</h4>
+                    </div>
+                    <div id="sBox3">
+                        <h4 style="color:khaki;">Probability of Winning</h4>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div id="checkResult" style="color: white;text-align: center;font-size: 1.5rem;">
+        <p>Done with picking up the players?</p>
+        <p>Test your team against our most reliable bots</p>
+        <button type="submit" onclick="countCheck()" id="test">Test Now<i class="fa fa-sign-out"
+                style="margin-left: 15px;"></i></button>
+    </div>
+
+
+
+
+    <!-- Floating button -->
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large white" style="box-shadow: 0px 0px 0px 1px black;">
+            <img src="basic/logo.png" id="float" alt="" style="width:60px;">
+        </a>
+        <ul>
+            <li><a href="https://www.facebook.com/IPL/" class="btn-floating blue myFloat"><i
+                        class="fa fa-facebook"></i></a>
+            </li>
+            <li><a href="https://www.instagram.com/iplt20/" class="btn-floating pink myFloat"><i
+                        class="fa fa-instagram"></i></a></li>
+            <li><a href="https://twitter.com/IPL" class="btn-floating blue myFloat"><i class="fa fa-twitter"></i></a>
+            </li>
+        </ul>
+    </div>
+
+
+
+      <!-- Floating button -->
+
+      <div class="fixed-action-btn">
+        <a class="btn-floating btn-large white" style="box-shadow: 0px 0px 0px 1px black;">
+          <img src="basic/logo.png" id="float" alt="" style="width:60px;">
+        </a>
+        <ul>
+          <li><a href="/contact#team" class="btn-floating green myFloat">Team</a>
+          </li>
+          <li><a href="https://www.facebook.com/IPL/" class="btn-floating blue myFloat"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li><a href="https://www.instagram.com/iplt20/" class="btn-floating pink myFloat"><i
+                class="fa fa-instagram"></i></a></li>
+          <li><a href="https://twitter.com/IPL" class="btn-floating blue myFloat"><i class="fa fa-twitter"></i></a>
+          </li>
+        </ul>
+      </div>
+  
+  
+      <!-- Footer -->
+  
+      <footer class="page-footer" id="footer">
+        <div class="container">
+          <div class="row">
+            <div style="text-align: center;">
+              <h5>follow #IPL</h5>
+              <a href="https://www.facebook.com/IPL/" class="socials"><i class="fa fa-facebook-official"></i></a>
+              <a href="https://www.instagram.com/iplt20/" class="socials"><i class="fa fa-instagram"></i></a>
+              <a href="https://twitter.com/IPL" class="socials"><i class="fa fa-twitter-square"></i></a>
+            </div>
+            <div class="col l3 offset-l1 s6">
+              <h5 class="white-text">Quick Links</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="/videos">Videos</a></li>
+                <li><a class="grey-text text-lighten-3" href="/standings">Points Table</a></li>
+                <li><a class="grey-text text-lighten-3" href="/schedule">Schedule</a></li>
+                <li><a class="grey-text text-lighten-3" href="/info">Player Wise Data</a></li>
+                <li><a class="grey-text text-lighten-3" href="/updates">News</a></li>
+              </ul>
+            </div>
+            <div class="col l3 offset-l1 s6">
+              <h5 class="white-text">Teams</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="/csk">Chennai Super Kings</a></li>
+                <li><a class="grey-text text-lighten-3" href="/dc">Delhi Capitals</a></li>
+                <li><a class="grey-text text-lighten-3" href="/kxip">Kings XI Punjab</a></li>
+                <li><a class="grey-text text-lighten-3" href="/kkr">Kolkata Knight Riders</a></li>
+                <li><a class="grey-text text-lighten-3" href="/mi">Mumbai Indians</a></li>
+                <li><a class="grey-text text-lighten-3" href="/rr">Rajasthan Royals</a></li>
+                <li><a class="grey-text text-lighten-3" href="/rcb">Royal Challengers Bangalore</a></li>
+                <li><a class="grey-text text-lighten-3" href="/srh">Sunrisers Hyderabad</a></li>
+              </ul>
+            </div>
+            <div class="col l3 offset-l1 s6">
+              <h5 class="white-text">Contact</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="/contact">Contact Us</a></li>
+                <li><a class="grey-text text-lighten-3" href="/contact#team">Our Team</a></li>
+                <li><a class="grey-text text-lighten-3" href="/feedback">Feedback</a></li>
+              </ul>
+            </div>
+  
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            <span>© &nbsp; iplfeverr.herokuapp.com &nbsp; 2020</span>
+            <a class="grey-text text-lighten-4 right" href="/credits">Content Credits</a>
+          </div>
+        </div>
+      </footer>
+
+    <script>
+        // JS for floating buuton
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.fixed-action-btn');
+            var instances = M.FloatingActionButton.init(elems);
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+
+
+    </script>
+    <script src="fantasy.js"></script>
+
+</body>
+
+</html>

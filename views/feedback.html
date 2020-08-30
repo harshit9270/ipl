@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="./basic/favicon.png" type="image/x-icon">
+    <title>Iplfeverr | Chennai SuperKings</title>
+
+    <style>
+        body {
+            font-family: 'Cabin Condensed', sans-serif;
+            background-color: aliceblue;
+        }
+
+        #navbar {
+            font-family: 'Arvo', serif;
+            font-weight: 600;
+            position: fixed;
+            top: 0px;
+            z-index: 10;
+        }
+
+        #navbar ul li a:hover {
+            color: #c7edee;
+            background-color: black;
+        }
+
+
+
+        .myFloat:hover {
+            filter: saturate(10);
+        }
+
+        #float:hover {
+            transform: rotateY(180deg);
+        }
+
+        #footer {
+            margin-top: 90px;
+            background-color: #4b5d67;
+            font-family: 'Cairo', sans-serif;
+            /* text-align: center; */
+        }
+
+        .socials {
+            font-size: 2rem;
+            margin: 10px;
+        }
+
+        .socials:hover,
+        #footer ul li a:hover {
+            color: darkgoldenrod !important;
+        }
+
+        .emojis {
+            font-size: 3rem;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        #on:hover,#on1:hover  {
+            color: crimson;
+        }
+
+        #tw:hover,#tw1:hover {
+            color: yellow;
+        }
+
+        #th:hover,#th1:hover {
+            color: yellowgreen;
+        }
+
+        #fo:hover,#fo1:hover {
+            color: green;
+        }
+
+        #container {
+            border: 2px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            width: 54%;
+            padding: 20px 7%;
+            background-color: whitesmoke;
+        }
+
+        @media screen and (max-width: 700px){
+          #container{
+            width: 90%;
+          }
+        }
+
+        form {
+            width: 420px;
+            max-width: 90%;
+        }
+
+        #container p {
+            font-size: 1.8rem;
+        }
+        form a{
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+        .numbers{
+            color: white;
+        }
+        @media screen and (max-width: 650px){
+            #logoText{
+                display: none;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- navbar -->
+
+    <nav id="navbar" style="background-color:#1b2a49;">
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo"><img src="basic/logo.png" alt="" style="width:70px;filter:invert(100%);"></a>
+          <a href="/" class="brand-logo" id="logoText" style="margin-left: 75px;font-size: 2rem;">Iplfeverr</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul id="main-menu" class="right hide-on-med-and-down">
+            <li><a href="/schedule">Schedule</a></li>
+            <li><a href="/standings">Standings</a></li>
+            <li><a href="/videos">Videos</a></li>
+            <li><a href="/fantasy">Fantasy</a></li>
+            <li><a href="/trivia">Trivia</a></li>
+            <li><a href="/info">Player Info</a></li>
+            <li><a href="/updates">News</a></li>
+            <li><a href="/teams">Teams</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+      <ul class="sidenav" id="mobile-demo" style="background-color:#1b2a49;color:white">
+        <br>
+        <li><a href="/schedule" style="color:white;">Schedule</a></li>
+        <li><a href="/standings" style="color:white;">Standings</a></li>
+        <li><a href="/videos" style="color:white">Videos</a></li>
+        <li><a href="/fantasy" style="color:white">Fantasy</a></li>
+        <li><a href="/trivia" style="color:white">Trivia</a></li>
+        <li><a href="/info" style="color:white">Player Info</a></li>
+        <li><a href="/updates" style="color:white">News</a></li>
+        <li><a href="/teams" style="color:white">Teams</a></li>
+      </ul>
+
+    <div id="container" style="margin-top: 100px;">
+
+        <h2>Feedback</h2>
+        <form action="/feedback" method="POST">
+
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="review" id="review" cols="60" rows="40"placeholder="Any Suggestions? Write here."></textarea>
+            <p aria-required="true">How was your overall experience?</p>
+            <i class="material-icons emojis" id="on">sentiment_very_dissatisfied</i>
+            <i class="material-icons emojis" id="tw">sentiment_neutral</i>
+            <i class="material-icons emojis" id="th">sentiment_satisfied</i>
+            <i class="material-icons emojis" id="fo">sentiment_very_satisfied</i>
+            
+            <p aria-required="true">How was our content quality?</p>
+            <i class="material-icons emojis" id="on1">sentiment_very_dissatisfied</i>
+            <i class="material-icons emojis" id="tw1">sentiment_neutral</i>
+            <i class="material-icons emojis" id="th1">sentiment_satisfied</i>
+            <i class="material-icons emojis" id="fo1">sentiment_very_satisfied</i>
+       
+            <p>How likely you are to recommend our website to others?</p>
+            <a class="btn-floating btn-large waves-effect waves-light numbers" style="color: white;">1</a>
+            <a class="btn-floating btn-large waves-effect waves-light numbers" style="color: white;">2</a>
+            <a class="btn-floating btn-large waves-effect waves-light numbers" style="color: white;">3</a>
+            <a class="btn-floating btn-large waves-effect waves-light numbers" style="color: white;">4</a>
+            <a class="btn-floating btn-large waves-effect waves-light numbers" style="color: white;">5</a>
+
+            <p>How much visually appealing do you find our site?</p>
+            <a class="btn-floating btn-large waves-effect waves-light numbers" style="color: white;">1</a>
+            <a class="btn-floating btn-large waves-effect waves-light numbers" style="color: white;">2</a>
+            <a class="btn-floating btn-large waves-effect waves-light numbers" style="color: white;">3</a>
+            <a class="btn-floating btn-large waves-effect waves-light numbers" style="color: white;">4</a>
+            <a class="btn-floating btn-large waves-effect waves-light numbers" style="color: white;">5</a>
+
+            <!-- <a type="submit" class="waves-effect btn-large waves-light btn">Submit<i class="fa fa-share-square-o" style="margin-left: 15px;"></i></a>      -->
+            <button class="btn waves-effect btn-large waves-light"  name="action" style="margin: 75px 0px;background-color: #4b5d67;">Submit
+                <i class="material-icons right">send</i>
+              </button>
+        </form>
+
+    </div>
+
+
+
+    <!-- Floating button -->
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large white" style="box-shadow: 0px 0px 0px 1px black;">
+          <img src="basic/logo.png" id="float" alt="" style="width:60px;">
+        </a>
+        <ul>
+          <li><a href="/contact#team" class="btn-floating green myFloat">Team</a>
+          </li>
+          <li><a href="https://www.facebook.com/IPL/" class="btn-floating blue myFloat"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li><a href="https://www.instagram.com/iplt20/" class="btn-floating pink myFloat"><i
+                class="fa fa-instagram"></i></a></li>
+          <li><a href="https://twitter.com/IPL" class="btn-floating blue myFloat"><i class="fa fa-twitter"></i></a>
+          </li>
+        </ul>
+      </div>
+  
+  
+      <!-- Footer -->
+  
+      <footer class="page-footer" id="footer">
+        <div class="container">
+          <div class="row">
+            <div style="text-align: center;">
+              <h5>follow #IPL</h5>
+              <a href="https://www.facebook.com/IPL/" class="socials"><i class="fa fa-facebook-official"></i></a>
+              <a href="https://www.instagram.com/iplt20/" class="socials"><i class="fa fa-instagram"></i></a>
+              <a href="https://twitter.com/IPL" class="socials"><i class="fa fa-twitter-square"></i></a>
+            </div>
+            <div class="col l3 offset-l1 s6">
+              <h5 class="white-text">Quick Links</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="/videos">Videos</a></li>
+                <li><a class="grey-text text-lighten-3" href="/standings">Points Table</a></li>
+                <li><a class="grey-text text-lighten-3" href="/schedule">Schedule</a></li>
+                <li><a class="grey-text text-lighten-3" href="/info">Player Wise Data</a></li>
+                <li><a class="grey-text text-lighten-3" href="/updates">News</a></li>
+              </ul>
+            </div>
+            <div class="col l3 offset-l1 s6">
+              <h5 class="white-text">Teams</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="/csk">Chennai Super Kings</a></li>
+                <li><a class="grey-text text-lighten-3" href="/dc">Delhi Capitals</a></li>
+                <li><a class="grey-text text-lighten-3" href="/kxip">Kings XI Punjab</a></li>
+                <li><a class="grey-text text-lighten-3" href="/kkr">Kolkata Knight Riders</a></li>
+                <li><a class="grey-text text-lighten-3" href="/mi">Mumbai Indians</a></li>
+                <li><a class="grey-text text-lighten-3" href="/rr">Rajasthan Royals</a></li>
+                <li><a class="grey-text text-lighten-3" href="/rcb">Royal Challengers Bangalore</a></li>
+                <li><a class="grey-text text-lighten-3" href="/srh">Sunrisers Hyderabad</a></li>
+              </ul>
+            </div>
+            <div class="col l3 offset-l1 s6">
+              <h5 class="white-text">Contact</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="/contact">Contact Us</a></li>
+                <li><a class="grey-text text-lighten-3" href="/contact#team">Our Team</a></li>
+                <li><a class="grey-text text-lighten-3" href="/feedback">Feedback</a></li>
+              </ul>
+            </div>
+  
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            <span>© &nbsp; iplfeverr.herokuapp.com &nbsp; 2020</span>
+            <a class="grey-text text-lighten-4 right" href="/credits">Content Credits</a>
+          </div>
+        </div>
+      </footer>
+
+
+    <script>
+        // JS for floating buuton
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.fixed-action-btn');
+            var instances = M.FloatingActionButton.init(elems);
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+
+        /* Feedback Form */
+const emoji = document.querySelectorAll(".emojis");
+const button = document.querySelectorAll(".numbers");
+
+console.log(emoji);
+
+emoji[0].addEventListener('click',()=>{
+     emoji[0].style.color="red";
+     emoji[1].style.color="black";
+     emoji[2].style.color="black";
+     emoji[3].style.color="black";
+});
+emoji[1].addEventListener('click',()=>{
+    emoji[1].style.color="yellow";
+    emoji[0].style.color="black";
+    emoji[2].style.color="black";
+    emoji[3].style.color="black";
+});
+emoji[2].addEventListener('click',()=>{
+    emoji[2].style.color="yellowgreen";
+    emoji[0].style.color="black";
+    emoji[1].style.color="black";
+    emoji[3].style.color="black";
+});
+emoji[3].addEventListener('click',()=>{
+    emoji[3].style.color="green";
+    emoji[0].style.color="black";
+    emoji[1].style.color="black";
+    emoji[2].style.color="black";
+});
+
+emoji[4].addEventListener('click',()=>{
+     emoji[4].style.color="red";
+     emoji[5].style.color="black";
+     emoji[6].style.color="black";
+     emoji[7].style.color="black";
+});
+emoji[5].addEventListener('click',()=>{
+    emoji[5].style.color="yellow";
+    emoji[4].style.color="black";
+    emoji[6].style.color="black";
+    emoji[7].style.color="black";
+});
+emoji[6].addEventListener('click',()=>{
+    emoji[6].style.color="yellowgreen";
+    emoji[4].style.color="black";
+    emoji[5].style.color="black";
+    emoji[7].style.color="black";
+});
+emoji[7].addEventListener('click',()=>{
+    emoji[7].style.color="green";
+    emoji[4].style.color="black";
+    emoji[5].style.color="black";
+    emoji[6].style.color="black";
+});
+
+
+// button
+
+button[0].addEventListener('click',()=>{
+     button[0].style.backgroundColor="red";
+     button[1].style.backgroundColor="blue";
+     button[2].style.backgroundColor="blue";
+     button[3].style.backgroundColor="blue";
+     button[4].style.backgroundColor="blue";
+});
+button[1].addEventListener('click',()=>{
+     button[1].style.backgroundColor="red";
+     button[0].style.backgroundColor="blue";
+     button[2].style.backgroundColor="blue";
+     button[3].style.backgroundColor="blue";
+     button[4].style.backgroundColor="blue";
+});
+button[2].addEventListener('click',()=>{
+     button[2].style.backgroundColor="red";
+     button[1].style.backgroundColor="blue";
+     button[0].style.backgroundColor="blue";
+     button[3].style.backgroundColor="blue";
+     button[4].style.backgroundColor="blue";
+});
+button[3].addEventListener('click',()=>{
+     button[3].style.backgroundColor="red";
+     button[1].style.backgroundColor="blue";
+     button[2].style.backgroundColor="blue";
+     button[0].style.backgroundColor="blue";
+     button[4].style.backgroundColor="blue";
+});
+button[4].addEventListener('click',()=>{
+     button[4].style.backgroundColor="red";
+     button[1].style.backgroundColor="blue";
+     button[2].style.backgroundColor="blue";
+     button[3].style.backgroundColor="blue";
+     button[0].style.backgroundColor="blue";
+});
+
+button[5].addEventListener('click',()=>{
+     button[5].style.backgroundColor="red";
+     button[6].style.backgroundColor="blue";
+     button[7].style.backgroundColor="blue";
+     button[8].style.backgroundColor="blue";
+     button[9].style.backgroundColor="blue";
+});
+button[6].addEventListener('click',()=>{
+     button[6].style.backgroundColor="red";
+     button[5].style.backgroundColor="blue";
+     button[7].style.backgroundColor="blue";
+     button[8].style.backgroundColor="blue";
+     button[9].style.backgroundColor="blue";
+});
+button[7].addEventListener('click',()=>{
+     button[7].style.backgroundColor="red";
+     button[6].style.backgroundColor="blue";
+     button[5].style.backgroundColor="blue";
+     button[8].style.backgroundColor="blue";
+     button[9].style.backgroundColor="blue";
+});
+button[8].addEventListener('click',()=>{
+     button[8].style.backgroundColor="red";
+     button[6].style.backgroundColor="blue";
+     button[7].style.backgroundColor="blue";
+     button[5].style.backgroundColor="blue";
+     button[9].style.backgroundColor="blue";
+});
+button[9].addEventListener('click',()=>{
+     button[9].style.backgroundColor="red";
+     button[6].style.backgroundColor="blue";
+     button[7].style.backgroundColor="blue";
+     button[8].style.backgroundColor="blue";
+     button[5].style.backgroundColor="blue";
+});
+
+
+
+    </script>
+
+</body>
+
+</html>

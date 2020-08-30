@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="./basic/favicon.png" type="image/x-icon">
+    <title>Iplfeverr | News</title>
+
+    <style>
+        body {
+            font-family: 'Cabin Condensed', sans-serif;
+        }
+
+        #navbar {
+            font-family: 'Arvo', serif;
+            font-weight: 600;
+            position: fixed;
+            top: 0px;
+            z-index: 10;
+        }
+
+        #navbar ul li a:hover {
+            color: #c7edee;
+            background-color: black;
+        }
+
+
+
+        .myFloat:hover {
+            filter: saturate(2);
+        }
+
+        #float:hover {
+            transform: rotateY(180deg);
+        }
+
+        #footer {
+            margin-top: 90px;
+            background-color: #4b5d67;
+            font-family: 'Cairo', sans-serif;
+            /* text-align: center; */
+        }
+
+        .socials {
+            font-size: 2rem;
+            margin: 10px;
+        }
+
+        .socials:hover,
+        #footer ul li a:hover {
+            color: darkgoldenrod !important;
+        }
+
+        #news {
+            margin-top: 120px;
+        }
+
+        .rows {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        .newsBox {
+            border: 2px solid black;
+            border-radius: 10px;
+            min-height: 510px;
+            height: fit-content;
+            width: 30%;
+            margin: 10px 2.7%;
+            padding: 20px;
+            background-color: aliceblue;
+        }
+
+        .newsBox img {
+            width: 100%;
+        }
+
+        .newsBox:hover {
+            background-color: #b2ebf2;
+            cursor: pointer;
+        }
+
+        #one,
+        #two,
+        #three,
+        #four,
+        #five,
+        #six {
+            display: none;
+        }
+
+        #userArea {
+            text-align: center;
+            padding: 0 4%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #userArea form {
+            width: 60%;
+            margin: 20px 0;
+        }
+
+        @media screen and (max-width: 700px) {
+            #userArea form {
+                width: 75%;
+            }
+
+            .rows {
+                flex-direction: column;
+            }
+
+            .newsBox {
+                width: 90%;
+            }
+        }
+
+        @media screen and (max-width: 650px) {
+            #logoText {
+                display: none;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- navbar -->
+
+    <nav id="navbar" style="background-color:#1b2a49;">
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo"><img src="basic/logo.png" alt="" style="width:70px;filter:invert(100%);"></a>
+          <a href="/" class="brand-logo" id="logoText" style="margin-left: 75px;font-size: 2rem;">Iplfeverr</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul id="main-menu" class="right hide-on-med-and-down">
+            <li><a href="/schedule">Schedule</a></li>
+            <li><a href="/standings">Standings</a></li>
+            <li><a href="/videos">Videos</a></li>
+            <li><a href="/fantasy">Fantasy</a></li>
+            <li><a href="/trivia">Trivia</a></li>
+            <li><a href="/info">Player Info</a></li>
+            <li><a href="/updates">News</a></li>
+            <li><a href="/teams">Teams</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+      <ul class="sidenav" id="mobile-demo" style="background-color:#1b2a49;color:white">
+        <br>
+        <li><a href="/schedule" style="color:white;">Schedule</a></li>
+        <li><a href="/standings" style="color:white;">Standings</a></li>
+        <li><a href="/videos" style="color:white">Videos</a></li>
+        <li><a href="/fantasy" style="color:white">Fantasy</a></li>
+        <li><a href="/trivia" style="color:white">Trivia</a></li>
+        <li><a href="/info" style="color:white">Player Info</a></li>
+        <li><a href="/updates" style="color:white">News</a></li>
+        <li><a href="/teams" style="color:white">Teams</a></li>
+      </ul>
+
+
+    <div id="container">
+
+        <div id="news">
+            <div class="rows">
+                <div id="news1" class="newsBox">
+                    <img src="https://resources.platform.iplt20.com/photo-resources/2020/08/20/8ab72598-0ed5-411d-9b91-7fc371ae2812/IPL_v1.jpg?width=2000&height=1333"
+                        alt="">
+                    <p style="font-size: 2.2rem;">5 youngesters to watch out for in IPL 2020</p>
+
+                    <span style="color: #f0a500;font-weight: bold;">ARTICLE</span>
+
+                    <p id="one" style="font-size: 1.5rem;">
+                        IPL has always given an opportunity to youngsters to showcase their talent.
+                        There are many young cricketers who aspire to play in the IPL.<br>
+                        <span style="font-weight:bold"> We will look at 5 young cricketers on whom all eyes will be in
+                            IPL 2020:</span>
+                        <img src="https://www.kxip.in/static-assets/images/players/small/12/71288.png?v=1.6" alt=""
+                            style="width: 135px;">
+                        <span style="font-weight: bold;display: inline-block;">1. Ravi Bishnoi <br>
+                            India's new spin wizard<br>
+                            Price : 2 cr <br>
+                            Team : KXIP <br>
+                        </span>
+                        <br>
+                        <img src="https://www.rajasthanroyals.com/adminpanel/uploads/images/players/zgnxb8sobko6b8swrd4adx575ye36ym0.png"
+                            alt="" style="width: 135px;">
+                        <span style="font-weight: bold;display: inline-block;">2. Yashasvi Jaiswal<br>
+                            Destructive Opener<br>
+                            Price : 2.4 cr <br>
+                            Team : RR <br>
+                        </span>
+                        <br>
+                        <img src="https://www.rajasthanroyals.com/adminpanel/uploads/images/players/f298rydlf135ftryof1fnv37mb7l5asp.png"
+                            alt="" style="width: 135px;">
+                        <span style="font-weight: bold;display: inline-block;">3. Kartik Tyagi<br>
+                            Stumps breaker<br>
+                            Price : 1.3 cr <br>
+                            Team : RR <br>
+                        </span>
+                        <br>
+                        <img src="https://www.kkr.in/static-assets/images/players/2020/66923.png?v=1.3&w=200" alt=""
+                            style="width: 135px;">
+                        <span style="font-weight: bold;display: inline-block;">4. Tom Banton<br>
+                            Bowling destructor<br>
+                            Price : 1 cr <br>
+                            Team : KKR <br>
+                        </span>
+                        <br>
+                        <img src="https://www.kkr.in/static-assets/images/players/2020/66807.png?v=1.3&w=200" alt=""
+                            style="width: 135px;">
+                        <span style="font-weight: bold;display: inline-block;">5. Kamlesh Nagarkoti<br>
+                            Bowling destructor<br>
+                            Price : 3.2 cr <br>
+                            Team : KKR <br>
+                        </span>
+
+
+                    </p>
+
+                    <button class="btn waves-effect waves-light more" style="float: right;">Read more
+                        <i class="material-icons right">pageview</i>
+                    </button>
+                </div>
+                <div id="news2" class="newsBox">
+                    <img src="https://resources.platform.iplt20.com/photo-resources/2020/08/20/8ab72598-0ed5-411d-9b91-7fc371ae2812/IPL_v1.jpg?width=2000&height=1333"
+                        alt="">
+                    <p style="font-size: 2.2rem;">BCCI Statement – COVID-19 Testing</p>
+                    <span style="color: #f0a500;font-weight: bold;">ARTICLE</span>
+
+                    <p id="two" style="font-size: 1.5rem;">The Board of Control for Cricket in India (BCCI) has put in
+                        place stringent health and safety protocols for the Dream11 Indian Premier League 2020 Season,
+                        which
+                        is scheduled to start from September 19th in the UAE.
+                        <br>
+                        Accordingly, upon landing in the UAE, all the participants have followed a mandatory testing and
+                        quarantine programme. Total of 1,988 RT-PCR COVID tests were carried out between August 20th –
+                        28th
+                        across all participant groups in the UAE. These groups include Players, Support Staff, Team
+                        Management, BCCI Staff, IPL Operational team, Hotel and ground transport Staff.
+                        <br>
+                        13 personnel have tested positive of which 2 are players. All the affected personnel as well as
+                        their close contacts are asymptomatic and have been isolated from other team members. They are
+                        being
+                        monitored by the IPL Medical Team.
+                        <br>
+                        As per the IPL 2020 Health and Safety Protocols testing on all participants will be conducted
+                        regularly throughout the IPL 2020 Season.
+                        <br>
+                        <br>
+                        <span style="font-weight: bold;"> IPL</span>
+                    </p>
+
+                    <button class="btn waves-effect waves-light more" style="float: right;">Read more
+                        <i class="material-icons right">pageview</i>
+                    </button>
+                </div>
+                <div id="news3" class="newsBox">
+                    <img src="https://miro.medium.com/max/750/1*fX1674arC9JQ7kZ2eC6FzA.png" alt="">
+                    <p style="font-size: 2.2rem;">BCCI announce Dream11 as Title Sponsor for IPL 2020</p>
+                    <span style="color: #f0a500;font-weight: bold;">ARTICLE</span>
+                    <p id="three" style="font-size: 1.5rem;">
+
+                        The IPL Governing Council has announced Dream11 as the new Title Sponsor of the 2020 edition of
+                        the
+                        Indian Premier League. Dream11 (Sporta Technologies Pvt. Ltd) is an Indian company based in
+                        Mumbai,
+                        Maharashtra.
+                        <br>
+                        Dream11’s association with sports has grown over the years and it is presently partnering a
+                        total of
+                        19 sports leagues along with 6 Indian Premier League Franchises.
+                        <br>
+                        <span style="font-weight: bold;"> Brijesh Patel, Chairman, IPL, said:</span> “We welcome Dream11
+                        on
+                        board as Title Sponsor for the 2020
+                        edition of the IPL. Dream11 upgrading their association from an Official Partner to Title
+                        Sponsors
+                        is a great testament to the brand IPL. Dream11 as a fantasy sports brand will only grow the
+                        engagement of the IPL with its fans. As a digital brand it will give them leverage to create
+                        exciting online engagement for fans sitting at home and watching the matches. We look forward to
+                        delivering great value to Dream11.”
+                        <br>
+                        <span style="font-weight: bold;"> Mr Harsh Jain, CEO & Co-Founder, Dream Sports (Dream11)
+                            said:</span> “The launch of IPL in 2008 gave birth
+                        to the idea of Dream11. As avid sports fans, we wanted to offer fantasy cricket to IPL fans to
+                        help
+                        them further engage with the sport they love and showcase their sports knowledge & skill. Being
+                        a
+                        proud homegrown Indian brand that is made in India, by Indians and exclusively for Indian sports
+                        fans, we would like to thank the BCCI for giving us an opportunity to become the Title Sponsor
+                        of
+                        IPL, which in our opinion is the world’s greatest sports property. We believe that ‘Dream11 IPL’
+                        also perfectly defines what IPL is all about: every team fielding its Dream11 team culminating
+                        in
+                        the IPL finals determining The Dream11. We are happy to continue building our partnership with
+                        BCCI
+                        & IPL to further promote sports fan engagement in India, and look forward to 10 Crore+ Indians
+                        making their Dream11 for every Dream11 IPL match.”
+                        <br><br>
+                        <span style="font-weight: bold;"> IPL</span>
+                    </p>
+
+                    <button class="btn waves-effect waves-light more" style="float: right;">Read more
+                        <i class="material-icons right">pageview</i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="rows">
+                <div id="news4" class="newsBox">
+                    <img src="https://resources.platform.iplt20.com/photo-resources/2020/08/20/8ab72598-0ed5-411d-9b91-7fc371ae2812/IPL_v1.jpg?width=2000&height=1333"
+                        alt="">
+                    <p style="font-size: 2.2rem;">5 most expensive buys in IPL 2020</p>
+
+                    <span style="color: #f0a500;font-weight: bold;">ARTICLE</span>
+
+                    <p id="four" style="font-size: 1.5rem;">
+
+                        IPL is also known for the huge amount of money that players get every year to represent their
+                        respective franchise. <br>
+                        <span style="font-weight:bold">In this article we will look at the top 5 expensive buys in IPL
+                            2020.</span>
+                        <img src="https://www.kkr.in/static-assets/images/players/2020/56964.png?v=1.3&w=200" alt=""
+                            style="width: 135px;">
+                        <span style="font-weight: bold;display: inline-block;">1. Pat Cummins <br>
+                            Price : ₹15.5 cr <br>
+                            Franchise : KKR <br>
+                        </span>
+                        <br>
+                        <img src="https://www.kxip.in/static-assets/images/players/small/12/10085.png?v=1.6" alt=""
+                            style="width: 135px;">
+                        <span style="font-weight: bold;display: inline-block;">2. Glen Maxwell<br>
+                            Price : ₹10.75 cr <br>
+                            Team : KXIP <br>
+                        </span>
+                        <br>
+                        <img src="https://www.uokpl.rs/fpng/f/473-4737424_chris-morris-cricketer.png" alt="" style="width: 120px;
+                height: 175px;">
+                        <span style="font-weight: bold;display: inline-block;">3. Chris Morris<br>
+                            Price : ₹10 cr <br>
+                            Team : RCB <br>
+                        </span>
+                        <br>
+                        <img src="https://www.kxip.in/static-assets/images/players/small/12/61505.png?v=1.6" alt=""
+                            style="width: 135px;">
+                        <span style="font-weight: bold;display: inline-block;">4. Sheldon Cottrell<br>
+                            Price : ₹8.5 cr <br>
+                            Team : KXIP <br>
+                        </span>
+                        <br>
+                        <img src="https://www.mumbaiindians.com/static-assets/images/players/large/10090.png?v=1.33"
+                            alt="" style="width: 135px;">
+                        <span style="font-weight: bold;display: inline-block;">5. Nathan Coulter-Nile<br>
+                            Price : ₹8 cr <br>
+                            Team : MI <br>
+                        </span>
+
+
+                    </p>
+
+                    <button class="btn waves-effect waves-light more" style="float: right;">Read more
+                        <i class="material-icons right">pageview</i>
+                    </button>
+                </div>
+
+                <div id="news5" class="newsBox">
+                    <img src="https://resources.platform.iplt20.com/photo-resources/2019/11/14/4ca3c16c-dea1-41b0-a746-583c722df4df/GAZI_0150.JPG?width=2000&height=1333"
+                        alt="">
+                    <p style="font-size: 2.2rem;">After 100 games with RR, Rahane to play for DC</p>
+                    <span style="color: #f0a500;font-weight: bold;">ARTICLE</span>
+
+                    <p id="five" style="font-size: 1.5rem;"> <span style="font-weight: bold;">Ajinkya Rahane, Rajasthan
+                            Royals’ most-capped player </span> will
+                        now move to Delhi Capitals following a successful trade. Rahane, who captained RR in 24 matches
+                        and represented them in 100 IPL games from 2011 to 2015 and again in 2018 and 2019, was also
+                        their top run-getter having scored 2810 runs at an average of 34.26 and a S/R of 122.65. Rahane
+                        also scored two centuries for the Royals and made 17 half-centuries.
+                        <br>
+                        <span style="font-weight: bold;">Delhi Capitals</span> have traded leg spinner Mayank Markande
+                        to Rajasthan Royals. After the 12th
+                        season of the VIVO IPL, Markande was traded to Delhi Capitals by Mumbai Indians.
+                        <br>
+                        <span style="font-weight: bold;">Bowling all-rounder Rahul Tewatia</span> will return to Rajasthan Royals after being traded by Delhi
+                        Capitals. Tewatia began his IPL career with RR in 2014, when he was bought for INR 10 lakhs. He
+                        also played for them in 2015 before moving to Kings XI Punjab in 2017 and settling with Delhi
+                        Capitals in 2018 and 2019.
+                        <br>
+
+                        <span style="font-weight: bold;">Jay Shah <br>
+                            Hony. Secretary <br>
+                            BCCI</span>
+                    </p>
+
+                    <button class="btn waves-effect waves-light more" style="float: right;">Read more
+                        <i class="material-icons right">pageview</i>
+                    </button>
+                </div>
+                <div id="news6" class="newsBox">
+                    <img src="https://resources.platform.iplt20.com/photo-resources/2020/08/20/8ab72598-0ed5-411d-9b91-7fc371ae2812/IPL_v1.jpg?width=2000&height=1333" alt="">
+                    <p style="font-size: 2.2rem;">Unacademy is new Official Partner for IPL</p>
+                    <span style="color: #f0a500;font-weight: bold;">ARTICLE</span>
+                    <p id="six" style="font-size: 1.5rem;">
+
+                        <span style="font-weight: bold;">The Indian Premier League Governing Council (IPL GC)</span> announced India’s largest learning platform
+                        Unacademy as Official Partner for IPL beginning with the 2020 edition which will be held in the
+                        UAE from September 19th onwards. The partnership will cover three seasons of IPL.
+                        <br>
+                        <span style="font-weight: bold;">The Bengaluru-based edutech firm, Unacademy,</span> aims to build an online knowledge repository for
+                        multilingual education by bringing expert Educators together from across the globe.
+                        <br>
+                        Mr Brijesh Patel, Chairman, IPL, said about the association: "We are pleased to have Unacademy
+                        on board as the 'Official Partner' of the Indian Premier League 2020 to 2022. IPL Is the most
+                        watched cricket league in India and as a homegrown Indian edutech company we believe that
+                        Unacademy can create a huge positive impact on the aspirations of the audience watching,
+                        especially the millions of Indian youth who are seeking inspiration in their careers."
+                        <br>
+                        <span style="font-weight: bold;">Mr Karan Shroff, VP - Marketing, Unacademy, said:</span> “We are delighted to become the Official
+                        Partner of IPL. Unacademy is a high-intensity brand that has disrupted the education and
+                        learning market with innovations and broken geographical barriers for Learners and Educators.
+                        The IPL has a similar history of disruption and innovation that have not only brought cricket
+                        fans closer to the game but also catapulted it to become one of the top sporting events in the
+                        world. With this partnership, we will double-down on our efforts to make Unacademy the biggest
+                        brand in the consumer-internet space in India. We thank the BCCI and IPL for the opportunity and
+                        look forward to a long and fruitful partnership.”
+                        <br><br>
+                        <span style="font-weight: bold;"> IPL</span>
+                    </p>
+
+                    <button class="btn waves-effect waves-light more" style="float: right;">Read more
+                        <i class="material-icons right">pageview</i>
+                    </button>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <hr>
+        <div id="userArea">
+            <h2 style="color: #5b8c85;">Interested in Journalism</h2>
+
+            <h4 style="color: #251f44;">Share your work with us</h4>
+            <form onsubmit="return Jform()" id="myForm">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="work" cols="30" rows="10" placeholder="Enter your work"></textarea>
+                <p style="font-size: 1.5rem;">Add some work(optional)</p>
+                <input type="file" name="file" style="display: block;">
+                <button class="btn waves-effect waves-light" type="submit" name="action"
+                    style="margin-top:20px;background-color: #565d47;">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+
+            </form>
+            <h5 style="color: #00909e;">Our team will review your work and revert back to you within 2-3 working days.
+            </h5>
+        </div>
+
+    </div>
+
+    <!-- Floating button -->
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large white" style="box-shadow: 0px 0px 0px 1px black;">
+          <img src="basic/logo.png" id="float" alt="" style="width:60px;">
+        </a>
+        <ul>
+          <li><a href="/contact#team" class="btn-floating green myFloat">Team</a>
+          </li>
+          <li><a href="https://www.facebook.com/IPL/" class="btn-floating blue myFloat"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li><a href="https://www.instagram.com/iplt20/" class="btn-floating pink myFloat"><i
+                class="fa fa-instagram"></i></a></li>
+          <li><a href="https://twitter.com/IPL" class="btn-floating blue myFloat"><i class="fa fa-twitter"></i></a>
+          </li>
+        </ul>
+      </div>
+  
+  
+      <!-- Footer -->
+  
+      <footer class="page-footer" id="footer">
+        <div class="container">
+          <div class="row">
+            <div style="text-align: center;">
+              <h5>follow #IPL</h5>
+              <a href="https://www.facebook.com/IPL/" class="socials"><i class="fa fa-facebook-official"></i></a>
+              <a href="https://www.instagram.com/iplt20/" class="socials"><i class="fa fa-instagram"></i></a>
+              <a href="https://twitter.com/IPL" class="socials"><i class="fa fa-twitter-square"></i></a>
+            </div>
+            <div class="col l3 offset-l1 s6">
+              <h5 class="white-text">Quick Links</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="/videos">Videos</a></li>
+                <li><a class="grey-text text-lighten-3" href="/standings">Points Table</a></li>
+                <li><a class="grey-text text-lighten-3" href="/schedule">Schedule</a></li>
+                <li><a class="grey-text text-lighten-3" href="/info">Player Wise Data</a></li>
+                <li><a class="grey-text text-lighten-3" href="/updates">News</a></li>
+              </ul>
+            </div>
+            <div class="col l3 offset-l1 s6">
+              <h5 class="white-text">Teams</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="/csk">Chennai Super Kings</a></li>
+                <li><a class="grey-text text-lighten-3" href="/dc">Delhi Capitals</a></li>
+                <li><a class="grey-text text-lighten-3" href="/kxip">Kings XI Punjab</a></li>
+                <li><a class="grey-text text-lighten-3" href="/kkr">Kolkata Knight Riders</a></li>
+                <li><a class="grey-text text-lighten-3" href="/mi">Mumbai Indians</a></li>
+                <li><a class="grey-text text-lighten-3" href="/rr">Rajasthan Royals</a></li>
+                <li><a class="grey-text text-lighten-3" href="/rcb">Royal Challengers Bangalore</a></li>
+                <li><a class="grey-text text-lighten-3" href="/srh">Sunrisers Hyderabad</a></li>
+              </ul>
+            </div>
+            <div class="col l3 offset-l1 s6">
+              <h5 class="white-text">Contact</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="/contact">Contact Us</a></li>
+                <li><a class="grey-text text-lighten-3" href="/contact#team">Our Team</a></li>
+                <li><a class="grey-text text-lighten-3" href="/feedback">Feedback</a></li>
+              </ul>
+            </div>
+  
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            <span>© &nbsp; iplfeverr.herokuapp.com &nbsp; 2020</span>
+            <a class="grey-text text-lighten-4 right" href="/credits">Content Credits</a>
+          </div>
+        </div>
+      </footer>
+
+
+
+    <script>
+        // JS for floating buuton
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.fixed-action-btn');
+            var instances = M.FloatingActionButton.init(elems);
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+
+
+        const one = document.getElementById('one');
+        const two = document.getElementById('two');
+        const three = document.getElementById('three');
+        const four = document.getElementById('four');
+        const five = document.getElementById('five');
+        const six = document.getElementById('six');
+        const more = document.querySelectorAll('.more');
+
+        more[0].addEventListener('click', () => {
+            one.style.display = "block";
+            two.style.display = "none";
+            three.style.display = "none";
+            four.style.display = "none";
+            five.style.display = "none";
+            six.style.display = "none";
+            more[0].style.display = "none";
+            more[1].style.display = "block";
+            more[2].style.display = "block";
+            more[3].style.display = "block";
+            more[4].style.display = "block";
+            more[5].style.display = "block";
+        });
+
+        more[1].addEventListener('click', () => {
+            two.style.display = "block";
+            one.style.display = "none";
+            three.style.display = "none";
+            four.style.display = "none";
+            five.style.display = "none";
+            six.style.display = "none";
+            more[1].style.display = "none";
+            more[0].style.display = "block";
+            more[2].style.display = "block";
+            more[3].style.display = "block";
+            more[4].style.display = "block";
+            more[5].style.display = "block";
+        });
+
+        more[2].addEventListener('click', () => {
+            three.style.display = "block";
+            one.style.display = "none";
+            two.style.display = "none";
+            four.style.display = "none";
+            five.style.display = "none";
+            six.style.display = "none";
+            more[0].style.display = "block";
+            more[1].style.display = "block";
+            more[2].style.display = "none";
+            more[3].style.display = "block";
+            more[4].style.display = "block";
+            more[5].style.display = "block";
+        });
+
+        more[3].addEventListener('click', () => {
+            four.style.display = "block";
+            one.style.display = "none";
+            two.style.display = "none";
+            three.style.display = "none";
+            five.style.display = "none";
+            six.style.display = "none";
+            more[0].style.display = "block";
+            more[1].style.display = "block";
+            more[2].style.display = "block";
+            more[3].style.display = "none";
+            more[4].style.display = "block";
+            more[5].style.display = "block";
+        });
+
+        more[4].addEventListener('click', () => {
+            five.style.display = "block";
+            one.style.display = "none";
+            two.style.display = "none";
+            three.style.display = "none";
+            four.style.display = "none";
+            six.style.display = "none";
+            more[0].style.display = "block";
+            more[1].style.display = "block";
+            more[2].style.display = "block";
+            more[3].style.display = "block";
+            more[4].style.display = "none";
+            more[5].style.display = "block";
+        });
+
+        more[5].addEventListener('click', () => {
+            six.style.display = "block";
+            one.style.display = "none";
+            two.style.display = "none";
+            three.style.display = "none";
+            four.style.display = "none";
+            five.style.display = "none";
+            more[0].style.display = "block";
+            more[1].style.display = "block";
+            more[2].style.display = "block";
+            more[3].style.display = "block";
+            more[4].style.display = "block";
+            more[5].style.display = "none";
+        });
+
+
+
+        function Jform() {
+            M.toast({ html: 'Your inputs are recorded !<br>You will be informed very soon.' }, { displayLength: 10000 });
+            document.getElementById("myForm").reset();
+            return false;
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cabin+Condensed&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!--Font Awesome-->
+  <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
+
+  <link rel="icon" href="./basic/favicon.png" type="image/x-icon">
+  <title>Iplfeverr | Mumbai Indians</title>
+
+  <style>
+    body {
+      font-family: 'Cabin Condensed', sans-serif;
+    }
+
+    #navbar {
+      font-family: 'Arvo', serif;
+      font-weight: 600;
+      position: fixed;
+      top: 0px;
+      z-index: 10;
+    }
+
+    #navbar ul li a:hover {
+      color: #c7edee;
+      background-color: black;
+    }
+
+
+
+    .myFloat:hover {
+      filter: saturate(10);
+    }
+
+    #float:hover {
+      transform: rotateY(180deg);
+    }
+
+    #footer {
+      margin-top: 90px;
+      background-color: #4b5d67;
+      font-family: 'Cairo', sans-serif;
+      /* text-align: center; */
+    }
+
+    .socials {
+      font-size: 2rem;
+      margin: 10px;
+    }
+
+    .socials:hover,
+    #footer ul li a:hover {
+      color: darkgoldenrod !important;
+    }
+
+    #s1 {
+      /* background: url('miBg.jpg') no-repeat center/cover; */
+      color: white;
+      height: 450px;
+      /* opacity: 0.81; */
+      padding-left: 10%;
+      /* padding-top: 30px; */
+      background-color: black;
+      background-blend-mode: darken;
+    }
+
+    #s1img {
+      float: right;
+      height: 100%;
+      width: 60%;
+    }
+
+    #s22{
+      margin-right: 9%;
+      font-size: 1.5rem;
+      box-shadow: 0px 0px 4px 1px black;
+      margin-top: 40px;
+      padding: 30px;
+      padding-top: 15px;
+      border-radius: 10px;
+    }
+
+    @media screen and (min-width: 750px) and (max-width:1100px) {
+
+      #s1img {
+        height: 75%;
+        width: 60%;
+        margin-top: 6%;
+      }
+    }
+
+    @media screen and (max-width: 750px) {
+
+      #s1img {
+        display: none;
+      }
+
+      #s2{
+        flex-direction: column;
+      }
+
+      #s22 {
+        margin-left: 10%;
+        padding: 12px;
+      }
+
+      select {
+        max-width: 250px;
+      }
+
+    }
+    @media screen and (max-width: 650px){
+            #logoText{
+                display: none;
+            }
+        }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- navbar -->
+
+  <nav id="navbar" style="background-color:#1b2a49;">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo"><img src="basic/logo.png" alt="" style="width:70px;filter:invert(100%);"></a>
+      <a href="/" class="brand-logo" id="logoText" style="margin-left: 75px;font-size: 2rem;">Iplfeverr</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="main-menu" class="right hide-on-med-and-down">
+        <li><a href="/schedule">Schedule</a></li>
+        <li><a href="/standings">Standings</a></li>
+        <li><a href="/videos">Videos</a></li>
+        <li><a href="/fantasy">Fantasy</a></li>
+        <li><a href="/trivia">Trivia</a></li>
+        <li><a href="/info">Player Info</a></li>
+        <li><a href="/updates">News</a></li>
+        <li><a href="/teams">Teams</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo" style="background-color:#1b2a49;color:white">
+    <br>
+    <li><a href="/schedule" style="color:white;">Schedule</a></li>
+    <li><a href="/standings" style="color:white;">Standings</a></li>
+    <li><a href="/videos" style="color:white">Videos</a></li>
+    <li><a href="/fantasy" style="color:white">Fantasy</a></li>
+    <li><a href="/trivia" style="color:white">Trivia</a></li>
+    <li><a href="/info" style="color:white">Player Info</a></li>
+    <li><a href="/updates" style="color:white">News</a></li>
+    <li><a href="/teams" style="color:white">Teams</a></li>
+  </ul>
+
+  <div id="container" style="margin-top: 70px;">
+
+    <div id="s1">
+      <!-- <img src="teamsSvg/mi.png" alt="MI" style="width: 100px;"> -->
+      <img src="teamBGs/miBg.jpg" alt="" id="s1img">
+      <span>
+        <p style="font-weight: 900;font-size: 1.8rem;padding-top: 60px;">MUMBAI INDIANS</p>
+        <p
+          style="color:gold;border: 2px solid black;border-radius: 20px;width:fit-content;padding: 9px;background-color: gray;">
+          <i class="fa fa-trophy"></i>
+          2013,2015,2017,2019
+        </p>
+        <p><span style="margin: 20px 30px;">Owner</span><span>Indiawin Sports Pvt. Ltd</span></p>
+        <p><span style="margin: 20px 30px;">Coach</span><span>Mahela Jayawardene</span></p>
+        <p><span style="margin: 20px 30px;">Venue</span><span>Wankhede Stadium</span></p>
+        <p><span style="margin: 20px 30px;">Captain</span><span>Rohit Sharma</span></p>
+
+        <a class="waves-effect waves-light btn" href="https://www.mumbaiindians.com/">Official Team Site</a>
+      </span>
+    </div>
+
+    <div id="s2" style="display: flex;justify-content: space-between;">
+
+
+      <div id="s21" style="margin-left: 9%;margin-top: 40px;">
+        <h3>PlayerWise Stats</h3>
+        <form action="/cbatsman" method="POST" style="margin-top: 10px;">
+          <h4>Batsman:</h4>
+          <input type="text" value="MUMBAI INDIANS" name="team" style="display: none;">
+          <input type="text" value="MI" name="T" style="display: none;">
+          <select name="cappedBatsman" style="display: inline-block;">
+
+            <option value="34102">Rohit Sharma</option>
+            <option value="326637">Chris Lynn</option>
+            <option value="379143">Quinton Decock</option>
+
+          </select>
+
+          <button type="submit">Find</button>
+        </form>
+        <form action="/ubatsman" method="POST">
+          <h4>Uncapped Batsman:</h4>
+          <input type="text" value="MUMBAI INDIANS" name="team" style="display: none;">
+          <input type="text" value="MI" name="T" style="display: none;">
+          <select name="uncappedBatsman" style="display: inline-block;">
+            <option value="35390">Saurabh Tiwary</option>
+            <option value="333904">Aditya Tare</option>
+            <option value="446507">Suryakumar Yadav</option>
+            <option value="851261">Anmolpreet</option>
+            <option value="720471">Ishan Kishan</option>
+
+
+          </select>
+          <button type="submit">Find</button>
+        </form>
+        <form action="/cbowler" method="POST">
+          <h4>Bowlers:</h4>
+          <input type="text" value="MUMBAI INDIANS" name="team" style="display: none;">
+          <input type="text" value="MI" name="T" style="display: none;">
+          <select name="cappedBowler" style="display: inline-block;">
+            <option value="277955">Dhawal Kulkarni</option>
+            <option value="625383">Jasprit Bumrah</option>
+            <option value="49758">Lasith Malinga</option>
+            <option value="277912">Trent Boult</option>
+            <option value="261354">Nathan Counter-Nile</option>
+            <option value="319439">Mitchell McCleneghan</option>
+
+          </select>
+          <button type="submit">Find</button>
+        </form>
+        <form action="/ubowler" method="POST">
+          <h4>UnCapped Bowlers:</h4>
+          <input type="text" value="MUMBAI INDIANS" name="team" style="display: none;">
+          <input type="text" value="MI" name="T" style="display: none;">
+          <select name="uncappedBowler" style="display: inline-block;">
+            <option value="1064812">Rahul Chahar</option>
+            <option value="447587">Jayant Yadav</option>
+            <!-- <option value="1079839">Anukul Roy</option> -->
+
+          </select>
+          <button type="submit">Find</button>
+        </form>
+
+        <form action="/callRounder" method="POST">
+          <h4>AllRounders:</h4>
+          <input type="text" value="MUMBAI INDIANS" name="team" style="display: none;">
+          <input type="text" value="MI" name="T" style="display: none;">
+          <select name="cappedAllRounder" style="display: inline-block;">
+
+            <option value="625371">Hardik Pandya</option>
+            <option value="230559">Kieron Pollard</option>
+
+          </select>
+          <button type="submit">Find</button>
+
+        </form>
+        <form action="/uallRounder" method="POST">
+          <h4>UnCapped AllRounders:</h4>
+          <input type="text" value="MUMBAI INDIANS" name="team" style="display: none;">
+          <input type="text" value="MI" name="T" style="display: none;">
+          <select name="uncappedAllRounder" style="display: inline-block;">
+
+            <option value="471342">Krunal Pandya</option>
+
+
+          </select>
+          <button type="submit">Find</button>
+
+        </form>
+      </div>
+
+      <div id="s22">
+        <!-- Team section -->
+        <h3>Squad List</h3>
+        <ul style="list-style: none;">
+          <li>Rohit Sharma<i class="fa fa-copyright" style="margin-left: 40px;"></i></li>
+          <li>Aditya Tare</li>
+          <li>Quinton Decock<i class="fa fa-plane" style="margin-left: 40px;"></i></li>
+          <li>Saurabh Tiwary</li>
+          <li>Jasprit Bumrah</li>
+          <li>Dhawal Kulkarni</li>
+          <li>Nathan Counter-Nile<i class="fa fa-plane" style="margin-left: 40px;"></i></li>
+          <li>Trent Boult<i class="fa fa-plane" style="margin-left: 40px;"></i></li>
+          <li>Jayant Yadav</li>
+          <li>Suryakumar Yadav</li>
+          <li>Krunal Pandya</li>
+          <li>Kieron Pollard<i class="fa fa-plane" style="margin-left: 40px;"></i></li>
+          <li>Lasith Malinga<i class="fa fa-plane" style="margin-left: 40px;"></i></li>
+          <li>Rahul Chahar</li>
+          <li>Chris Lynn<i class="fa fa-plane" style="margin-left: 40px;"></i></li>
+          <li>Hardik Pandya</li>
+          <li>Sherfan Rutherford<i class="fa fa-plane" style="margin-left: 40px;"></i></li>
+          <li>Anmolpreet Singh</li>
+          <li>Mohsin Khan</li>
+          <li>Mitchell McCleneghan<i class="fa fa-plane" style="margin-left: 40px;"></i></li>
+          <li>Anukul Roy</li>
+          <li>Ishan Kishan</li>
+          <li>Digvijay Deshmukh</li>
+          <li>Prince Balwant Singh</li>
+        </ul>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+
+    <!-- Floating button -->
+
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large white" style="box-shadow: 0px 0px 0px 1px black;">
+        <img src="basic/logo.png" id="float" alt="" style="width:60px;">
+      </a>
+      <ul>
+        <li><a href="/contact#team" class="btn-floating green myFloat">Team</a>
+        </li>
+        <li><a href="https://www.facebook.com/IPL/" class="btn-floating blue myFloat"><i class="fa fa-facebook"></i></a>
+        </li>
+        <li><a href="https://www.instagram.com/iplt20/" class="btn-floating pink myFloat"><i
+              class="fa fa-instagram"></i></a></li>
+        <li><a href="https://twitter.com/IPL" class="btn-floating blue myFloat"><i class="fa fa-twitter"></i></a>
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer class="page-footer" id="footer">
+      <div class="container">
+        <div class="row">
+          <div style="text-align: center;">
+            <h5>follow #IPL</h5>
+            <a href="https://www.facebook.com/IPL/" class="socials"><i class="fa fa-facebook-official"></i></a>
+            <a href="https://www.instagram.com/iplt20/" class="socials"><i class="fa fa-instagram"></i></a>
+            <a href="https://twitter.com/IPL" class="socials"><i class="fa fa-twitter-square"></i></a>
+          </div>
+          <div class="col l3 offset-l1 s6">
+            <h5 class="white-text">Quick Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="/videos">Videos</a></li>
+              <li><a class="grey-text text-lighten-3" href="/standings">Points Table</a></li>
+              <li><a class="grey-text text-lighten-3" href="/schedule">Schedule</a></li>
+              <li><a class="grey-text text-lighten-3" href="/info">Player Wise Data</a></li>
+              <li><a class="grey-text text-lighten-3" href="/updates">News</a></li>
+            </ul>
+          </div>
+          <div class="col l3 offset-l1 s6">
+            <h5 class="white-text">Teams</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="/csk">Chennai Super Kings</a></li>
+              <li><a class="grey-text text-lighten-3" href="/dc">Delhi Capitals</a></li>
+              <li><a class="grey-text text-lighten-3" href="/kxip">Kings XI Punjab</a></li>
+              <li><a class="grey-text text-lighten-3" href="/kkr">Kolkata Knight Riders</a></li>
+              <li><a class="grey-text text-lighten-3" href="/mi">Mumbai Indians</a></li>
+              <li><a class="grey-text text-lighten-3" href="/rr">Rajasthan Royals</a></li>
+              <li><a class="grey-text text-lighten-3" href="/rcb">Royal Challengers Bangalore</a></li>
+              <li><a class="grey-text text-lighten-3" href="/srh">Sunrisers Hyderabad</a></li>
+            </ul>
+          </div>
+          <div class="col l3 offset-l1 s6">
+            <h5 class="white-text">Contact</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="/contact">Contact Us</a></li>
+              <li><a class="grey-text text-lighten-3" href="/contact#team">Our Team</a></li>
+              <li><a class="grey-text text-lighten-3" href="/feedback">Feedback</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          <span>© &nbsp; iplfeverr.herokuapp.com &nbsp; 2020</span>
+          <a class="grey-text text-lighten-4 right" href="/credits">Content Credits</a>
+        </div>
+      </div>
+    </footer>
+
+
+  <script>
+    // JS for floating buuton
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.fixed-action-btn');
+      var instances = M.FloatingActionButton.init(elems);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems);
+    });
+
+
+  </script>
+
+</body>
+
+</html>

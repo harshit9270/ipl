@@ -1,0 +1,130 @@
+body{
+    font-family: 'Roboto Slab', serif;
+}
+
+#navbar{
+    
+    font-family: 'Arvo', serif;
+    /* font-family: 'Karla', sans-serif; */
+    font-weight: 600;
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+}
+
+#navbar ul li a:hover{
+    color: #c7edee;
+    background-color: black;
+}
+
+#title{
+    margin-top: 100px;
+    margin-bottom: 30px;
+    margin-left: 4%;
+}
+
+#teams1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#teams2{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.team{
+    width: 300px;
+    height: 430px;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#one{
+    background-color: #fcad11;
+    color: white;
+}
+#two{
+    background-color: #004e96;
+    color: white;
+}
+#three{
+    background-color: #a33e3d;
+    color: white;
+}
+#four{
+    background-color: #6d438c;
+    color: white;
+}
+#five{
+    background-color: #005a9b;
+    color: white;
+}
+#six{
+    background-color: #2b4a97;
+    color: white;
+}
+#seven{
+    background-color: #060606;
+    color: white;
+}
+#eight{
+    background-color: #f15a3a;  
+    color: white;  
+}
+
+
+@media screen and (max-width:1200px)
+{
+    #teams1{
+        flex-direction: column;
+        
+    }
+    #teams2{
+        flex-direction:column;
+    }
+    
+}
+
+
+
+
+
+
+
+#float:hover{
+    transform: rotateY(180deg);
+}
+
+.myFloat:hover{
+    filter: saturate(10);
+}
+
+#footer{
+    background-color: #4b5d67; 
+    margin-top: 60px;
+    /* text-align: center; */
+}
+
+.socials{
+    font-size: 2rem;
+    margin:10px;
+}
+
+.socials:hover,#footer ul li a:hover{
+    color: darkgoldenrod !important;
+}
+
+@media screen and (max-width: 650px){
+    #logoText{
+        display: none;
+    }
+}

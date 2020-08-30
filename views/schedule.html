@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="./basic/favicon.png" type="image/x-icon">
+    <title>Iplfeverr | Schedule</title>
+
+    <style>
+        body {
+            font-family: 'Cabin Condensed', sans-serif;
+            background-color: #ffffff;
+            background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+        }
+
+        #navbar {
+            font-family: 'Arvo', serif;
+            font-weight: 600;
+            position: fixed;
+            top: 0px;
+            z-index: 10;
+        }
+
+        #navbar ul li a:hover {
+            color: #c7edee;
+            background-color: black;
+        }
+
+
+
+        .myFloat:hover {
+            filter: saturate(10);
+        }
+
+        #float:hover {
+            transform: rotateY(180deg);
+        }
+
+        #footer {
+            margin-top: 90px;
+            background-color: #4b5d67;
+            font-family: 'Cairo', sans-serif;
+            /* text-align: center; */
+        }
+
+        .socials {
+            font-size: 2rem;
+            margin: 10px;
+        }
+
+        .socials:hover,
+        #footer ul li a:hover {
+            color: darkgoldenrod !important;
+        }
+
+        #report {
+            padding: 0px 100px;
+            font-size: 1.5rem;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 15%;
+        }
+
+        #schImg{
+            width: 65%;
+            margin: 60px 0px;
+        }
+
+        @media screen and (max-width: 600px){
+            #container{
+                padding : 75px 1%;
+            }
+            #report{
+                padding: 0px 6%;
+            }
+            #schImg{
+            width: 85%;
+            margin: 30px 0px;
+        }
+        #heading h1{
+            font-size: 2.5rem;
+        }
+        }
+
+        #heading {
+            margin-left: 10%;
+        }
+
+        @media screen and (max-width: 650px){
+            #logoText{
+                display: none;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- navbar -->
+
+    <nav id="navbar" style="background-color:#1b2a49;">
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo"><img src="basic/logo.png" alt="" style="width:70px;filter:invert(100%);"></a>
+          <a href="/" class="brand-logo" id="logoText" style="margin-left: 75px;font-size: 2rem;">Iplfeverr</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul id="main-menu" class="right hide-on-med-and-down">
+            <li><a href="/schedule">Schedule</a></li>
+            <li><a href="/standings">Standings</a></li>
+            <li><a href="/videos">Videos</a></li>
+            <li><a href="/fantasy">Fantasy</a></li>
+            <li><a href="/trivia">Trivia</a></li>
+            <li><a href="/info">Player Info</a></li>
+            <li><a href="/updates">News</a></li>
+            <li><a href="/teams">Teams</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+      <ul class="sidenav" id="mobile-demo" style="background-color:#1b2a49;color:white">
+        <br>
+        <li><a href="/schedule" style="color:white;">Schedule</a></li>
+        <li><a href="/standings" style="color:white;">Standings</a></li>
+        <li><a href="/videos" style="color:white">Videos</a></li>
+        <li><a href="/fantasy" style="color:white">Fantasy</a></li>
+        <li><a href="/trivia" style="color:white">Trivia</a></li>
+        <li><a href="/info" style="color:white">Player Info</a></li>
+        <li><a href="/updates" style="color:white">News</a></li>
+        <li><a href="/teams" style="color:white">Teams</a></li>
+      </ul>
+
+
+    <div id="container">
+
+        <div id="heading">
+            <h1>
+                IPL 2020 TO BE PLAYED FROM 19TH SEPTEMBER TO 10TH NOVEMBER 2020
+            </h1>
+            <p>2 Aug 2020</p>
+        </div>
+        <img src="news/iplBackNew.jpg" alt="" id="schImg">
+        <div id="report">
+
+            <p>The Indian Premier League Governing Council (IPL GC) met today via video-conference to decide on the
+                issues concerning the IPL 2020 edition. Taking note of the prevailing COVID-19 situation in India,
+                the IPL GC decided to stage the tournament in the United Arab Emirates (UAE) and the matches will be
+                played in Dubai, Sharjah and Abu Dhabi subject to necessary clearances from the Government of India.
+            </p>
+            <p>IPL 2020 will be played from 19th September and the final will be played on 10th November 2020. The
+                53-day tournament will witness 10-afternoon matches starting at 15:30 IST while the evening matches
+                will start at 19:30 IST.</p>
+            <p>The Governing Council also discussed the comprehensive Standard Operating Procedures (SOPs), which
+                will be finalised and published in due course, including the agencies to execute and deliver a
+                bio-secure environment for safe and successful conduct of IPL 2020 Season.</p>
+            <p>The Governing Council also reviewed the Player Regulations for replacement player for 2020 season.
+            </p>
+            <p>Women’s T20 Challenge will also take place in the UAE and will comprise three teams with four matches
+                to be played during the IPL Playoff week.</p>
+            <p>A meeting with the Franchises will be called shortly.</p>
+            <p><strong>JAY SHAH</strong><br /><strong>Honorary Secretary </strong><br /><strong>BCCI</strong></p>
+            <p> </p>
+        </div>
+
+    </div>
+
+    <!-- Floating button -->
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large white" style="box-shadow: 0px 0px 0px 1px black;">
+          <img src="basic/logo.png" id="float" alt="" style="width:60px;">
+        </a>
+        <ul>
+          <li><a href="/contact#team" class="btn-floating green myFloat">Team</a>
+          </li>
+          <li><a href="https://www.facebook.com/IPL/" class="btn-floating blue myFloat"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li><a href="https://www.instagram.com/iplt20/" class="btn-floating pink myFloat"><i
+                class="fa fa-instagram"></i></a></li>
+          <li><a href="https://twitter.com/IPL" class="btn-floating blue myFloat"><i class="fa fa-twitter"></i></a>
+          </li>
+        </ul>
+      </div>
+  
+  
+      <!-- Footer -->
+  
+      <footer class="page-footer" id="footer">
+        <div class="container">
+          <div class="row">
+            <div style="text-align: center;">
+              <h5>follow #IPL</h5>
+              <a href="https://www.facebook.com/IPL/" class="socials"><i class="fa fa-facebook-official"></i></a>
+              <a href="https://www.instagram.com/iplt20/" class="socials"><i class="fa fa-instagram"></i></a>
+              <a href="https://twitter.com/IPL" class="socials"><i class="fa fa-twitter-square"></i></a>
+            </div>
+            <div class="col l3 offset-l1 s6">
+              <h5 class="white-text">Quick Links</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="/videos">Videos</a></li>
+                <li><a class="grey-text text-lighten-3" href="/standings">Points Table</a></li>
+                <li><a class="grey-text text-lighten-3" href="/schedule">Schedule</a></li>
+                <li><a class="grey-text text-lighten-3" href="/info">Player Wise Data</a></li>
+                <li><a class="grey-text text-lighten-3" href="/updates">News</a></li>
+              </ul>
+            </div>
+            <div class="col l3 offset-l1 s6">
+              <h5 class="white-text">Teams</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="/csk">Chennai Super Kings</a></li>
+                <li><a class="grey-text text-lighten-3" href="/dc">Delhi Capitals</a></li>
+                <li><a class="grey-text text-lighten-3" href="/kxip">Kings XI Punjab</a></li>
+                <li><a class="grey-text text-lighten-3" href="/kkr">Kolkata Knight Riders</a></li>
+                <li><a class="grey-text text-lighten-3" href="/mi">Mumbai Indians</a></li>
+                <li><a class="grey-text text-lighten-3" href="/rr">Rajasthan Royals</a></li>
+                <li><a class="grey-text text-lighten-3" href="/rcb">Royal Challengers Bangalore</a></li>
+                <li><a class="grey-text text-lighten-3" href="/srh">Sunrisers Hyderabad</a></li>
+              </ul>
+            </div>
+            <div class="col l3 offset-l1 s6">
+              <h5 class="white-text">Contact</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="/contact">Contact Us</a></li>
+                <li><a class="grey-text text-lighten-3" href="/contact#team">Our Team</a></li>
+                <li><a class="grey-text text-lighten-3" href="/feedback">Feedback</a></li>
+              </ul>
+            </div>
+  
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            <span>© &nbsp; iplfeverr.herokuapp.com &nbsp; 2020</span>
+            <a class="grey-text text-lighten-4 right" href="/credits">Content Credits</a>
+          </div>
+        </div>
+      </footer>
+
+
+
+    <script>
+        // JS for floating buuton
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.fixed-action-btn');
+            var instances = M.FloatingActionButton.init(elems);
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="./basic/favicon.png" type="image/x-icon">
+    <title>Iplfeverr | IPL videos</title>
+
+    <style>
+        body {
+            font-family: 'Cabin Condensed', sans-serif;
+        }
+
+        a{
+            color: black;
+        }
+
+        #navbar {
+            font-family: 'Arvo', serif;
+            font-weight: 600;
+            position: fixed;
+            top: 0px;
+            z-index: 10;
+        }
+
+        #navbar ul li a:hover {
+            color: #c7edee;
+            background-color: black;
+        }
+
+
+
+        .myFloat:hover {
+            filter: saturate(10);
+        }
+
+        #float:hover {
+            transform: rotateY(180deg);
+        }
+
+        #footer {
+            margin-top: 90px;
+            background-color: #4b5d67;
+            font-family: 'Cairo', sans-serif;
+            /* text-align: center; */
+        }
+
+        .socials {
+            font-size: 2rem;
+            margin: 10px;
+        }
+
+        .socials:hover,
+        #footer ul li a:hover {
+            color: darkgoldenrod !important;
+        }
+
+
+        /* Carousel Styling */
+
+        #BG {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        #BG p{
+            font-size: 3rem;
+            padding: 60px 20px;
+            color: aliceblue;
+            text-align: center;
+            margin-top: 55px;
+            margin-bottom: 60px;
+        }
+
+        /* #playBtn {
+            font-size: 4.5rem;
+            color: #ee6f57;
+            position: relative;
+            top: -300px;
+            left: 10%;
+        } */
+
+        /* #playBtn:hover {
+            color: #ffc93c;
+        } */
+
+        .cardCarousel .card {
+            margin: 10px;
+            /* height: 290px; */
+            font-size: 1.2rem;
+            box-shadow: 0px 0px 15px 1px black;
+        }
+
+        .cardCarousel .card:hover {
+            color: white;
+            /* background-color: rgb(112, 113, 116); */
+            border: 2px solid gray;
+            border-radius: 9px;
+            box-shadow: none;
+        }
+
+        .cardCarousel .card-content {
+            padding: 20px;
+            text-align: center;
+            min-height: 100px;
+        }
+
+        #style1,
+        #style1a,
+        #style1b,
+        #style1c,
+        #style2,
+        #style2a,
+        #style2b,
+        #style2c {
+            /* display: flex; */
+            display: block;
+        }
+
+        .more {
+            display: none;
+        }
+
+
+        @media screen and (max-width: 600px) {
+            .row {
+                flex-direction: column;
+            }
+
+          
+
+            #BG p{
+                font-size: 2rem;
+                padding-bottom: 45px;
+            }
+
+            #playBtn {
+                top: -400px;
+            }
+           
+        }
+    
+
+        #style2,
+        #style2a,
+        #style2b,
+        #style2c {
+            display: none;
+        }
+
+        .card:hover{
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .card-content:hover { color: azure;}
+
+        .card-image i {
+            /* margin-left: 120px; */
+            font-size: 2.7rem;
+            position: absolute;
+            bottom: -10%;
+            left: 45%;
+            z-index: 1;
+            color: red;
+            background-color: white;
+            border-radius: 100%;
+        }
+
+        #Carousel-Heading {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-left: 2%;
+            /* margin-right: 63%; */
+        }
+
+
+        #prev,
+        #next,
+        #prev1,
+        #next1,
+        #prev2,
+        #next2,
+        #prev3,
+        #next3 {
+            margin-left: auto;
+        }
+
+        #topSection {
+            padding: 0px 4%;
+        }
+
+        #topSection .card-content {
+            padding: 30px;
+        }
+
+        #topSection img {
+            width: 100%;
+            min-height: 100px;
+        }
+
+        /* CSS */
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .big-box {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            margin: 0px 45px;
+        }
+
+        .small-box {
+            border: 2px solid transparent;
+            width: 330px;
+            height: 550px;
+            transition: 0.3s linear all;
+        }
+
+        .small-box:hover {
+            transform: scale(1.02);
+        }
+
+        #b1 {
+            background: url("https://resources.platform.iplt20.com/photo-resources/2019/03/27/24ebb4e2-6c1f-4def-a1bf-f66b36b74fcd/MS-Dhoni.png?width=350&height=550");
+            border-bottom-color: yellow;
+            border-bottom-width: 0.3rem;
+            backdrop-filter: brightness(10%);
+        }
+
+        #b2 {
+            background: url("https://resources.platform.iplt20.com/photo-resources/2019/03/27/231e3f58-03b2-4901-bcaa-38ddd3aa9dde/Shreyas-Iyer.png?width=350&height=550");
+            border-bottom-color: blue;
+            border-bottom-width: 0.3rem;
+        }
+
+        #b3 {
+            background: url("https://resources.platform.iplt20.com/photo-resources/2019/03/27/034f46bd-99b5-4400-8307-6d4205a58a97/Ravichandran-Ashwin.png?width=350&height=550");
+            border-bottom-color: red;
+            border-bottom-width: 0.3rem;
+        }
+
+        #b4 {
+            background: url("https://resources.platform.iplt20.com/photo-resources/2019/03/27/17327235-14b9-4c78-8135-92e4a4b92fd7/Dinesh-Karthik.png?width=350&height=550");
+            border-bottom-color: purple;
+            border-bottom-width: 0.3rem;
+        }
+
+        #b5 {
+            background: url("https://resources.platform.iplt20.com/photo-resources/2019/03/27/621c3907-41d1-4b1d-967f-22163410b4d2/Rohit-Sharma.png?width=350&height=550");
+            border-bottom-color: rgb(22, 13, 151);
+            border-bottom-width: 0.3rem;
+        }
+
+        #b6 {
+            background: url("https://resources.platform.iplt20.com/photo-resources/2019/03/27/bc3b68ef-3210-4efb-9481-c049ce6708a9/Ajinkya-Rahane.JPG?width=350&height=550");
+            border-bottom-color: blue;
+            border-bottom-width: 0.3rem;
+        }
+
+        #b7 {
+            background: url("https://resources.platform.iplt20.com/photo-resources/2019/03/27/814a93c9-b9ba-440b-9ff8-6d81a3e3f5e2/Virat-Kohli.png?width=350&height=550");
+            border-bottom-color: rgb(53, 20, 20);
+            border-bottom-width: 0.3rem;
+        }
+
+        #b8 {
+            background: url("https://resources.platform.iplt20.com/photo-resources/2019/03/27/091a1dfc-2178-4fec-864e-53d51e7592b2/Kane-Williamson.png?width=350&height=550");
+            border-bottom-color: orange;
+            border-bottom-width: 0.3rem;
+        }
+
+        h2 {
+            margin-top: 450px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .small-box span {
+            font-weight: 800;
+            font-size: 3rem;
+        }
+
+        .sub-box1 {
+            display: flex;
+        }
+
+        .sub-box2 {
+            display: flex;
+
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        @media screen and (max-width:768px) {
+            .big-box {
+                overflow: auto;
+                margin-left: 40px;
+                margin-top: 45px;
+
+            }
+
+            h2 {
+                margin-top: 310px;
+                font-size: 2rem;
+            }
+
+            .small-box {
+                height: 400px;
+            }
+
+            .sub-box1 {
+                display: flex;
+            }
+
+            .sub-box2 {
+                display: flex;
+            }
+
+        }
+        @media screen and (max-width: 650px){
+            #logoText{
+                display: none;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- navbar -->
+
+    <nav id="navbar" style="background-color:#1b2a49;">
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo"><img src="basic/logo.png" alt="" style="width:70px;filter:invert(100%);"></a>
+          <a href="/" class="brand-logo" id="logoText" style="margin-left: 75px;font-size: 2rem;">Iplfeverr</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul id="main-menu" class="right hide-on-med-and-down">
+            <li><a href="/schedule">Schedule</a></li>
+            <li><a href="/standings">Standings</a></li>
+            <li><a href="/videos">Videos</a></li>
+            <li><a href="/fantasy">Fantasy</a></li>
+            <li><a href="/trivia">Trivia</a></li>
+            <li><a href="/info">Player Info</a></li>
+            <li><a href="/updates">News</a></li>
+            <li><a href="/teams">Teams</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+      <ul class="sidenav" id="mobile-demo" style="background-color:#1b2a49;color:white">
+        <br>
+        <li><a href="/schedule" style="color:white;">Schedule</a></li>
+        <li><a href="/standings" style="color:white;">Standings</a></li>
+        <li><a href="/videos" style="color:white">Videos</a></li>
+        <li><a href="/fantasy" style="color:white">Fantasy</a></li>
+        <li><a href="/trivia" style="color:white">Trivia</a></li>
+        <li><a href="/info" style="color:white">Player Info</a></li>
+        <li><a href="/updates" style="color:white">News</a></li>
+        <li><a href="/teams" style="color:white">Teams</a></li>
+      </ul>
+
+    <div id="container">
+        <div id="BG">
+            <!-- <a
+                href="https://www.hotstar.com/in/sports/cricket/vivo-ipl-2019/kolkata-knight-riders-vs-mumbai-indians-m190309/match-clips/2019-kkr-bury-mi-on-home-soil/2001630482"><i
+                    class="material-icons" id="playBtn">play_circle_filled</i></a> -->
+            <p>Relive the Thrillers and magic
+                moments of IPL.<br>Let's recreate the moments together.</p>
+        </div>
+        <div id="topSection" class="cardCarousel">
+
+            <div class="row">
+                <div class="col s12 m6 l3">
+                    <div class="card" id="card1">
+                        <a
+                            href="https://www.hotstar.com/in/sports/cricket/vivo-ipl-2019/kolkata-knight-riders-vs-mumbai-indians-m190309/match-clips/2019-hardik-batters-kkr-with-91/2001630502">
+                            <div class="card-image">
+                                <img
+                                    src="https://resources.platform.iplt20.com/photo-resources/2019/04/28/88dde45f-20b2-436e-944a-f8da2f14abc2/lieKsgQs.jpg?width=390&height=219">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>2019: Hardik Batters KKR with 91</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card" id="card2">
+                        <a
+                            href="https://www.hotstar.com/in/sports/cricket/vivo-ipl-2019/sunrisers-hyderabad-vs-mumbai-indians-m190261/match-clips/2019-612-alzarris-magical-debut/2001628937">
+                            <div class="card-image">
+                                <img
+                                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/6610/656610-h">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>2019: 6-12! Alzarri's Magical Debut</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card" id="card3">
+                        <a
+                            href="https://www.hotstar.com/in/sports/cricket/dream11-ipl-2018/2009-pandeys-historic-114/2001609118">
+                            <div class="card-image">
+                                <img
+                                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/4353/294353-h">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>2009: Pandey's Historic 114*</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card" id="card4">
+                        <a
+                            href="https://www.hotstar.com/in/sports/cricket/dream11-ipl/gayles-recordbreaking-175-vs-pwi/1260028569">
+                            <div class="card-image">
+                                <img
+                                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/5821/695821-h">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>Gayle's Record-breaking 175 vs PWI</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div id="Carousel" style="padding: 40px;   margin-top: 0px;">
+            <span id="Carousel-Heading">Featured Videos</span>
+            <span style="float: right;">
+                <a id="prev" class="waves-effect waves-light btn-small"><i class="material-icons">chevron_left</i></a>
+                <a id="next" class="waves-effect waves-light btn-small"><i class="material-icons">chevron_right</i></a>
+            </span>
+            <div id="style1" class="cardCarousel">
+
+                <div class="row">
+                    <div class="col s12 m6 l3">
+                        <div class="card">
+                            <a
+                                href="https://www.hotstar.com/in/sports/cricket/vivo-ipl-2018/chennai-super-kings-vs-rajasthan-royals-m186518/match-clips/thakurs-stunner-sends-back-binny/1260036340">
+                                <div class="card-image">
+                                    <img
+                                        src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/4812/724812-h">
+                                    <i class="material-icons">play_circle_filled</i>
+                                </div>
+                                <div class="card-content">
+                                    <p>Thakur's stunner sends back Binny</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div class="card">
+                            <a
+                                href="https://www.hotstar.com/in/sports/cricket/dream11-ipl-2018/rohits-4x4-silences-csk/1260037234">
+                                <div class="card-image">
+                                    <img
+                                        src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/6983/726983-h">
+                                    <i class="material-icons">play_circle_filled</i>
+                                </div>
+                                <div class="card-content">
+                                    <p>Rohit's 4x4 silences CSK</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div class="card">
+                            <a
+                                href="https://www.hotstar.com/in/sports/cricket/vivo-ipl-2019/delhi-capitals-vs-kolkata-knight-riders-m189961/match-clips/2019-dc-stun-kkr-in-super-over/2001628431">
+                                <div class="card-image">
+                                    <img
+                                        src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/9390/669390-h">
+                                    <i class="material-icons">play_circle_filled</i>
+                                </div>
+                                <div class="card-content">
+                                    <p>2019: DC Stun KKR in Super Over</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div class="card">
+                            <a
+                                href="https://www.hotstar.com/in/sports/cricket/vivo-ipl-2019/kolkata-knight-riders-vs-chennai-super-kings-m190279/match-clips/2019-csk-down-kkr-in-last-over/2001629474">
+                                <div class="card-image">
+                                    <img
+                                        src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/4649/664649-h">
+                                    <i class="material-icons">play_circle_filled</i>
+                                </div>
+                                <div class="card-content">
+                                    <p>2019: CSK Down KKR in Last Over</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div id="style2" class="cardCarousel">
+
+                <div class="row">
+                    <div class="col s12 m6 l3">
+                        <div class="card">
+                            <a
+                                href="https://www.hotstar.com/in/sports/cricket/vivo-ipl-2019/mumbai-indians-vs-sunrisers-hyderabad-m190314/match-clips/pandey-forces-super-over-with-71/2001630708">
+                                <div class="card-image">
+                                    <img
+                                        src="https://img1.hotstarext.com/image/upload/f_auto/sources/r1/cms/prod/3776/413776-h">
+                                    <i class="material-icons">play_circle_filled</i>
+                                </div>
+                                <div class="card-content">
+                                    <p>Pandey forces SuperOver with 71*</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div class="card">
+                            <a
+                                href="https://www.hotstar.com/in/sports/cricket/vivo-ipl-2018/royal-challengers-bangalore-vs-chennai-super-kings-m186525/match-clips/msd-rayudu-loot-negis-over/2002003583">
+                                <div class="card-image">
+                                    <img
+                                        src="https://img1.hotstarext.com/image/upload/f_auto/sources/r1/cms/prod/old_images/MATCH/3583/2002003583/2002003583-h">
+                                    <i class="material-icons">play_circle_filled</i>
+                                </div>
+                                <div class="card-content">
+                                    <p>MSD, Rayudu Loot Negi’s Over</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div class="card">
+                            <a
+                                href="https://www.hotstar.com/in/sports/cricket/vivo-ipl-2019/mumbai-indians-vs-chennai-super-kings-m189966/match-clips/bravos-final-over-goes-for-29-runs/2002005397">
+                                <div class="card-image">
+                                    <img
+                                        src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/7954/357954-h">
+                                    <i class="material-icons">play_circle_filled</i>
+                                </div>
+                                <div class="card-content">
+                                    <p>Bravo’s Final Over Goes for 29 Runs</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div class="card">
+                            <a
+                                href="https://www.hotstar.com/in/sports/cricket/vivo-ipl-2019/delhi-capitals-vs-kolkata-knight-riders-m189961/match-clips/dcs-hero-rabada-rises-in-super-over/2001628418">
+                                <div class="card-image">
+                                    <img
+                                        src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/375/350375-h">
+                                    <i class="material-icons">play_circle_filled</i>
+                                </div>
+                                <div class="card-content">
+                                    <p>DC's Hero Rabada Rises in Super Over</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <button class="btn waves-effect waves-light more" style="float: right;">View more
+                <i class="material-icons right">pageview</i>
+            </button>
+
+        </div>
+    </div>
+    <!-- <h1 style="color: black;">Featured Players</h1> -->
+    <span id="Carousel-Heading" style="margin-left: 3%;">Featured Players</span>
+    <div class="big-box">
+        <div class="sub-box1">
+            <a href="https://www.iplt20.com/video/191481/ms-dhoni-run-out-out-or-not-out-?tagNames=indian-premier-league&references=CRICKET_PLAYER:1"
+                target="_blank">
+                <div class="small-box" id="b1">
+                    <h2 style="text-align:center">MS<br><span>Dhoni</span></h2>
+                </div>
+            </a>
+            <a href="https://www.iplt20.com/video/190449/we-had-a-bad-day-shreyas-iyer?tagNames=indian-premier-league&references=CRICKET_PLAYER:1563"
+                target="_blank">
+                <div class="small-box" id="b2">
+                    <h2 style="text-align:center">Shreyas<br><span>Iyer</span></h2>
+                </div>
+            </a>
+            <a href="https://www.iplt20.com/video/187547/win-against-csk-our-most-clinical-in-2019-r-ashwin?tagNames=indian-premier-league&references=CRICKET_PLAYER:8"
+                target="_blank">
+                <div class="small-box" id="b3">
+                    <h2 style="text-align:center">Ravichandran<br><span>Ashwin</span></h2>
+                </div>
+            </a>
+            <a href="https://www.iplt20.com/video/206411/this-ipl-is-for-the-city-of-joy-karthik?tagNames=indian-premier-league&references=CRICKET_PLAYER:102"
+                target="_blank">
+                <div class="small-box" id="b4">
+                    <h2 style="text-align:center">Dinesh<br><span>Karthik</span></h2>
+                </div>
+            </a>
+        </div>
+        <!-- Box2-->
+        <div class="sub-box2">
+            <a href="https://www.iplt20.com/video/191817/rohit-ritika-cherish-mi-s-4th-title?tagNames=indian-premier-league&references=CRICKET_PLAYER:107"
+                target="_blank">
+                <div class="small-box" id="b5">
+                    <h2 style="text-align:center">Rohit<br>
+                        <spna>Sharma</spna>
+                    </h2>
+                </div>
+            </a>
+            <a href="https://www.iplt20.com/video/186216/m53-dc-vs-rr-ajinkya-rahane-interview?tagNames=indian-premier-league&references=CRICKET_PLAYER:135"
+                target="_blank">
+                <div class="small-box" id="b6">
+                    <h2 style="text-align:center">Ajinkya<br><span>Rahane</span></h2>
+                </div>
+            </a>
+            <a href="https://www.iplt20.com/video/186588/virat-s-breathtaking-six?tagNames=indian-premier-league&references=CRICKET_PLAYER:164"
+                target="_blank">
+                <div class="small-box" id="b7">
+                    <h2 style="text-align:center">Virat<br><span>Kohli</span></h2>
+                </div>
+            </a>
+            <a herf="https://www.iplt20.com/video/189609/khaleel-has-been-incredible-for-us-this-season-kane?tagNames=indian-premier-league&references=CRICKET_PLAYER:440"
+                target="_blank">
+                <div class="small-box" id="b8">
+                    <h2 style="text-align:center">Kane<br><span>Williamson</span></h2>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div id="Carousel" style="padding: 40px;">
+        <span id="Carousel-Heading">Interviews</span>
+        <span style="float: right;">
+            <a id="prev1" class="waves-effect waves-light btn-small"><i class="material-icons">chevron_left</i></a>
+            <a id="next1" class="waves-effect waves-light btn-small"><i class="material-icons">chevron_right</i></a>
+        </span>
+        <div id="style1a" class="cardCarousel">
+
+            <div class="row">
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a
+                            href="https://www.iplt20.com/video/206366/open-nets-with-mayank-ft-kl-rahul-and-chris-gayle?tagNames=indian-premier-league&viewCountWindowSeconds=604800">
+                            <div class="card-image">
+                                <img src="Lvideos/1.jpg">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>Open Nets with Mayank ft. KL Rahul and Chris Gayle</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a
+                            href="https://www.iplt20.com/video/206414/stay-in-the-moment-and-make-the-best-decisions-kl-rahul-s-captaincy-mantra?tagNames=indian-premier-league,interview">
+                            <div class="card-image">
+                                <img
+                                    src="https://resources.platform.iplt20.com/photo-resources/2020/08/25/86391a03-4ee5-4298-a4ad-49f19ff5c8a2/DMIPL_9802.JPG?width=390&height=219">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>Stay in the moment and make the best</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a
+                            href="https://www.iplt20.com/video/206411/this-ipl-is-for-the-city-of-joy-karthik?tagNames=indian-premier-league,interview">
+                            <div class="card-image">
+                                <img
+                                    src="https://resources.platform.iplt20.com/photo-resources/2020/08/26/14456e28-6424-486a-a9f5-8b2d6d8ff850/RON_2454.JPG?width=390&height=219">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>This IPL is for the City of Joy: Karthik</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a href="https://www.iplt20.com/video/191817">
+                            <div class="card-image">
+                                <img
+                                    src="https://resources.platform.iplt20.com/photo-resources/2019/05/12/12ff6f93-3a69-4972-8b88-e4a022aee1c3/rohit-int.jpg?width=390&height=219">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>Rohit & Ritika cherish MI's 4th title</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="style2a" class="cardCarousel">
+
+            <div class="row">
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a href="https://www.iplt20.com/video/191806">
+                            <div class="card-image">
+                                <img
+                                    src="https://resources.platform.iplt20.com/photo-resources/2019/05/12/d99192d4-d8a5-4f81-b8a1-9bcc217d7bf7/DJoZITgf.jpg?width=390&height=219">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>Malinga’s slower ball bluffed everyone: Hardik tells Pollard</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a href="https://www.iplt20.com/video/191797">
+                            <div class="card-image">
+                                <img
+                                    src="https://resources.platform.iplt20.com/photo-resources/2019/05/12/71b7b19f-36f7-4afd-aac3-ff836be9b88a/LANMiBbo.jpg?width=390&height=219">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>Idea was to stay calm & execute plans - Bumrah</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a href="https://www.iplt20.com/video/191789">
+                            <div class="card-image">
+                                <img
+                                    src="https://resources.platform.iplt20.com/photo-resources/2019/05/12/d1992d89-1334-4640-906c-29ef4d59c628/sachin.jpg?width=390&height=219">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>Bumrah, world's best: Sachin & Yuvraj</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a href="https://www.iplt20.com/video/191762">
+                            <div class="card-image">
+                                <img
+                                    src="https://resources.platform.iplt20.com/photo-resources/2019/05/12/2d787473-3ba4-4fdc-965c-421fb5e0bdea/ANHBfuac.jpg?width=390&height=219">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>Final: MI vs CSK – Mitchell McClenaghan & Shane Bond Interview</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <button class="btn waves-effect waves-light more" style="float: right;">View more
+            <i class="material-icons right">pageview</i>
+        </button>
+
+    </div>
+    </div>
+
+    <div id="Carousel" style="padding: 40px;">
+        <span id="Carousel-Heading">IPL Thrillers</span>
+        <span style="float: right;">
+            <a id="prev2" class="waves-effect waves-light btn-small"><i class="material-icons">chevron_left</i></a>
+            <a id="next2" class="waves-effect waves-light btn-small"><i class="material-icons">chevron_right</i></a>
+        </span>
+
+        <div id="style1b" class="cardCarousel">
+
+            <div class="row">
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a
+                            href="https://www.hotstar.com/in/sports/cricket/dream11-ipl/189990/match-clips/2018-csk-best-rcb-in-thriller/2001612692">
+                            <div class="card-image">
+                                <img
+                                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/old_images/MATCH/2692/2001612692/2001612692-h">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>2018: CSK Best RCB in Thriller</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a
+                            href="https://www.hotstar.com/in/sports/cricket/vivo-ipl-2019/kolkata-knight-riders-vs-sunrisers-hyderabad-m189953/match-clips/2019-kkr-snatch-thriller-vs-srh/2001628001">
+                            <div class="card-image">
+                                <img
+                                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/3581/653581-h">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>2019: KKR Snatch Thriller vs SRH</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a
+                            href="https://www.hotstar.com/in/sports/cricket/vivo-ipl-2019/delhi-capitals-vs-kings-xi-punjab-m190290/match-clips/2019-dc-trump-kxip-in-thriller/2001629875">
+                            <div class="card-image">
+                                <img
+                                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/2574/662574-h">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>2019: DC Trump KXIP in Thriller</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a
+                            href="https://www.hotstar.com/in/sports/cricket/vivo-ipl-2018/mumbai-indians-vs-delhi-daredevils-m186510/match-clips/2018-mi-stay-winless-as-dd-seal-thriller/2001612053">
+                            <div class="card-image">
+                                <img
+                                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/old_images/MATCH/2053/2001612053/2001612053-h">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>2018: MI Stay Winless as DD Seal Thriller</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="style2b" class="cardCarousel">
+
+            <div class="row">
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a
+                            href="https://www.hotstar.com/in/sports/cricket/dream11-ipl-2018/2018-kxip-edge-csk-in-thriller/2001612190">
+                            <div class="card-image">
+                                <img
+                                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/4406/294406-h">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>2018: KXIP Edge CSK in Thriller</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a
+                            href="https://www.hotstar.com/in/sports/cricket/dream11-ipl/2014-kkr-sink-rcb-in-thriller/2001610208">
+                            <div class="card-image">
+                                <img
+                                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/9182/699182-h">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>2014: KKR Sink RCB in Thriller</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a
+                            href="https://www.hotstar.com/in/sports/cricket/west-indies-women-tour-of-ireland-2019/ireland-women-vs-west-indies-women-m189987/match-clips/2018-gowtham-saves-rr-in-thriller/2001612588">
+                            <div class="card-image">
+                                <img
+                                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/4364/294364-h">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>2018: Gowtham Saves RR in Thriller</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a
+                            href="https://www.hotstar.com/in/sports/cricket/dream11-ipl/2012-kkr-edge-pwi-in-thriller/2001610681">
+                            <div class="card-image">
+                                <img
+                                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/3315/693315-h">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>2012: KKR Edge PWI in Thriller</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn waves-effect waves-light more" style="float: right;">View more
+            <i class="material-icons right">pageview</i>
+        </button>
+
+
+
+    </div>
+    </div>
+
+    <div id="Carousel" style="padding: 40px;">
+        <span id="Carousel-Heading">Magic Moments</span>
+        <span style="float: right;">
+            <a id="prev3" class="waves-effect waves-light btn-small"><i class="material-icons">chevron_left</i></a>
+            <a id="next3" class="waves-effect waves-light btn-small"><i class="material-icons">chevron_right</i></a>
+        </span>
+        <div id="style1c" class="cardCarousel">
+
+            <div class="row">
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a href="https://www.iplt20.com/video/105000">
+                            <div class="card-image">
+                                <img
+                                    src="https://resources.platform.iplt20.com/IPL/photo/2017/05/10/6435b034-fa70-4313-afc1-ba992d61fc74/OVEMMVfx.jpg">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>Lightening Jadeja strikes twice</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a href="https://www.iplt20.com/video/119407">
+                            <div class="card-image">
+                                <img
+                                    src="https://resources.platform.iplt20.com/IPL/photo/2018/04/14/e21ef7e9-bc77-46b3-bdc8-8a1f8b8d73b8/HP.jpg">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>WOW: Spectacular Pandya takes a blinder</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a href="https://www.iplt20.com/video/128476">
+                            <div class="card-image">
+                                <img
+                                    src="https://resources.platform.iplt20.com/IPL/photo/2018/04/29/6a046416-b231-47d4-9648-4dab59b6b05b/tjRVqZEo.jpg">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>Smart catch, Smart Saha</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a href="https://www.iplt20.com/video/93346">
+                            <div class="card-image">
+                                <img
+                                    src="https://resources.platform.iplt20.com/IPL/photo/2017/04/16/d6ebb38d-0223-43b3-933f-bb75c310fcaf/CI1I0144.JPG">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>Stunning! That is one scorcher of a catch from Captain Kohli</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="style2c" class="cardCarousel">
+
+            <div class="row">
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a href="https://www.iplt20.com/video/191239">
+                            <div class="card-image">
+                                <img
+                                    src="https://resources.platform.iplt20.com/photo-resources/2019/05/12/c8b8d4d3-c7ee-45ae-9b5a-9af690710ff4/catch-ST.jpg?width=390&height=219">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>Cool Shardul grabs a stunner</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a href="https://www.iplt20.com/video/167883">
+                            <div class="card-image">
+                                <img
+                                    src="https://resources.platform.iplt20.com/photo-resources/2019/04/11/63fdeba5-b950-4a25-be06-ca28f85c132f/FZGdmlON.jpg?width=390&height=219">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>M25: RR vs CSK – Ravindra Jadeja Six</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a href="https://www.iplt20.com/video/136259">
+                            <div class="card-image">
+                                <img
+                                    src="https://resources.platform.iplt20.com/IPL/photo/2018/05/12/3d7d11a7-df15-45a5-b83a-b74758a0c6f8/AB.jpg">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>Catching it ABD style</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <a href="https://www.iplt20.com/video/184283">
+                            <div class="card-image">
+                                <img
+                                    src="https://resources.platform.iplt20.com/photo-resources/2019/05/01/57837111-6682-4f1f-97fa-d6baab2db643/ABD.jpg?width=390&height=219">
+                                <i class="material-icons">play_circle_filled</i>
+                            </div>
+                            <div class="card-content">
+                                <p>From ABD to MSD - The one-handed six travels</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn waves-effect waves-light more" style="float: right;">View more
+            <i class="material-icons right">pageview</i>
+        </button>
+
+
+
+    </div>
+    </div>
+
+
+
+    </div>
+
+
+    <!-- Floating button -->
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large white" style="box-shadow: 0px 0px 0px 1px black;">
+          <img src="basic/logo.png" id="float" alt="" style="width:60px;">
+        </a>
+        <ul>
+          <li><a href="/contact#team" class="btn-floating green myFloat">Team</a>
+          </li>
+          <li><a href="https://www.facebook.com/IPL/" class="btn-floating blue myFloat"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li><a href="https://www.instagram.com/iplt20/" class="btn-floating pink myFloat"><i
+                class="fa fa-instagram"></i></a></li>
+          <li><a href="https://twitter.com/IPL" class="btn-floating blue myFloat"><i class="fa fa-twitter"></i></a>
+          </li>
+        </ul>
+      </div>
+  
+  
+      <!-- Footer -->
+  
+      <footer class="page-footer" id="footer">
+        <div class="container">
+          <div class="row">
+            <div style="text-align: center;">
+              <h5>follow #IPL</h5>
+              <a href="https://www.facebook.com/IPL/" class="socials"><i class="fa fa-facebook-official"></i></a>
+              <a href="https://www.instagram.com/iplt20/" class="socials"><i class="fa fa-instagram"></i></a>
+              <a href="https://twitter.com/IPL" class="socials"><i class="fa fa-twitter-square"></i></a>
+            </div>
+            <div class="col l3 offset-l1 s6">
+              <h5 class="white-text">Quick Links</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="/videos">Videos</a></li>
+                <li><a class="grey-text text-lighten-3" href="/standings">Points Table</a></li>
+                <li><a class="grey-text text-lighten-3" href="/schedule">Schedule</a></li>
+                <li><a class="grey-text text-lighten-3" href="/info">Player Wise Data</a></li>
+                <li><a class="grey-text text-lighten-3" href="/updates">News</a></li>
+              </ul>
+            </div>
+            <div class="col l3 offset-l1 s6">
+              <h5 class="white-text">Teams</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="/csk">Chennai Super Kings</a></li>
+                <li><a class="grey-text text-lighten-3" href="/dc">Delhi Capitals</a></li>
+                <li><a class="grey-text text-lighten-3" href="/kxip">Kings XI Punjab</a></li>
+                <li><a class="grey-text text-lighten-3" href="/kkr">Kolkata Knight Riders</a></li>
+                <li><a class="grey-text text-lighten-3" href="/mi">Mumbai Indians</a></li>
+                <li><a class="grey-text text-lighten-3" href="/rr">Rajasthan Royals</a></li>
+                <li><a class="grey-text text-lighten-3" href="/rcb">Royal Challengers Bangalore</a></li>
+                <li><a class="grey-text text-lighten-3" href="/srh">Sunrisers Hyderabad</a></li>
+              </ul>
+            </div>
+            <div class="col l3 offset-l1 s6">
+              <h5 class="white-text">Contact</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="/contact">Contact Us</a></li>
+                <li><a class="grey-text text-lighten-3" href="/contact#team">Our Team</a></li>
+                <li><a class="grey-text text-lighten-3" href="/feedback">Feedback</a></li>
+              </ul>
+            </div>
+  
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            <span>© &nbsp; iplfeverr.herokuapp.com &nbsp; 2020</span>
+            <a class="grey-text text-lighten-4 right" href="/credits">Content Credits</a>
+          </div>
+        </div>
+      </footer>
+
+
+
+    <script>
+        // JS for floating buuton
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.fixed-action-btn');
+            var instances = M.FloatingActionButton.init(elems);
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+
+        // Carousel Script
+
+        //Featured
+
+        const style1 = document.getElementById("style1");
+        const style2 = document.getElementById("style2");
+        const prev = document.getElementById("prev");
+        const next = document.getElementById("next");
+
+        let count = 1;
+
+        next.addEventListener('click', () => {
+            ++count;
+            if (count == 1) {
+                style1.style.display = "none";
+                style2.style.display = "block";
+                next.style.opacity = "1";
+                prev.style.opacity = "0.3";
+            }
+            else if (count == 2) {
+                style1.style.display = "none";
+                style2.style.display = "block";
+                next.style.opacity = "0.3";
+                prev.style.opacity = "1";
+            }
+            else if (count > 2) {
+                count = 2;
+            }
+        });
+
+        prev.style.opacity = "0.3";
+        prev.addEventListener('click', () => {
+            --count;
+            if (count == 1) {
+                style1.style.display = "block";
+                style2.style.display = "none";
+                prev.style.opacity = "0.3";
+                next.style.opacity = "1";
+            }
+            else if (count == 2) {
+                style1.style.display = "none";
+                style2.style.display = "block";
+                prev.style.opacity = "1";
+                next.style.opacity = "0.3";
+            }
+            else if (count < 1) {
+                count = 1;
+            }
+        });
+
+        //2
+
+        const style1a = document.getElementById("style1a");
+        const style2a = document.getElementById("style2a");
+        const prev1 = document.getElementById("prev1");
+        const next1 = document.getElementById("next1");
+
+        let counta = 1;
+
+        next1.addEventListener('click', () => {
+            ++counta;
+            if (counta == 1) {
+                style1a.style.display = "none";
+                style2a.style.display = "block";
+                next1.style.opacity = "1";
+                prev1.style.opacity = "0.3";
+            }
+            else if (counta == 2) {
+                style1a.style.display = "none";
+                style2a.style.display = "block";
+                next1.style.opacity = "0.3";
+                prev1.style.opacity = "1";
+            }
+            else if (counta > 2) {
+                counta = 2;
+            }
+        });
+
+        prev1.style.opacity = "0.3";
+        prev1.addEventListener('click', () => {
+            --counta;
+            if (counta == 1) {
+                style1a.style.display = "block";
+                style2a.style.display = "none";
+                prev1.style.opacity = "0.3";
+                next1.style.opacity = "1";
+            }
+            else if (counta == 2) {
+                style1a.style.display = "none";
+                style2a.style.display = "block";
+                prev1.style.opacity = "1";
+                next1.style.opacity = "0.3";
+            }
+            else if (counta < 1) {
+                counta = 1;
+            }
+        });
+
+        // 3
+
+        const style1b = document.getElementById("style1b");
+        const style2b = document.getElementById("style2b");
+        const prev2 = document.getElementById("prev2");
+        const next2 = document.getElementById("next2");
+
+        let countb = 1;
+
+        next2.addEventListener('click', () => {
+            ++countb;
+            if (countb == 1) {
+                style1b.style.display = "none";
+                style2b.style.display = "block";
+                next2.style.opacity = "1";
+                prev2.style.opacity = "0.3";
+            }
+            else if (countb == 2) {
+                style1b.style.display = "none";
+                style2b.style.display = "block";
+                next2.style.opacity = "0.3";
+                prev2.style.opacity = "1";
+            }
+            else if (countb > 2) {
+                countb = 2;
+            }
+        });
+
+        prev2.style.opacity = "0.3";
+        prev2.addEventListener('click', () => {
+            --countb;
+            if (countb == 1) {
+                style1b.style.display = "block";
+                style2b.style.display = "none";
+                prev2.style.opacity = "0.3";
+                next2.style.opacity = "1";
+            }
+            else if (countb == 2) {
+                style1b.style.display = "none";
+                style2b.style.display = "block";
+                prev2.style.opacity = "1";
+                next2.style.opacity = "0.3";
+            }
+            else if (countb < 1) {
+                countb = 1;
+            }
+        });
+
+        //  4
+
+        const style1c = document.getElementById("style1c");
+        const style2c = document.getElementById("style2c");
+        const prev3 = document.getElementById("prev3");
+        const next3 = document.getElementById("next3");
+
+        let countc = 1;
+
+        next3.addEventListener('click', () => {
+            ++countc;
+            if (countc == 1) {
+                style1c.style.display = "none";
+                style2c.style.display = "block";
+                next3.style.opacity = "1";
+                prev3.style.opacity = "0.3";
+            }
+            else if (countc == 2) {
+                style1c.style.display = "none";
+                style2c.style.display = "block";
+                next3.style.opacity = "0.3";
+                prev3.style.opacity = "1";
+            }
+            else if (countc > 2) {
+                countc = 2;
+            }
+        });
+
+        prev3.style.opacity = "0.3";
+        prev3.addEventListener('click', () => {
+            --countc;
+            if (countc == 1) {
+                style1c.style.display = "block";
+                style2c.style.display = "none";
+                prev3.style.opacity = "0.3";
+                next3.style.opacity = "1";
+            }
+            else if (countc == 2) {
+                style1c.style.display = "none";
+                style2c.style.display = "block";
+                prev3.style.opacity = "1";
+                next3.style.opacity = "0.3";
+            }
+            else if (countc < 1) {
+                countc = 1;
+            }
+        });
+
+
+    </script>
+
+</body>
+
+</html>

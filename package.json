@@ -1,0 +1,18 @@
+{
+  "name": "ipl",
+  "version": "1.0.0",
+  "description": "This website does'nt hold any copyright or claim over any used images and videos. \r All images and videos displayed here are sole property of the following firms and companies :",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "https": "^1.0.0",
+    "node-fetch": "^2.6.0"
+  }
+}

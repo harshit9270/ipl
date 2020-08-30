@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Iplfeverr is one stop destination for catching up all the IPL action.">
+  <meta name="description" content="You can find out IPL related updates ,videos ,stats and IPL squads.">
+  <meta name="description"
+    content="Iplfeverr, is a free and east-to-use website to access all IPL related data and catch updates on the go.">
+  <meta name="keywords"
+    content="IPL,IPLfever,IPlfeverr,IPLsquads,IPLschedule,IPLscorecard,IPLvideos,fantasy,IPLtrivia,IPLfantasy,news,IPLnews,IPLteams">
+  <link rel="canonical" href="iplfeverr.heroku.app" />
+
+  <link rel="icon" href="./basic/favicon.png" type="image/x-icon">
+  <title>Iplfeverr | Catch the fever of IPL</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap" rel="stylesheet">
+
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!--Font Awesome-->
+  <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <nav id="navbar" style="background-color:#1b2a49;">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo"><img src="basic/logo.png" alt="" style="width:70px;filter:invert(100%);"></a>
+      <a href="/" class="brand-logo" id="logoText" style="margin-left: 75px;font-size: 2rem;">Iplfeverr</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="main-menu" class="right hide-on-med-and-down">
+        <li><a href="/schedule">Schedule</a></li>
+        <li><a href="/standings">Standings</a></li>
+        <li><a href="/videos">Videos</a></li>
+        <li><a href="/fantasy">Fantasy</a></li>
+        <li><a href="/trivia">Trivia</a></li>
+        <li><a href="/info">Player Info</a></li>
+        <li><a href="/updates">News</a></li>
+        <li><a href="/teams">Teams</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo" style="background-color:#1b2a49;color:white">
+    <br>
+    <li><a href="/schedule" style="color:white;">Schedule</a></li>
+    <li><a href="/standings" style="color:white;">Standings</a></li>
+    <li><a href="/videos" style="color:white">Videos</a></li>
+    <li><a href="/fantasy" style="color:white">Fantasy</a></li>
+    <li><a href="/trivia" style="color:white">Trivia</a></li>
+    <li><a href="/info" style="color:white">Player Info</a></li>
+    <li><a href="/updates" style="color:white">News</a></li>
+    <li><a href="/teams" style="color:white">Teams</a></li>
+  </ul>
+
+  <div id="ballC" style="background-color:#1b2a49;">
+    <img src="basic/ball.png" id="ball" alt="IPL">
+  </div>
+
+  <div id="main" style="padding: 0;">
+
+    <div id="topSection">
+      <div id="captains" style="display: flex;">
+        <img src="basic/caps.png" alt="">
+      </div>
+
+      <h2 style="font-family: 'Jolly Lodger', cursive;font-size:4rem;text-align: center;color: oldlace;margin-top: 0;">
+        Ab Khel Bolega.</h2>
+      <div id="topCards">
+        <a href="">
+          <div class="card horizontal cardTop">
+            <div class="card-image">
+              <img class="imgOne" src="Lvideos/iplBack.jpg">
+            </div>
+            <div class="card-stacked">
+              <div class="card-content" style="padding: 10px;font-weight: bold;">
+                <p>IPL to be held now from 19th September</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="">
+          <div class="card horizontal cardTop">
+            <div class="card-image">
+              <img class="imgOne" src="Lvideos/IPLTrophy.jpg">
+            </div>
+            <div class="card-stacked">
+              <div class="card-content" style="padding: 9px;font-weight: bold;">
+                <p>IPL sponsorship to be crowned to some other reliable franchise</p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="">
+          <div class="card horizontal cardTop">
+            <div class="card-image">
+              <img class="imgOne" src="Lvideos/interview.jpg">
+            </div>
+            <div class="card-stacked">
+              <div class="card-content" style="padding: 10px;font-weight: bold;">
+                <p>Open Nets with Mayank ft. KL Rahul and Chris Gayle</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+
+    <div id="Carousel" style="padding: 30px;">
+      <span id="Carousel-Heading">Latest Videos</span>
+      <span>
+        <a id="prev" class="waves-effect waves-light btn-small"><i class="material-icons">chevron_left</i></a>
+        <a id="next" class="waves-effect waves-light btn-small"><i class="material-icons">chevron_right</i></a>
+      </span>
+      <div id="style1" class="cardCarousel">
+
+        <div class="row">
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/206366/open-nets-with-mayank-ft-kl-rahul-and-chris-gayle?tagNames=indian-premier-league&viewCountWindowSeconds=604800">
+                <div class="card-image">
+                  <img src="Lvideos/1.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>Open Nets with Mayank ft. KL Rahul and Chris Gayle</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/201430/2020-vivo-ipl-player-auction-chennai-super-kings?tagNames=indian-premier-league">
+                <div class="card-image">
+                  <img src="Lvideos/2.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>2020 IPL Auction - Chennai Super Kings</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/201424/2020-vivo-ipl-player-auction-delhi-capitals?tagNames=indian-premier-league">
+                <div class="card-image">
+                  <img src="Lvideos/3.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>2020 IPL Player Auction - Delhi Capitals</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/201420/2020-vivo-ipl-player-auction-kolkata-knight-riders?tagNames=indian-premier-league">
+                <div class="card-image">
+                  <img src="Lvideos/4.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>2020 IPL auction - Kolkata Knight Riders</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn waves-effect waves-light" id="more" style="float: right;">View more
+          <i class="material-icons right">pageview</i>
+        </button>
+      </div>
+
+      <div id="style2" class="cardCarousel">
+
+        <div class="row">
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/201412/2020-vivo-ipl-player-auction-kings-xi-punjab?tagNames=indian-premier-league">
+                <div class="card-image">
+                  <img src="Lvideos/5.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>2020 IPL auction - KingsXI Punjab</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/201408/2020-vivo-ipl-player-auction-mumbai-indians?tagNames=indian-premier-league">
+                <div class="card-image">
+                  <img src="Lvideos/6.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>2020 IPL auction - Mumbai Indians</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/201403/2020-vivo-ipl-player-auction-royal-challengers-bangalore?tagNames=indian-premier-league">
+                <div class="card-image">
+                  <img src="Lvideos/7.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>2020 IPL auction - Royal Challengers Bangalore</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/201397/2020-vivo-ipl-player-auction-rajasthan-royals?tagNames=indian-premier-league">
+                <div class="card-image">
+                  <img src="Lvideos/8.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>2020 IPL auction - Rajasthan Royals</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="style3" class="cardCarousel">
+
+        <div class="row">
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/201384/2020-vivo-ipl-player-auction-sunrisers-hyderabad?tagNames=indian-premier-league">
+                <div class="card-image">
+                  <img src="Lvideos/9.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>2020 IPL auction - Sunrisers Hyderabad</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/201378/top-buys-from-vivo-ipl-player-auction-2020?tagNames=indian-premier-league">
+                <div class="card-image">
+                  <img src="Lvideos/10.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>Top Buys from Ipl Player Auction 2020</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/201358/rajasthan-royals-over-the-next-four-to-five-years-manoj-badale?tagNames=indian-premier-league">
+                <div class="card-image">
+                  <img src="Lvideos/11.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>Rajasthan Royals over the next four to five years : Manoj Badale</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/201324/morgan-and-cummins-have-come-back-home-venky-mysore?tagNames=indian-premier-league">
+                <div class="card-image">
+                  <img src="Lvideos/12.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>Morgan and Cummins have come back home - Venky Mysore</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- latest news -->
+
+      <div id="newsCarousel" style="margin-top: 70px;">
+        <span id="Carousel-Heading">Latest News</span>
+        <div id="style1" class="cardCarousel">
+
+          <div class="row">
+            <div class="col s12 m6 l3">
+              <div class="card">
+                <a
+                  href="https://www.iplt20.com/news/206400/invitation-for-expressions-of-interest-ieoi-for-ipl-title-sponsorship-rights-for-2020">
+                  <div class="card-image">
+                    <img src="news/n1.jpg">
+                  </div>
+                  <div class="card-content">
+                    <p>INVITATION FOR EXPRESSIONS OF INTEREST (“IEOI”) FOR IPL TITLE SPONSORSHIP RIGHTS FOR 2020</p>
+                    <span style="font-size:0.9rem;margin-top:30px;color: sandybrown;">ARTICLE</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col s12 m6 l3">
+              <div class="card">
+                <a
+                  href="https://www.iplt20.com/news/206387/ipl-2020-to-be-played-from-19th-september-to-10th-november-2020">
+                  <div class="card-image">
+                    <img src="news/n2.jpg">
+                  </div>
+                  <div class="card-content">
+                    <p>IPL 2020 TO BE PLAYED FROM 19TH SEPTEMBER TO 10TH NOVEMBER 2020</p>
+                    <span style="font-size:0.9rem;margin-top:30px;color: sandybrown;">ARTICLE</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col s12 m6 l3">
+              <div class="card">
+                <a href="https://www.iplt20.com/news/206310/ipl-2020-suspended-till-further-notice">
+                  <div class="card-image">
+                    <img src="news/n3.jpg">
+                  </div>
+                  <div class="card-content">
+                    <p>IPL 2020 SUSPENDED TILL FURTHER NOTICE</p>
+                    <span style="font-size:0.9rem;margin-top:30px;color: sandybrown;">ARTICLE</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col s12 m6 l3">
+              <div class="card">
+                <a
+                  href="https://www.iplt20.com/news/206290/bcci-ipl-franchises-meet-held-with-the-focus-on-public-safety-and-well-being">
+                  <div class="card-image">
+                    <img src="news/n4.jpg">
+                  </div>
+                  <div class="card-content">
+                    <p>BCCI, IPL FRANCHISES’ MEET HELD WITH THE FOCUS ON PUBLIC SAFETY AND WELL-BEING</p>
+                    <span style="font-size:0.9rem;margin-top:30px;color: sandybrown;">ARTICLE</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://www.iplt20.com/news"><button class="btn waves-effect waves-light" id="More"
+              style="float: right;">View more
+              <i class="material-icons right">pageview</i>
+            </button></a>
+        </div>
+
+
+
+      </div>
+
+
+
+      <!-- Cards-->
+      <h2 style="margin-top: 70px;">2019 Leaders</h2>
+      <div class="bigBro" style="margin-top:20px;">
+        <div class="smallBro">
+          <div class="imageSection" style="background:linear-gradient(to top left,orangered,orange)">
+            <img src="leaders/r1.png">
+          </div>
+          <p style="text-align:center;color:white;background-color: orangered;margin-top:-5px;font-weight:700;">
+            Orange Cap</p>
+          <p style="text-align:center;">David <br><strong style="font-size:1.4rem;font-weight:700">Warner</strong></p>
+          <p style="text-align: center; font-size:3rem;margin-top:-20px;font-weight: 800;">692</p>
+          <p style="text-align: center; font-size:0.8rem;margin-top:-50px;color:gray;font-weight:600">RUNS</p>
+        </div>
+        <div class="smallBro">
+          <div class="imageSection" style="background:linear-gradient(to top left,blueviolet,purple)">
+            <img src="leaders/r2.png">
+          </div>
+          <p style="text-align:center;color:white;background-color: purple;margin-top:-5px;font-weight:700">
+            Purple Cap</p>
+          <p style="text-align:center;">Imran
+            <br><strong style="font-size:1.4rem;font-weight:700">Tahir</strong></p>
+          <p style="text-align: center; font-size:3rem;margin-top:-20px;font-weight: 800;">26</p>
+          <p style="text-align: center; font-size:0.8rem;margin-top:-50px;color:gray;font-weight:600">WICKETS</p>
+        </div>
+        <div class="smallBro">
+          <div class="imageSection" style="background:linear-gradient(to top left,#0c2461,#182C61)">
+            <img src="leaders/r3.png">
+          </div>
+          <p style="text-align:center;color:white;background-color: navy;margin-top:-5px;font-weight:700">
+            Highest Score</p>
+          <p style="text-align:center;">Jonny
+            <br><strong style="font-size:1.4rem;font-weight:700">Bairstow</strong></p>
+          <p style="text-align: center; font-size:3rem;margin-top:-20px;font-weight: 800;">114</p>
+          <p style="text-align: center; font-size:0.8rem;margin-top:-50px;color:gray;font-weight:600">SCORE</p>
+        </div>
+        <div class="smallBro">
+          <div class="imageSection" style="background:linear-gradient(to top left,#40407a,#182C61)">
+            <img src="leaders/r4.png">
+          </div>
+          <p style="text-align:center;color:white;background-color:#182C61 ;margin-top:-5px;font-weight:700">
+            Best Bowling Figures</p>
+          <p style="text-align:center;">Alzarri
+            <br><strong style="font-size:1.4rem;font-weight:700">Joseph</strong></p>
+          <p style="text-align: center; font-size:3rem;margin-top:-20px;font-weight: 800;">6/12</p>
+          <p style="text-align: center; font-size:0.8rem;margin-top:-50px;color:gray;font-weight:600">BOWLING</p>
+        </div>
+        <div class="smallBro">
+          <div class="imageSection" style="background:linear-gradient(to top left,rgb(151, 36, 36),#ff3f34)">
+            <img src="leaders/r5.png">
+          </div>
+          <p style="text-align:center;color:white;background-color:#ff3f34 ;margin-top:-5px;font-weight:700">
+            Most Valuable Player</p>
+          <p style="text-align:center;">Andrew
+            <br><strong style="font-size:1.4rem;font-weight:700;">Russell</strong></p>
+          <p style="text-align: center; font-size:3rem;margin-top:-20px;font-weight: 800;">369</p>
+          <p style="text-align: center; font-size:0.8rem;margin-top:-50px;color:gray;font-weight:600">PTS</p>
+        </div>
+        <div class="smallBro">
+          <div class="imageSection" style="background:linear-gradient(to top left,cyan,#00d8d6)">
+            <img src="leaders/r6.png">
+          </div>
+          <p style="text-align:center;color:white;background-color:#00d8d6 ;margin-top:-5px;font-weight:700">
+            Fairplay Awards</p>
+          <p style="text-align:center;">Kane
+            <br><strong style="font-size:1.1rem;font-weight:700">Williamson</strong></p>
+          <p style="text-align: center; font-size:1.5rem;margin-top:-10px;font-weight: 600;">Sunrisers Hyderabad</p>
+          <p style="text-align: center; font-size:0.8rem;margin-top:0px;color:gray;font-weight:600">TEAM</p>
+        </div>
+      </div>
+      <!-- Card2-->
+      <div style="padding-left: 2%;">
+        <h2 style="margin-top: 100px;">2019 in Numbers</h2>
+        <div class="content1">
+          <div class="smallContent1">
+            <h3 style="text-align: center;">DID YOU KNOW?</h3>
+            <p style="text-align: center;font-size:1rem;">Match Trivia - With 100+
+              runs partnership against RCB in Match 11 of IPL 2019, David Warner and
+              Jonny Bairstow became the first pair to post three consecutive century partnerships in the IPL</p>
+          </div>
+          <div class="smallContent2">
+            <div id="one">
+              <h2 style="text-align: center;font-size:4rem;margin-top: 30px;">785</h2>
+              <p style="text-align: center;font-size:1.5rem;margin-top:-20px;">Sixes</p>
+            </div>
+            <div id="two">
+              <h2 style="text-align: center;font-size:4rem;margin-top: 30px;">111m</h2>
+              <p style="text-align: center;font-size:1.5rem;margin-top:-20px;">Longest Six</p>
+            </div>
+          </div>
+          <div class="smallContent3">
+            <div id="three">
+              <h2 style="text-align: center;font-size:4rem;margin-top: 30px;">19,416</h2>
+              <p style="text-align: center;font-size:1rem;margin-top:-20px;">RUNS</p>
+            </div>
+            <div id="four">
+              <h2 style="text-align: center;font-size:4rem;margin-top: 30px;">11,326</h2>
+              <p style="text-align: center;font-size:1rem;margin-top:-20px;">RUNS FROM BOUNDARIES</p>
+            </div>
+          </div>
+        </div>
+        <!-- Content 2-->
+        <div class="content2">
+          <div class="smallContent4">
+            <div class="imageSection" style="background:linear-gradient(to top left,#40407a,#182C61)">
+              <img src="gridCarousel/c21.png">
+            </div>
+            <p style="text-align:center;color:white;background-color:#182C61 ;margin-top:-5px;font-weight:700">
+              Best Economy</p>
+            <p style="text-align:center;">Ankul
+              <br><strong style="font-size:1.8rem;font-weight:800">Roy</strong></p>
+            <p style="text-align:center;font-size:3rem;margin-top:-15px;font-weight:700">5.50</p>
+          </div>
+          <div class="smallContent5">
+            <div id="half1">
+              <div id="hone">
+                <h2 style="text-align: center;font-size:4rem;margin-top: 20px;">682</h2>
+                <p style="text-align: center;font-size:1rem;margin-top:-20px;">WICKETS</p>
+              </div>
+              <div id="htwo">
+                <h2 style="text-align: center;font-size:4rem;margin-top: 20px;">3</h2>
+                <p style="text-align: center;font-size:1rem;margin-top:-20px;">HATRICKS</p>
+              </div>
+              <div id="hthree">
+                <h2 style="text-align: center;font-size:4rem;margin-top: 20px;">4,934</h2>
+                <p style="text-align: center;font-size:1rem;margin-top:-20px;">DOT BALLS</p>
+              </div>
+            </div>
+            <div id="half2">
+              <h2 style="text-align: center;font-size:4rem;margin-top: 20px;">106</h2>
+              <p style="text-align: center;font-size:1rem;margin-top:-20px;">FIFTIES</p>
+            </div>
+          </div>
+          <div class="smallContent6">
+            <div class="imageSection" style="background:linear-gradient(to top left,#40407a,#182C61)">
+              <img src="gridCarousel/c22.png">
+            </div>
+            <p style="text-align:center;color:white;background-color:#182C61 ;margin-top:-5px;font-weight:700">
+              Best Strike Rate</p>
+            <p style="text-align:center;">Andre
+              <br><strong style="font-size:1.8rem;font-weight:800">Russell</strong></p>
+            <p style="text-align:center;font-size:3rem;margin-top:-15px;font-weight:700">204.81</p>
+          </div>
+          <div class="smallContent7">
+            <div id="half3">
+              <div id="s1" class="Teams" style="background-color: navy;height: 100%;border-radius: 9px;">
+                <img src="teamsSvg/mi.png" alt="MI" style="width: 150px;margin: 30px;margin-right: 60px;">
+                <span>
+                  <p style="color: gray;font-size: 1rem;font-weight:600;">PREVIOUS WINNERS</p>
+                  <p style="font-size: 1.8rem;font-weight:800;margin:0px;">MUMBAI INDIANS</p>
+                  <p style="font-size: 1.3rem;margin: 0;">2019 winners</p>
+                </span>
+              </div>
+              <div id="s2" class="Teams" style="background-color: yellow;height: 100%;border-radius: 9px;">
+                <img src="teamsSvg/csk.png" alt="CSK" style="width: 150px;margin: 30px;margin-right: 60px;">
+                <span>
+                  <p style="color: gray;font-size: 1rem;font-weight:600;">PREVIOUS WINNERS</p>
+                  <p style="font-size: 1.8rem;font-weight:800;margin:0px;">CHENNAI SUPERKINGS</p>
+                  <p style="font-size: 1.3rem;margin: 0;">2018 winners</p>
+                </span>
+              </div>
+              <div id="s3" class="Teams" style="background-color: navy;height: 100%;border-radius: 9px;">
+                <img src="teamsSvg/mi.png" alt="MI" style="width: 150px;margin: 30px;margin-right: 60px;">
+                <span>
+                  <p style="color: gray;font-size: 1rem;font-weight:600;">PREVIOUS WINNERS</p>
+                  <p style="font-size: 1.8rem;font-weight:800;margin:0px;">MUMBAI INDIANS</p>
+                  <p style="font-size: 1.3rem;margin: 0;">2017 winners</p>
+                </span>
+              </div>
+              <div id="s4" class="Teams" style="background-color: orangered;height: 100%;border-radius: 9px;">
+                <img src="teamsSvg/srh.png" alt="SRH" style="width: 150px;margin: 30px;margin-right: 60px;">
+                <span>
+                  <p style="color: gray;font-size: 1rem;font-weight:600;">PREVIOUS WINNERS</p>
+                  <p style="font-size: 1.8rem;font-weight:800;margin:0px;">SUNRISERS HYEDRABAD</p>
+                  <p style="font-size: 1.3rem;margin: 0;">2016 winners</p>
+                </span>
+              </div>
+              <div id="s5" class="Teams" style="background-color: navy;height: 100%;border-radius: 9px;">
+                <img src="teamsSvg/mi.png" alt="MI" style="width: 150px;margin: 30px;margin-right: 60px;">
+                <span>
+                  <p style="color: gray;font-size: 1rem;font-weight:600;">PREVIOUS WINNERS</p>
+                  <p style="font-size: 1.8rem;font-weight:800;margin:0px;">MUMBAI INDIANS</p>
+                  <p style="font-size: 1.3rem;margin: 0;">2015 winners</p>
+                </span>
+              </div>
+              <div id="s6" class="Teams" style="background-color:#182C61 ;height: 100%;border-radius: 9px;">
+                <img src="teamsSvg/kkr.png" alt="KKR" style="width: 100px;margin: 30px;margin-right: 60px;">
+                <span>
+                  <p style="color: gray;font-size: 1rem;font-weight:600;">PREVIOUS WINNERS</p>
+                  <p style="font-size: 1.8rem;font-weight:800;margin:0px;">KOLKATA KNIGHT RIDERS</p>
+                  <p style="font-size: 1.3rem;margin: 0;">2014 winners</p>
+                </span>
+              </div>
+              <div id="s7" class="Teams" style="background-color: blue;height: 100%;border-radius: 9px;">
+                <img src="teamsSvg/mi.png" alt="MI" style="width: 150px;margin: 30px;margin-right: 60px;">
+                <span>
+                  <p style="color: gray;font-size: 1rem;font-weight:600;">PREVIOUS WINNERS</p>
+                  <p style="font-size: 1.8rem;font-weight:800;margin:0px;">MUMBAI INDIANS</p>
+                  <p style="font-size: 1.3rem;margin: 0;">2013 winners</p>
+                </span>
+              </div>
+              <div id="s8" class="Teams" style="background-color:#182C61 ;height: 100%;border-radius: 9px;">
+                <img src="teamsSvg/kkr.png" alt="KKR" style="width: 100px;margin: 30px;margin-right: 60px;">
+                <span>
+                  <p style="color: gray;font-size: 1rem;font-weight:600;">PREVIOUS WINNERS</p>
+                  <p style="font-size: 1.8rem;font-weight:800;margin:0px;">KOLKATA KNIGHT RIDERS</p>
+                  <p style="font-size: 1.3rem;margin: 0;">2012 winners</p>
+                </span>
+              </div>
+              <div id="s9" class="Teams" style="background-color: yellow;height: 100%;border-radius: 9px;">
+                <img src="teamsSvg/csk.png" alt="CSK" style="width: 150px;margin: 30px;margin-right: 60px;">
+                <span>
+                  <p style="color: gray;font-size: 1rem;font-weight:600;">PREVIOUS WINNERS</p>
+                  <p style="font-size: 1.8rem;font-weight:800;margin:0px;">CHENNAI SUPERKINGS</p>
+                  <p style="font-size: 1.3rem;margin: 0;">2011 winners</p>
+                </span>
+              </div>
+              <div id="s10" class="Teams" style="background-color: yellow;height: 100%;border-radius: 9px;">
+                <img src="teamsSvg/csk.png" alt="CSK" style="width: 150px;margin: 30px;margin-right: 60px;">
+                <span>
+                  <p style="color: gray;font-size: 1rem;font-weight:600;">PREVIOUS WINNERS</p>
+                  <p style="font-size: 1.8rem;font-weight:800;margin:0px;">CHENNAI SUPERKINGS</p>
+                  <p style="font-size: 1.3rem;margin: 0;">2010 winners</p>
+                </span>
+              </div>
+              <div id="s11" class="Teams" style="background-color: #182C61;height: 100%;border-radius: 9px;">
+                <img src="teamsSvg/srh.png" alt="SRH" style="width: 150px;margin: 30px;margin-right: 60px;">
+                <span>
+                  <p style="color: gray;font-size: 1rem;font-weight:600;">PREVIOUS WINNERS</p>
+                  <p style="font-size: 1.8rem;font-weight:800;margin:0px;">DECCAN CHARGERS</p>
+                  <p style="font-size: 1.3rem;margin: 0;">2009 winners</p>
+                </span>
+              </div>
+              <div id="s12" class="Teams" style="background-color: pink;height: 100%;border-radius: 9px;">
+                <img src="teamsSvg/rr.png" alt="RR" style="width: 150px;margin: 30px;margin-right: 60px;">
+                <span>
+                  <p style="color: gray;font-size: 1rem;font-weight:600;">PREVIOUS WINNERS</p>
+                  <p style="font-size: 1.8rem;font-weight:800;margin:0px;">RAJASTHAN ROYALS</p>
+                  <p style="font-size: 1.3rem;margin: 0;">2008 winners</p>
+                </span>
+              </div>
+
+
+            </div>
+
+
+            <div id="half4">
+              <div id="section1">
+                <div id="e1" class="em">
+                  <span style="padding: 20px;">Players To Watch Out<span
+                      style="font-size: 1.5rem;color: midnightblue;font-weight: bold;"><br>Yashaswi
+                      Jaiswal</span></span>
+                  <img
+                    src="https://www.rajasthanroyals.com/adminpanel/uploads/images/players/zgnxb8sobko6b8swrd4adx575ye36ym0.png"
+                    alt="" style="width:
+                      120px;">
+                </div>
+                <div id="e2" class="em">
+                  <span style="padding: 20px;">Players To Watch Out<span
+                      style="font-size: 1.5rem;color: midnightblue;font-weight: bold;"><br>Kartik Tyagi</span></span>
+                  <img
+                    src="https://www.rajasthanroyals.com/adminpanel/uploads/images/players/f298rydlf135ftryof1fnv37mb7l5asp.png"
+                    alt="" style="width:
+                      120px;">
+                </div>
+               
+            </div>
+            <div id="section2">
+              <div id="sone">
+                <h2 style="text-align: center;font-size:4rem;margin-top: 30px;">2</h2>
+                <p style="text-align: center;font-size:1rem;margin-top:-20px;">Last Ball Finishes</p>
+              </div>
+              <div id="stwo">
+                <h2 style="text-align: center;font-size:4rem;margin-top: 30px;">2</h2>
+                <p style="text-align: center;font-size:1rem;margin-top:-20px;">Super Overs</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Videos-->
+
+    <div id="Carousel" style="padding: 0px;margin-top: 75px;">
+      <span id="Carousel-Heading">Trending Videos</span>
+      <span>
+        <a id="Prev" class="waves-effect waves-light btn-small"><i class="material-icons">chevron_left</i></a>
+        <a id="Next" class="waves-effect waves-light btn-small"><i class="material-icons">chevron_right</i></a>
+      </span>
+      <div id="Style1" class="cardCarousel">
+
+        <div class="row">
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/126494/king-dhoni-s-match-winning-70-34-?tagNames=indian-premier-league&viewCountWindowSeconds=604800">
+                <div class="card-image">
+                  <img src="Tvideos/t1.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>King Dhoni's match-winning 70*(34)</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/191756/final-mi-vs-csk-match-highlights?tagNames=indian-premier-league&viewCountWindowSeconds=604800">
+                <div class="card-image">
+                  <img src="Tvideos/t2.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>Final MI vs CSK - Match Highlights</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/201430/2020-vivo-ipl-player-auction-chennai-super-kings?tagNames=indian-premier-league&viewCountWindowSeconds=604800">
+                <div class="card-image">
+                  <img src="Tvideos/t3.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>2020 IPL Player Auction - Chennai Super Kings</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/206366/open-nets-with-mayank-ft-kl-rahul-and-chris-gayle?tagNames=indian-premier-league&viewCountWindowSeconds=604800">
+                <div class="card-image">
+                  <img src="Tvideos/t4.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>Open nets with Mayank ft.KL Rahul and Chris Gayle</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn waves-effect waves-light" id="more" style="float: right;">View more
+          <i class="material-icons right">pageview</i>
+        </button>
+      </div>
+
+      <div id="Style2" class="cardCarousel">
+
+        <div class="row">
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/187783/m56-mi-vs-kkr-match-highlights?tagNames=indian-premier-league&viewCountWindowSeconds=604800">
+                <div class="card-image">
+                  <img src="Tvideos/t5.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>M56 : MI vs KKR -Match Highlights</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/201408/2020-vivo-ipl-player-auction-mumbai-indians?tagNames=indian-premier-league&viewCountWindowSeconds=604800">
+                <div class="card-image">
+                  <img src="Tvideos/t6.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>2020 IPL auction - Mumbai Indians</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/144983/final-csk-vs-srh-match-highlights?tagNames=indian-premier-league&viewCountWindowSeconds=604800">
+                <div class="card-image">
+                  <img src="Tvideos/t7.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>Final : CSK vs SRH -Match Highlights</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/177209/m39-rcb-vs-csk-match-highlights?tagNames=indian-premier-league&viewCountWindowSeconds=604800">
+                <div class="card-image">
+                  <img src="Tvideos/t8.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>M39 : RCB vs CSK -Match Highlights</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="Style3" class="cardCarousel">
+
+        <div class="row">
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/6873/m38-kkr-vs-gl-suresh-raina-s-phenomenal-catch-in-the-slips?tagNames=indian-premier-league&viewCountWindowSeconds=604800">
+                <div class="card-image">
+                  <img src="Tvideos/t9.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>M38 : KKR vs GL -Suresh raina's phenomenal catch in the slips</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/201403/2020-vivo-ipl-player-auction-royal-challengers-bangalore?tagNames=indian-premier-league&viewCountWindowSeconds=604800">
+                <div class="card-image">
+                  <img src="Tvideos/t10.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>M59 : KXIP vs CSK - Suresh Raina's 87</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/13297/m60-mi-vs-csk-match-highlights?tagNames=indian-premier-league&viewCountWindowSeconds=604800">
+                <div class="card-image">
+                  <img src="Tvideos/t11.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>2020 IPL Player Auction -Royal Challengers Bangalore</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <a
+                href="https://www.iplt20.com/video/126555/m24-rcb-vs-csk-match-highlights?tagNames=indian-premier-league&viewCountWindowSeconds=604800">
+                <div class="card-image">
+                  <img src="Tvideos/t12.jpg">
+                  <i class="material-icons">play_circle_filled</i>
+                </div>
+                <div class="card-content">
+                  <p>M24 : RCB vs CSK -Match Highlights</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div id="partners" style="display: flex;justify-content: center;margin-top: 100px;">
+      <div id="partner" style="margin: 20px;font-size: 1.2rem;font-weight: 600;">
+        <p>Our Unofficial Partners(non-paid):</p>
+        <a href="https://www.hotstar.com/in"><img src="partners/hotstar.png" alt="" id="hotstarLogo"></a>
+      </div>
+      <div id="content" style="margin: 20px;font-size: 1.2rem;font-weight: 600;">
+        <p>Content from:</p>
+        <a href="https://www.iplt20.com/"><img src="partners/ipl.png" alt="" id="iplLogo"></a>
+      </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+    <!-- Floating button -->
+
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large white" style="box-shadow: 0px 0px 0px 1px black;">
+        <img src="basic/logo.png" id="float" alt="" style="width:60px;">
+      </a>
+      <ul>
+        <li><a href="/contact#team" class="btn-floating green myFloat">Team</a>
+        </li>
+        <li><a href="https://www.facebook.com/IPL/" class="btn-floating blue myFloat"><i class="fa fa-facebook"></i></a>
+        </li>
+        <li><a href="https://www.instagram.com/iplt20/" class="btn-floating pink myFloat"><i
+              class="fa fa-instagram"></i></a></li>
+        <li><a href="https://twitter.com/IPL" class="btn-floating blue myFloat"><i class="fa fa-twitter"></i></a>
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer class="page-footer" id="footer">
+      <div class="container">
+        <div class="row">
+          <div style="text-align: center;">
+            <h5>follow #IPL</h5>
+            <a href="https://www.facebook.com/IPL/" class="socials"><i class="fa fa-facebook-official"></i></a>
+            <a href="https://www.instagram.com/iplt20/" class="socials"><i class="fa fa-instagram"></i></a>
+            <a href="https://twitter.com/IPL" class="socials"><i class="fa fa-twitter-square"></i></a>
+          </div>
+          <div class="col l3 offset-l1 s6">
+            <h5 class="white-text">Quick Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="/videos">Videos</a></li>
+              <li><a class="grey-text text-lighten-3" href="/standings">Points Table</a></li>
+              <li><a class="grey-text text-lighten-3" href="/schedule">Schedule</a></li>
+              <li><a class="grey-text text-lighten-3" href="/info">Player Wise Data</a></li>
+              <li><a class="grey-text text-lighten-3" href="/updates">News</a></li>
+            </ul>
+          </div>
+          <div class="col l3 offset-l1 s6">
+            <h5 class="white-text">Teams</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="/csk">Chennai Super Kings</a></li>
+              <li><a class="grey-text text-lighten-3" href="/dc">Delhi Capitals</a></li>
+              <li><a class="grey-text text-lighten-3" href="/kxip">Kings XI Punjab</a></li>
+              <li><a class="grey-text text-lighten-3" href="/kkr">Kolkata Knight Riders</a></li>
+              <li><a class="grey-text text-lighten-3" href="/mi">Mumbai Indians</a></li>
+              <li><a class="grey-text text-lighten-3" href="/rr">Rajasthan Royals</a></li>
+              <li><a class="grey-text text-lighten-3" href="/rcb">Royal Challengers Bangalore</a></li>
+              <li><a class="grey-text text-lighten-3" href="/srh">Sunrisers Hyderabad</a></li>
+            </ul>
+          </div>
+          <div class="col l3 offset-l1 s6">
+            <h5 class="white-text">Contact</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="/contact">Contact Us</a></li>
+              <li><a class="grey-text text-lighten-3" href="/contact#team">Our Team</a></li>
+              <li><a class="grey-text text-lighten-3" href="/feedback">Feedback</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          <span>© &nbsp; iplfeverr.herokuapp.com &nbsp; 2020</span>
+          <a class="grey-text text-lighten-4 right" href="/credits">Content Credits</a>
+        </div>
+      </div>
+    </footer>
+
+</body>
+<script src="index.js"></script>
+
+</html>
