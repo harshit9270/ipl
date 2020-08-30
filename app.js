@@ -568,20 +568,195 @@ app.post("/ubatsman", async(req, res) =>{
 })
 
 
-app.post("/cbowler", async(req, res) =>{
+// app.post("/cbowler", async(req, res) =>{
+//     const bowler = req.body.cappedBowler;
+//     const team = req.body.team;
+//     const T = req.body.T;
+//     const numberBowl = Number(bowler);
+
+
+
+//     const appKey = process.env.key1;
+
+//     const url = `https://cricapi.com/api/playerStats?apikey=${appKey}&pid=${numberBowl}`;
+
+//     const fetch_response = await fetch(url);
+//     const cricketData = await fetch_response.json();
+
+
+//     const img = (cricketData.imageURL) || ("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAqgwETNY6BqOd76U888zJtx4529Ggiamqsw&usqp=CAU");
+//     const name = cricketData.name;
+//     const age = cricketData.currentAge;
+//     const born = cricketData.born;
+//     const battingStyle = cricketData.battingStyle;
+//     const bowlingStyle = cricketData.bowlingStyle;
+//     /* ODI */
+//     const odiMatches = cricketData.data.bowling.ODIs.Mat;
+//     const odiWickets = cricketData.data.bowling.ODIs.Wkts;
+//     const odiEcon = cricketData.data.bowling.ODIs.Econ;
+//     const odiBest = cricketData.data.bowling.ODIs.BBM;
+//     /* t20 */
+//     const t20Matches = cricketData.data.bowling.T20Is.Mat;
+//     const t20Wickets = cricketData.data.bowling.T20Is.Wkts;
+//     const t20Econ = cricketData.data.bowling.T20Is.Econ;
+//     const t20Best = cricketData.data.bowling.T20Is.BBM
+
+//     var test = `<!DOCTYPE html>
+//         <html lang="en">
+//         <head>
+//             <meta charset="UTF-8">
+//             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//             <title>IplFeverr | Ipl Teams</title>
+                        
+//             <!--Font Awesome-->
+//             <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
+           
+//             <style>
+//                    body{
+//                     background-color:grey;
+//                    }
+//                    #close{
+//                     float: right;
+//                     font-size:2rem;
+//                     color:black;
+//                    }
+//                    #close:hover{
+//                        color:purple;
+//                    }
+//                    #container{
+//                     display: flex;
+//                     flex-direction: column;
+//                     justify-content:center;
+//                     align-items:center;
+//                    }
+
+//             </style>
+
+//         </head>
+//         <body>
+//         <a href ='${T}.html'><i class="fa fa-times" id="close"></i></a>
+//             <div id="container">
+//                 <div id="section1">
+//                   <img src=${img} alt="">
+//                   <h2 id="name">${name}</h2>
+//                   <h3 id="team">${team}</h3>
+//                 </div>
+//                 <div id="section2">
+//                     <table>
+                        
+//                         <tr>
+//                             <th>Plays for</th>
+//                             <td  style="padding-left:25px;">${team}</td>
+//                         </tr>
+                        
+//                         <tr>
+//                             <th>Age</th>
+//                             <td  style="padding-left:25px;">${age}</td>
+//                         </tr>
+                        
+//                         <tr>
+//                             <th>Born</th>
+//                             <td  style="padding-left:25px;">${born}</td>
+//                         </tr>
+                        
+//                         <tr>
+//                             <th>Batting Style</th>
+//                             <td style="padding-left:25px">${battingStyle}</td>
+//                         </tr>
+                        
+//                         <tr>
+//                             <th>Bowling Style</th>
+//                             <td style="padding-left:25px;">${bowlingStyle}</td>
+//                         </tr>
+                       
+                        
+//                     </table>
+//                 </div>
+//                 <div id="section3" style="display: flex;">
+//                  <div id="card1" style="box-shadow:0px 0px 10px 1px black;margin:30px;padding:40px;">
+//                     <h3>T20 Carrer:</h3>
+//                     <table>
+//                         <tr>
+//                             <th>Matches</th>
+//                             <td  style="padding-left:25px;">${t20Matches}</td>
+//                         </tr>
+                        
+//                         <tr>
+//                             <th>Wickets</th>
+//                             <td  style="padding-left:25px;">${t20Wickets}</td>
+//                         </tr>
+        
+                      
+        
+//                         <tr>
+//                             <th>Economy</th>
+//                             <td colspan="2">${t20Econ}</td>
+//                         </tr>
+        
+//                         <tr>
+//                             <th>Best Figures</th>
+//                             <td  style="padding-left:25px;">${t20Best}</td>
+//                         </tr>
+                        
+//                     </table>
+//                  </div>
+//                  <div id="card2" style="box-shadow:0px 0px 10px 1px black;margin:30px;padding:40px;">
+//                     <h3>ODI Carrer:</h3>
+//                     <table>
+//                         <tr>
+//                             <th>Matches</th>
+//                             <td  style="padding-left:25px;">${odiMatches}</td>
+//                         </tr>
+                        
+//                         <tr>
+//                             <th>Wickets</th>
+//                             <td  style="padding-left:25px;">${odiWickets}</td>
+//                         </tr>
+        
+                       
+        
+//                         <tr>
+//                             <th>Economy</th>
+//                             <td  style="padding-left:25px;">${odiEcon}</td>
+//                         </tr>
+        
+//                         <tr>
+//                             <th>Best Figures</th>
+//                             <td  style="padding-left:25px;">${odiBest}</td>
+//                         </tr>
+                        
+//                     </table>
+//                  </div>
+              
+//                 </div>
+//             </div>
+//         </body>
+//         </html>`;
+
+//     res.write(test);
+
+//     res.send();
+// })
+
+
+app.post("/cbowler",  (req, res) => {
     const bowler = req.body.cappedBowler;
     const team = req.body.team;
     const T = req.body.T;
     const numberBowl = Number(bowler);
 
-
+     
 
     const appKey = process.env.key1;
 
     const url = `https://cricapi.com/api/playerStats?apikey=${appKey}&pid=${numberBowl}`;
 
-    const fetch_response = await fetch(url);
-    const cricketData = await fetch_response.json();
+ fetch(url)
+ .then(fetch_response => {
+     return fetch_response.json()
+ })
+ .then(cricketData => {
+    // const cricketData = await fetch_response.json();
 
 
     const img = (cricketData.imageURL) || ("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAqgwETNY6BqOd76U888zJtx4529Ggiamqsw&usqp=CAU");
@@ -736,8 +911,9 @@ app.post("/cbowler", async(req, res) =>{
     res.write(test);
 
     res.send();
+                })
+                .catch(err => console.log(err))
 })
-
 
 app.post("/ubowler", async(req, res)=> {
     const ubowler = req.body.uncappedBowler;
