@@ -286,6 +286,9 @@ app.post("/ubatsman",(req, res) =>{
             data += chunk;
         });
         response.on('end', () => {
+            
+             const cricketData = JSON.parse(data);
+            console.log(cricketData);
 
     const img = (cricketData.imageURL) || ("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAqgwETNY6BqOd76U888zJtx4529Ggiamqsw&usqp=CAU");
     const name = cricketData.name;
@@ -434,6 +437,9 @@ app.post("/cbowler",  (req, res) => {
             data += chunk;
         });
         response.on('end', () => {
+            
+             const cricketData = JSON.parse(data);
+            console.log(cricketData);
 
 
     const img = (cricketData.imageURL) || ("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAqgwETNY6BqOd76U888zJtx4529Ggiamqsw&usqp=CAU");
@@ -614,6 +620,9 @@ app.post("/ubowler", (req, res)=> {
             data += chunk;
         });
         response.on('end', () => {
+            
+             const cricketData = JSON.parse(data);
+            console.log(cricketData);
 
     const img = (cricketData.imageURL) || "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAqgwETNY6BqOd76U888zJtx4529Ggiamqsw&usqp=CAU";
     console.log(img);
@@ -762,6 +771,9 @@ app.post("/callRounder", (req, res)=> {
             data += chunk;
         });
         response.on('end', () => {
+            
+             const cricketData = JSON.parse(data);
+            console.log(cricketData);
 
     const img = (cricketData.imageURL) || ("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAqgwETNY6BqOd76U888zJtx4529Ggiamqsw&usqp=CAU");
     const name = cricketData.name;
@@ -940,6 +952,9 @@ app.post("/uallRounder", (req, res)=> {
             data += chunk;
         });
         response.on('end', () => {
+            
+             const cricketData = JSON.parse(data);
+            console.log(cricketData);
 
     const img = (cricketData.imageURL) || ("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAqgwETNY6BqOd76U888zJtx4529Ggiamqsw&usqp=CAU");
     const name = cricketData.name;
@@ -1114,6 +1129,9 @@ app.post("/playerInfo",(req, res)=> {
             data += chunk;
         });
         response.on('end', () => {
+            
+             const cricketData = JSON.parse(data);
+            console.log(cricketData);
 
     console.log(cricketData.data.length);
     let pid = [], name = [], fullname = [];
@@ -1207,6 +1225,9 @@ app.post("/playerInfo",(req, res)=> {
             data += chunk;
         });
         response.on('end', () => {
+            
+             const cricData = JSON.parse(data);
+            console.log(cricData);
             
         const img = (cricData.imageURL);
         const name = cricData.name;
