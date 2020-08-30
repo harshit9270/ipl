@@ -1345,7 +1345,7 @@ app.post("/playerInfo", async (req, res)=> {
         console.log("Error: " + err.message);
     });
 });
-});
+
 
 
 app.listen(PORT, () => {
