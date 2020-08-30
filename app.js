@@ -243,9 +243,6 @@ app.post("/cbatsman", async (req, res) => {
          </body>
          </html>`;
 
-    await Promise.reject(new Error("Whoops!"));
-    
-    res.write(test);
 
     res.send();
     
