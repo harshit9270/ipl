@@ -267,7 +267,7 @@ app.post("/cbatsman", function (req, res) {
 
 // Uncapped Batsman
 
-app.post("/ubatsman", async(req, res) =>{
+app.post("/ubatsman",(req, res) =>{
     const batsman = req.body.uncappedBatsman;
     const team = req.body.team;
     const T = req.body.T;
@@ -595,7 +595,7 @@ app.post("/cbowler",  (req, res) => {
     });
 });
 
-app.post("/ubowler", async(req, res)=> {
+app.post("/ubowler", (req, res)=> {
     const ubowler = req.body.uncappedBowler;
     const team = req.body.team;
     const T = req.body.T;
@@ -744,7 +744,7 @@ app.post("/ubowler", async(req, res)=> {
     });
 });
 
-app.post("/callRounder", async (req, res)=> {
+app.post("/callRounder", (req, res)=> {
     const allRounder = req.body.cappedAllRounder;
     const team = req.body.team;
     const T = req.body.T;
@@ -921,7 +921,7 @@ app.post("/callRounder", async (req, res)=> {
     });
 });
 
-app.post("/uallRounder", async (req, res)=> {
+app.post("/uallRounder", (req, res)=> {
     const uallRounder = req.body.uncappedAllRounder;
     const team = req.body.team;
     const T = req.body.T;
@@ -1100,7 +1100,7 @@ app.post("/uallRounder", async (req, res)=> {
 });
 
 
-app.post("/playerInfo", async (req, res)=> {
+app.post("/playerInfo",(req, res)=> {
     const playerName = req.body.playerName;
 
     const appKey = "QYVTz9QEW0fawaBMu3tsIJNJlxn1";
@@ -1193,7 +1193,7 @@ app.post("/playerInfo", async (req, res)=> {
         res.write(test[i]);
     }
 
-    app.post("/playerDetails", async (req, res) => {
+    app.post("/playerDetails", (req, res) => {
         let Pid = req.body.Pid;
 
         const appKey = "0CYUfBW7ODXfytpDSflRHkMxKpU2";
@@ -1334,7 +1334,7 @@ app.post("/playerInfo", async (req, res)=> {
         console.log("Error: " + err.message);
     });
 });
-    });
+
 
             res.write(test);
 
