@@ -1211,13 +1211,15 @@ app.post("/playerInfo",(req, res)=> {
         res.write(test[i]);
     }
 
-    app.post("/playerDetails", (req, res) => {
-        let Pid = req.body.Pid;
 
-        const appKey = "0CYUfBW7ODXfytpDSflRHkMxKpU2";
+app.post("/playerInfo", (req, res) => {
+    const playerName = req.body.playerName;
 
-           let data ="";
-        const url = `https://cricapi.com/api/playerStats?apikey=${appKey}&pid=${Pid}`;
+    const appKey = "QYVTz9QEW0fawaBMu3tsIJNJlxn1";
+
+    let data = "";
+
+    const url = `https://cricapi.com/api/playerFinder?apikey=${appKey}&name=${playerName}`;
 
     https.get(url, function (response) {
 
@@ -1225,32 +1227,127 @@ app.post("/playerInfo",(req, res)=> {
             data += chunk;
         });
         response.on('end', () => {
-            
-             const cricData = JSON.parse(data);
-            console.log(cricData);
-            
-        const img = (cricData.imageURL);
-        const name = cricData.name;
-        const fullName = cricData.fullName;
-        const age = cricData.currentAge;
-        const born = cricData.born;
-        const country = cricData.country;
-        const battingStyle = cricData.battingStyle;
-        const bowlingStyle = cricData.bowlingStyle;
-        const playingRole = cricData.playingRole;
-        const profile = cricData.profile;
-        const majorTeams = cricData.majorTeams;
 
-        var detail = `<!DOCTYPE html>
+            const cricketData = JSON.parse(data);
+            console.log(cricketData);
+
+            let pid = [], name = [], fullname = [];
+            for (var i = 0; i < cricketData.data.length; i++) {
+                pid[i] = cricketData.data[i].pid;
+                name[i] = cricketData.data[i].name;
+                fullname[i] = cricketData.data[i].fullName;
+                console.log("2000");
+                console.log(pid[i]);
+                console.log(name[i]);
+                var test = [];
+                test[i] = `<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>IplFeverr | Player Info</title>
+
+
+            <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
+
+            <style>
+                   body{
+                    background-color:gray;
+                   }
+                   #close{
+                    float: right;
+                    font-size:2rem;
+                    color:black;
+                   }
+                   #close:hover{
+                       color:purple;
+                   }
+                   #container{
+                    background-color:aliceblue;
+                    text-align:center;
+                    border:2px solid black;
+                    border-radius:10px;
+                    padding:15px;
+                    margin: 20px auto;
+                    width:40%;
+                    font-size:1.5rem;
+                   }
+                   #details{
+                       font-size: 1.2rem;
+                       padding:6px;
+                       border:2px solid black;
+                       border-radius:9px;
+                       cursor:pointer;
+                    }
+                    #details:hover{
+                        color:#40407a;
+                        border:2px solid #40407a;
+                        background-color: #ffda79;
+                   }
+            </style>
+
+        </head>
+        <body>
+
+            <div id="container">
+                <div id="section1">
+                <form action="/playerDetails" id="playerForm" method="POST">
+                  <a>${pid[i]}</a>
+                  <input type="text" name="Pid" value="${pid[i]}" style="display:none;">
+                  <p>${name[i]}</p>
+                  <p>${fullname[i]}</p>
+                  <button type="submit" id="details">View Details</button>
+                </form>
+                </div>
+
+            </div>
+        </body>
+        </html>`;
+
+
+                res.write(test[i]);
+            }
+
+            app.post("/playerDetails", (req, res) => {
+                let Pid = req.body.Pid;
+
+                const appKey = "0CYUfBW7ODXfytpDSflRHkMxKpU2";
+
+                let data1 = "";
+                const url = `https://cricapi.com/api/playerStats?apikey=${appKey}&pid=${Pid}`;
+
+                https.get(url, function (response) {
+
+                    response.on("data", (chunk) => {
+                        data1 += chunk;
+                    });
+                    response.on('end', () => {
+
+                        const cricData = JSON.parse(data1);
+                        console.log(cricData);
+
+                        const img = (cricData.imageURL);
+                        const name = cricData.name;
+                        const fullName = cricData.fullName;
+                        const age = cricData.currentAge;
+                        const born = cricData.born;
+                        const country = cricData.country;
+                        const battingStyle = cricData.battingStyle;
+                        const bowlingStyle = cricData.bowlingStyle;
+                        const playingRole = cricData.playingRole;
+                        const profile = cricData.profile;
+                        const majorTeams = cricData.majorTeams;
+
+                        var detail = `<!DOCTYPE html>
                         <html lang="en">
                     <head>
                     <meta charset="UTF-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <title>IplFeverr | Ipl Teams</title>
-                        
+
                         <!--Font Awesome-->
                         <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
-                        
+
                         <style>
                         body{
                             background-color: black;
@@ -1284,9 +1381,9 @@ app.post("/playerInfo",(req, res)=> {
                                img{
                                    box-shadow: 0px 0px 10px 0px white;
                                }
-            
+
                         </style>
-            
+
                     </head>
                     <body>
                     <div id="container" >
@@ -1298,47 +1395,47 @@ app.post("/playerInfo",(req, res)=> {
                             </div>
                             <div id="section2">
                                 <table>
-                                    
+
                                     <tr>
                                         <th>Country</th>
                                         <td  style="padding-left:25px;">${country}</td>
                                     </tr>
-                                    
+
                                     <tr>
                                         <th  style="padding-left:25px;">Age</th>
                                         <td  style="padding-left:25px;">${age}</td>
                                     </tr>
-                                    
+
                                     <tr>
                                         <th>Born</th>
                                         <td  style="padding-left:25px;">${born}</td>
                                     </tr>
-                                    
+
                                     <tr>
                                         <th>Batting Style</th>
                                         <td  style="padding-left:25px;">${battingStyle}</td>
                                     </tr>
-                                    
+
                                     <tr>
                                         <th>Bowling Style</th>
                                         <td  style="padding-left:25px;">${bowlingStyle}</td>
                                     </tr>
-                                    
+
                                     <tr>
                                         <th>Major Teams</th>
                                         <td  style="padding-left:25px;">${majorTeams}</td>
                                     </tr>
-                                    
+
                                     <tr>
                                         <th>Playing Role</th>
                                         <td  style="padding-left:25px;">${playingRole}</td>
                                     </tr>
-                                   
-                                    
+
+
                                 </table>
                                 <p style="text-align:center;color:cyan;font-size:1.2rem;">${profile}</p>
                             </div>                         
-                
+
                         </div>
             </body>
             </html>`;
@@ -1346,26 +1443,23 @@ app.post("/playerInfo",(req, res)=> {
 
 
 
-        res.write(detail);
+                        res.write(detail);
+                        res.send();
+                    });
 
+                }).on("error", (err) => {
+                    console.log("Error: " + err.message);
+                });
+            });
+            
             res.send();
         });
-
+        
     }).on("error", (err) => {
-        console.log("Error: " + err.message);
-    });
+    console.log("Error: " + err.message);
+});
 });
 
-
-            res.write(test);
-
-            res.send();
-        });
-
-    }).on("error", (err) => {
-        console.log("Error: " + err.message);
-    });
-});
 
 
 
