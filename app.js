@@ -262,11 +262,11 @@ app.post("/cbatsman", function (req, res) {
     // const fetch_response = await fetch(url);
     // const cricketData = await fetch_response.json();
 
-    https.get(url, function(response){
-         response.on("data", async function(data){
+    https.get(url, async function(response){
+        response.on("data", await function(data){
         console.log(response.statusCode);
         
-        const cricketData = await JSON.parse(data);
+        const cricketData =JSON.parse(data);
         console.log(cricketData);
 
         const img = (cricketData.imageURL) || ("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAqgwETNY6BqOd76U888zJtx4529Ggiamqsw&usqp=CAU");
