@@ -352,6 +352,8 @@ function reset5() {
 
 function countCheck(){
 
+    playerCount = WKcount + Bcount + ARcount + BWcount + Ycount;
+
 if(playerCount > 11){
     M.toast({ html: 'Selection exceeded the team limit!<br>Team can have maximum 11 players.<button id="toastReset" onclick="resetAll()">Reset All</button>' });
 }
@@ -371,8 +373,7 @@ else if(BWcount<3){
 else if(playerCount < 11){
     M.toast({ html: 'Selection did not the team limit!<br>Team must have 11 players.<button id="toastReset" onclick="resetAll()">Reset All</button>' });
 }
-else{
-    playerCount = WKcount + Bcount + ARcount + BWcount + Ycount;
+else if(playerCount==11){
     
     credit = WKcredit + Bcredit + ARcredit + BWcredit + Ycredit;
     team.innerHTML =  "<h4 style='color:pink;'>Fantasy Team</h4>" + (teamWK + teamB +teamAR + teamBW +teamY);
@@ -393,6 +394,7 @@ else{
     resultBox.style.display="block";
 }
 }
+
 
 function resetAll(){
     SWK.innerHTML= "";
