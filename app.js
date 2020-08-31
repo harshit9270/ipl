@@ -88,7 +88,8 @@ app.post("/cbatsman", function (req, res) {
     const numberBat = Number(batsman);
     const T = req.body.T;
 
-    const appKey = "0CYUfBW7ODXfytpDSflRHkMxKpU2";
+//     const appKey = "0CYUfBW7ODXfytpDSflRHkMxKpU2";
+     const appKey = process.env.KEY1;
      let data ="";
     const url = `https://cricapi.com/api/playerStats?apikey=${appKey}&pid=${numberBat}`;
 
