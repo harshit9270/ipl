@@ -351,19 +351,7 @@ function reset5() {
 
 
 function countCheck(){
-    playerCount = WKcount + Bcount + ARcount + BWcount + Ycount;
-    console.log(playerCount);
-    console.log(WKcredit);
-    console.log(Bcredit);
-    console.log(ARcredit);
-    console.log(BWcredit);
-    console.log(Ycredit);
-    credit = WKcredit + Bcredit + ARcredit + BWcredit + Ycredit;
-    team.innerHTML =  "<h4 style='color:pink;'>Fantasy Team</h4>" + (teamWK + teamB +teamAR + teamBW +teamY);
-    let chances = Math.ceil((credit/110)*100); 
-    sBox1.innerHTML += "<h4>110</h4>";
-    sBox2.innerHTML += "<h4>" + credit +"</h4>";
-    sBox3.innerHTML += "<h4>" + chances + "/100 </h4>";
+
 if(playerCount > 11){
     M.toast({ html: 'Selection exceeded the team limit!<br>Team can have maximum 11 players.<button id="toastReset" onclick="resetAll()">Reset All</button>' });
 }
@@ -380,7 +368,19 @@ else if(ARcount<2){
 else if(BWcount<3){
     M.toast({ html:'Atleast three Bowlers should be there!'})
 }
+else if(playerCount < 11){
+    M.toast({ html: 'Selection did not the team limit!<br>Team must have 11 players.<button id="toastReset" onclick="resetAll()">Reset All</button>' });
+}
 else{
+    playerCount = WKcount + Bcount + ARcount + BWcount + Ycount;
+    
+    credit = WKcredit + Bcredit + ARcredit + BWcredit + Ycredit;
+    team.innerHTML =  "<h4 style='color:pink;'>Fantasy Team</h4>" + (teamWK + teamB +teamAR + teamBW +teamY);
+    let chances = Math.ceil((credit/110)*100); 
+    sBox1.innerHTML += "<h4>110</h4>";
+    sBox2.innerHTML += "<h4>" + credit +"</h4>";
+    sBox3.innerHTML += "<h4>" + chances + "/100 </h4>";
+
     const left = document.getElementById('left');
     const container = document.getElementById('container');
     const right = document.getElementById('right');
