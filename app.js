@@ -304,7 +304,7 @@ app.post("/cbatsman", function (req, res) {
                     </div>
                     <div id="section3" style="display: flex;">
                         <div id="card1" style="margin:30px;padding:40px;">
-                            <h3 style="color:#cf7500;">T20 Carrer:</h3>
+                            <h3 style="color:#cf7500;">T20 Career:</h3>
                             <table>
                                 <tr>
                                     <th>Matches</th>
@@ -331,7 +331,7 @@ app.post("/cbatsman", function (req, res) {
                             </table>
                         </div>
                         <div id="card2" style="margin:30px;padding:40px;">
-                            <h3 style="color:cyan;">ODI Carrer:</h3>
+                            <h3 style="color:cyan;">ODI Career:</h3>
                             <table>
                                 <tr>
                                     <th>Matches</th>
@@ -651,7 +651,7 @@ app.post("/ubatsman",(req, res) =>{
                  <div id="section1">
                    <img src=${img} alt="">
                    <h2 id="name">${name}</h2>
-                   <h3 id="team">${team}</h3>
+                   <h3 id="team" style="color:#96bb7c;">${team}</h3>
                  </div>
                  <div id="section2">
                      <table>
@@ -685,8 +685,8 @@ app.post("/ubatsman",(req, res) =>{
                      </table>
                  </div>
                  <div id="section3" style="display: flex;">
-                  <div id="card1" style="box-shadow:0px 0px 10px 1px black;margin:30px;padding:40px;">
-                     <h3>List A Carrer:</h3>
+                  <div id="card1" style="margin:30px;padding:40px;">
+                     <h3 style="color:#cf7500;">List A Career:</h3>
                      <table>
                          <tr>
                              <th>Matches</th>
@@ -1006,7 +1006,7 @@ app.post("/cbowler",  (req, res) => {
                 <div id="section1">
                   <img src=${img} alt="">
                   <h2 id="name">${name}</h2>
-                  <h3 id="team">${team}</h3>
+            <h3 id="team" style="color:#96bb7c;">${team}</h3>
                 </div>
                 <div id="section2">
                     <table>
@@ -1040,8 +1040,8 @@ app.post("/cbowler",  (req, res) => {
                     </table>
                 </div>
                 <div id="section3" style="display: flex;">
-                 <div id="card1" style="box-shadow:0px 0px 10px 1px black;margin:30px;padding:40px;">
-                    <h3>T20 Carrer:</h3>
+                 <div id="card1" style="margin:30px;padding:40px;">
+                    <h3 style="color:#cf7500;">T20 Career:</h3>
                     <table>
                         <tr>
                             <th>Matches</th>
@@ -1067,8 +1067,8 @@ app.post("/cbowler",  (req, res) => {
                         
                     </table>
                  </div>
-                 <div id="card2" style="box-shadow:0px 0px 10px 1px black;margin:30px;padding:40px;">
-                    <h3>ODI Carrer:</h3>
+                 <div id="card2" style="margin:30px;padding:40px;">
+                    <h3 style="color:cyan;">ODI Career:</h3>
                     <table>
                         <tr>
                             <th>Matches</th>
@@ -1381,7 +1381,7 @@ app.post("/ubowler", (req, res)=> {
                 <div id="section1">
                   <img src=${img} alt="">
                   <h2 id="name">${name}</h2>
-                  <h3 id="team">${team}</h3>
+               <h3 id="team" style="color:#96bb7c;">${team}</h3>
                 </div>
                 <div id="section2">
                     <table>
@@ -1416,8 +1416,8 @@ app.post("/ubowler", (req, res)=> {
                 </div>
                 <div id="section3" style="display: flex;">
                 
-                 <div id="card2" style="box-shadow:0px 0px 10px 1px black;margin:30px;padding:40px;">
-                    <h3>ListA Carrer:</h3>
+                 <div id="card2" style="margin:30px;padding:40px;">
+                    <h3 color:"color:#cf7500;">ListA Career:</h3>
                     <table>
                         <tr>
                             <th>Matches</th>
@@ -1735,7 +1735,7 @@ app.post("/callRounder", (req, res)=> {
                 <div id="section1">
                   <img src=${img} alt="">
                   <h2 id="name">${name}</h2>
-                  <h3 id="team">${team}</h3>
+                  <h3 id="team" style="color:#96bb7c;">${team}</h3>
                 </div>
                 <div id="section2">
                     <table>
@@ -1769,8 +1769,8 @@ app.post("/callRounder", (req, res)=> {
                     </table>
                 </div>
                 <div id="section3" style="display: flex;">
-                 <div id="card1" style="box-shadow:0px 0px 10px 1px black;margin:30px;padding:40px;">
-                    <h3>T20 Batting Carrer:</h3>
+                 <div id="card1" style="margin:30px;padding:40px;">
+                    <h3 style="color:#cf7500;">T20 Batting Career:</h3>
                     <table>
                         <tr>
                             <th>Matches</th>
@@ -1795,8 +1795,8 @@ app.post("/callRounder", (req, res)=> {
                         
                     </table>
                  </div>
-                 <div id="card2" style="box-shadow:0px 0px 10px 1px black;margin:30px;padding:40px;">
-                    <h3>T20 Bowling Carrer:</h3>
+                 <div id="card2" style="margin:30px;padding:40px;">
+                    <h3 style="color:cyan;">T20 Bowling Career:</h3>
                     <table>
                         <tr>
                             <th>Matches</th>
@@ -2115,7 +2115,7 @@ app.post("/uallRounder", (req, res)=> {
                 <div id="section1">
                   <img src=${img} alt="">
                   <h2 id="name">${name}</h2>
-                  <h3 id="team">${team}</h3>
+                  <h3 id="team" style="color:#96bb7c;">${team}</h3>
                 </div>
                 <div id="section2">
                     <table>
@@ -2149,8 +2149,8 @@ app.post("/uallRounder", (req, res)=> {
                     </table>
                 </div>
                 <div id="section3" style="display: flex;">
-                 <div id="card1" style="box-shadow:0px 0px 10px 1px black;margin:30px;padding:40px;">
-                    <h3>T20 Batting Carrer:</h3>
+                 <div id="card1" style="margin:30px;padding:40px;">
+                    <h3 style="color:#cf7500;">T20 Batting Career:</h3>
                     <table>
                         <tr>
                             <th>Matches</th>
@@ -2175,8 +2175,8 @@ app.post("/uallRounder", (req, res)=> {
                         
                     </table>
                  </div>
-                 <div id="card2" style="box-shadow:0px 0px 10px 1px black;margin:30px;padding:40px;">
-                    <h3>T20 Bowling Carrer:</h3>
+                 <div id="card2" style="margin:30px;padding:40px;">
+                    <h3 style="color:#cf7500;">T20 Bowling Career:</h3>
                     <table>
                         <tr>
                             <th>Matches</th>
