@@ -88,7 +88,6 @@ app.post("/cbatsman", function (req, res) {
     const numberBat = Number(batsman);
     const T = req.body.T;
 
-//     const appKey = "0CYUfBW7ODXfytpDSflRHkMxKpU2";
      const appKey = process.env.KEY1;
      let data ="";
     const url = `https://cricapi.com/api/playerStats?apikey=${appKey}&pid=${numberBat}`;
@@ -479,7 +478,7 @@ app.post("/ubatsman",(req, res) =>{
 
 
 
-    const appKey = "QYVTz9QEW0fawaBMu3tsIJNJlxn1";
+     const appKey = process.env.KEY2;
 
         let data ="";
     const url = `https://cricapi.com/api/playerStats?apikey=${appKey}&pid=${numberBat}`;
@@ -828,8 +827,7 @@ app.post("/cbowler",  (req, res) => {
     const numberBowl = Number(bowler);
 
      
-
-    const appKey = "0CYUfBW7ODXfytpDSflRHkMxKpU2";
+     const appKey = process.env.KEY1;
 
        let data ="";
     const url = `https://cricapi.com/api/playerStats?apikey=${appKey}&pid=${numberBowl}`;
@@ -1209,9 +1207,7 @@ app.post("/ubowler", (req, res)=> {
     const T = req.body.T;
     const numberBowl = Number(ubowler);
 
-
-
-    const appKey = "QYVTz9QEW0fawaBMu3tsIJNJlxn1";
+     const appKey = process.env.KEY1;
 
          let data ="";
     const url = `https://cricapi.com/api/playerStats?apikey=${appKey}&pid=${numberBowl}`;
@@ -1560,8 +1556,7 @@ app.post("/callRounder", (req, res)=> {
     const T = req.body.T;
     const numberBat = Number(allRounder);
 
-
-    const appKey = "0CYUfBW7ODXfytpDSflRHkMxKpU2";
+     const appKey = process.env.KEY1;
 
          let data ="";
     const url = `https://cricapi.com/api/playerStats?apikey=${appKey}&pid=${numberBat}`;
@@ -1941,7 +1936,7 @@ app.post("/uallRounder", (req, res)=> {
 
 
 
-    const appKey = "0CYUfBW7ODXfytpDSflRHkMxKpU2";
+     const appKey = process.env.KEY2;
 
         let data ="";
     const url = `https://cricapi.com/api/playerStats?apikey=${appKey}&pid=${numberBat}`;
@@ -2318,7 +2313,7 @@ app.post("/uallRounder", (req, res)=> {
 app.post("/playerInfo", (req, res) => {
     const playerName = req.body.playerName;
 
-    const appKey = "QYVTz9QEW0fawaBMu3tsIJNJlxn1";
+     const appKey = process.env.KEY1;
 
     let data = "";
 
@@ -2411,7 +2406,7 @@ app.post("/playerInfo", (req, res) => {
             app.post("/playerDetails", (req, res) => {
                 let Pid = req.body.Pid;
 
-                const appKey = "0CYUfBW7ODXfytpDSflRHkMxKpU2";
+     const appKey = process.env.KEY2;
 
                 let data1 = "";
                 const url = `https://cricapi.com/api/playerStats?apikey=${appKey}&pid=${Pid}`;
