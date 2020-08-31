@@ -122,144 +122,356 @@ app.post("/cbatsman", function (req, res) {
             const t20Hundred = cricketData.data.batting.T20Is[100];
 
             var test = `<!DOCTYPE html>
-         <html lang="en">
-         <head>
-             <meta charset="UTF-8">
-             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-             <title>IplFeverr | Ipl Teams</title>
-
-             <!--Font Awesome-->
-             <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
+            <html lang="en">
             
-            <style>
-                   body{
-                    background-color:#889e81;
-                   }
-                   #card1,#card2{
-                   background-color:#e5e4cc;
-                   }
-                   #close{
-                    float: right;
-                    font-size:2rem;
-                    color:black;
-                   }
-                   #close:hover{
-                       color:purple;
-                   }
-                   #container{
-                    display: flex;
-                    flex-direction: column;
-                    justify-content:center;
-                    align-items:center;
-                   }
-                   @media screen and (max-width:600px){
-                     #section3{
-                          flex-direction:column;
-                     }
-                   }
-                 
-            </style>
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            
+                <!-- Compiled and minified CSS -->
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+            
+                <link href="https://fonts.googleapis.com/css2?family=Cabin+Condensed&display=swap" rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+            
+                <!-- Compiled and minified JavaScript -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+                <!--Font Awesome-->
+                <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
+            
+                <link rel="icon" href="./basic/favicon.png" type="image/x-icon">
+                <title>Iplfeverr | Chennai SuperKings</title>
+            
+                <style>
+                    body {
+                        font-family: 'Cabin Condensed', sans-serif;
+                        background-color: black;
+                    }
+            
+                    #navbar {
+                        font-family: 'Arvo', serif;
+                        font-weight: 600;
+                        position: fixed;
+                        top: 0px;
+                        z-index: 10;
+                    }
+            
+                    #navbar ul li a:hover {
+                        color: #c7edee;
+                        background-color: black;
+                    }
+            
+                    .myFloat:hover {
+                        filter: saturate(2);
+                    }
+            
+                    a {
+                        color: black;
+                    }
+            
+                    #float:hover {
+                        transform: rotateY(180deg);
+                    }
+            
+                    #footer {
+                        margin-top: 90px;
+                        background-color: #4b5d67;
+                        font-family: 'Cairo', sans-serif;
+                        /* text-align: center; */
+                    }
+            
+                    .socials {
+                        font-size: 2rem;
+                        margin: 10px;
+                    }
+            
+                    .socials:hover,
+                    #footer ul li a:hover {
+                        color: darkgoldenrod !important;
+                    }
+            
+                    @media screen and (max-width: 650px) {
+                        #logoText {
+                            display: none;
+                        }
+                    }
+            
+                    #close {
+                        float: right;
+                        font-size: 2rem;
+                        color: black;
+                    }
+            
+                    #close:hover {
+                        color: crimson;
+                    }
+            
+                    #container {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        color: white;
+                        margin-top: 72px;
+                        text-align:center;
+                    }
 
-         </head>
-         <body>
-         <a href ='${T}.html'><i class="fa fa-times" id="close"></i></a>
-             <div id="container">
-                 <div id="section1">
-                   <img src=${img} alt="" style="box-shadow:0px 0px 10px 1px black;margin-bottom:20px;padding:2px;">
-                   <h2 id="name">${name}</h2>
-                   <h3 id="team">${team}</h3>
-                 </div>
-                 <div id="section2">
-                     <table>
-                         
-                         <tr>
-                             <th>Plays for</th>
-                             <td style="padding-left:25px;">${team}</td>
-                             </tr>
-                         
-                         <tr>
-                         
-                             <th>Age</th>
-                             <td style="padding-left:25px;">${age}</td>
-                             </tr>
-                         
-                         <tr>
-                             <th>Born</th>
-                             <td style="padding-left:25px;">${born}</td>
-                             </tr>
-                         
-                         <tr>
-                             <th>Batting Style</th>
-                             <td style="padding-left:25px;">${battingStyle}</td>
-                         </tr>
-                         
-                         <tr>
-                             <th>Bowling Style</th>
-                             <td style="padding-left:25px;">${bowlingStyle}</td>
-                         </tr>
-                        
-                         
-                     </table>
-                 </div>
-                 <div id="section3" style="display: flex;">
-                  <div id="card1" style="box-shadow:0px 0px 10px 1px black;margin:30px;padding:40px;">
-                     <h3>T20 Carrer:</h3>
-                     <table>
-                         <tr>
-                             <th>Matches</th>
-                             <td  style="padding-left:25px;">${t20Matches}</td>
-                         </tr>
-                         
-                         <tr>
-                             <th>Runs</th>
-                             <td  style="padding-left:25px;">${t20Runs}</td>
-                         </tr>
-         
-                       
-         
-                         <tr>
-                             <th>50s</th>
-                             <td  style="padding-left:25px;">${t20Fifty}</td>
-                         </tr>
-         
-                         <tr>
-                             <th>100s</th>
-                             <td  style="padding-left:25px;">${t20Hundred}</td>
-                         </tr>
-                         
-                     </table>
-                  </div>
-                  <div id="card2" style="box-shadow:0px 0px 10px 1px black;margin:30px;padding:40px;">
-                     <h3>ODI Carrer:</h3>
-                     <table>
-                         <tr>
-                             <th>Matches</th>
-                             <td  style="padding-left:25px;">${odiMatches}</td>
-                         </tr>
-                         
-                         <tr>
-                             <th>Runs</th>
-                             <td  style="padding-left:25px;">${odiRuns}</td>
-                         </tr>
-         
-                        
-         
-                         <tr>
-                             <th>50s</th>
-                             <td  style="padding-left:25px;">${odiFifty}</td>
-                         </tr>
-         
-                         <tr>
-                             <th>100s</th>
-                             <td  style="padding-left:25px;">${odiHundred}</td>
-                         </tr>
-                         </table>
-                  </div>
-                
-                 </div>
-             </div>
-         </body>
-         </html>`;
+            
+                    @media screen and (max-width:600px) {
+                        #section3{
+                            flex-direction:column;
+                        }
+                    }
+                </style>
+            
+            </head>
+            
+            <body>
+            
+                <!-- navbar -->
+            
+                <nav id="navbar" style="background-color:#1b2a49;">
+                    <div class="nav-wrapper">
+                        <a href="/" class="brand-logo"><img src="basic/logo.png" alt="" style="width:70px;filter:invert(100%);"></a>
+                        <a href="/" class="brand-logo" id="logoText" style="margin-left: 75px;font-size: 2rem;">Iplfeverr</a>
+                        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        <ul id="main-menu" class="right hide-on-med-and-down">
+                            <li><a href="/schedule">Schedule</a></li>
+                            <li><a href="/standings">Standings</a></li>
+                            <li><a href="/videos">Videos</a></li>
+                            <li><a href="/fantasy">Fantasy</a></li>
+                            <li><a href="/trivia">Trivia</a></li>
+                            <li><a href="/info">Player Info</a></li>
+                            <li><a href="/updates">News</a></li>
+                            <li><a href="/teams">Teams</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            
+                <ul class="sidenav" id="mobile-demo" style="background-color:#1b2a49;color:white">
+                    <br>
+                    <li><a href="/schedule" style="color:white;">Schedule</a></li>
+                    <li><a href="/standings" style="color:white;">Standings</a></li>
+                    <li><a href="/videos" style="color:white">Videos</a></li>
+                    <li><a href="/fantasy" style="color:white">Fantasy</a></li>
+                    <li><a href="/trivia" style="color:white">Trivia</a></li>
+                    <li><a href="/info" style="color:white">Player Info</a></li>
+                    <li><a href="/updates" style="color:white">News</a></li>
+                    <li><a href="/teams" style="color:white">Teams</a></li>
+                </ul>
+            
+                <a href='${T}.html'><i class="fa fa-times" id="close"></i></a>
+                <div id="container">
+                    <div id="section1">
+                        <img src=${img} alt="" style="box-shadow:0px 0px 10px 1px black;margin-bottom:20px;padding:2px;">
+                        <h2 id="name">${name}</h2>
+                        <h3 id="team" style="color:#96bb7c;">${team}</h3>
+                    </div>
+                    <div id="section2">
+                        <table>
+            
+                            <tr>
+                                <th>Plays for</th>
+                                <td style="padding-left:25px;">${team}</td>
+                            </tr>
+            
+                            <tr>
+            
+                                <th>Age</th>
+                                <td style="padding-left:25px;">${age}</td>
+                            </tr>
+            
+                            <tr>
+                                <th>Born</th>
+                                <td style="padding-left:25px;">${born}</td>
+                            </tr>
+            
+                            <tr>
+                                <th>Batting Style</th>
+                                <td style="padding-left:25px;">${battingStyle}</td>
+                            </tr>
+            
+                            <tr>
+                                <th>Bowling Style</th>
+                                <td style="padding-left:25px;">${bowlingStyle}</td>
+                            </tr>
+            
+            
+                        </table>
+                    </div>
+                    <div id="section3" style="display: flex;">
+                        <div id="card1" style="margin:30px;padding:40px;">
+                            <h3 style="color:#cf7500;">T20 Carrer:</h3>
+                            <table>
+                                <tr>
+                                    <th>Matches</th>
+                                    <td style="padding-left:25px;">${t20Matches}</td>
+                                </tr>
+            
+                                <tr>
+                                    <th>Runs</th>
+                                    <td style="padding-left:25px;">${t20Runs}</td>
+                                </tr>
+            
+            
+            
+                                <tr>
+                                    <th>50s</th>
+                                    <td style="padding-left:25px;">${t20Fifty}</td>
+                                </tr>
+            
+                                <tr>
+                                    <th>100s</th>
+                                    <td style="padding-left:25px;">${t20Hundred}</td>
+                                </tr>
+            
+                            </table>
+                        </div>
+                        <div id="card2" style="margin:30px;padding:40px;">
+                            <h3 style="color:cyan;">ODI Carrer:</h3>
+                            <table>
+                                <tr>
+                                    <th>Matches</th>
+                                    <td style="padding-left:25px;">${odiMatches}</td>
+                                </tr>
+            
+                                <tr>
+                                    <th>Runs</th>
+                                    <td style="padding-left:25px;">${odiRuns}</td>
+                                </tr>
+            
+            
+            
+                                <tr>
+                                    <th>50s</th>
+                                    <td style="padding-left:25px;">${odiFifty}</td>
+                                </tr>
+            
+                                <tr>
+                                    <th>100s</th>
+                                    <td style="padding-left:25px;">${odiHundred}</td>
+                                </tr>
+                            </table>
+                        </div>
+            
+                    </div>
+                </div>
+            
+            
+                <!-- Floating button -->
+            
+                <div class="fixed-action-btn">
+                    <a class="btn-floating btn-large white" style="box-shadow: 0px 0px 0px 1px black;">
+                        <img src="basic/logo.png" id="float" alt="" style="width:60px;">
+                    </a>
+                    <ul>
+                        <li><a href="https://www.facebook.com/IPL/" class="btn-floating blue myFloat"><i
+                                    class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="https://www.instagram.com/iplt20/" class="btn-floating pink myFloat"><i
+                                    class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://twitter.com/IPL" class="btn-floating blue myFloat"><i class="fa fa-twitter"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            
+            
+            
+                <!-- Floating button -->
+            
+                <div class="fixed-action-btn">
+                    <a class="btn-floating btn-large white" style="box-shadow: 0px 0px 0px 1px black;">
+                        <img src="basic/logo.png" id="float" alt="" style="width:60px;">
+                    </a>
+                    <ul>
+                        <li><a href="/contact#team" class="btn-floating green myFloat">Team</a>
+                        </li>
+                        <li><a href="https://www.facebook.com/IPL/" class="btn-floating blue myFloat"><i
+                                    class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="https://www.instagram.com/iplt20/" class="btn-floating pink myFloat"><i
+                                    class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://twitter.com/IPL" class="btn-floating blue myFloat"><i class="fa fa-twitter"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            
+            
+                <!-- Footer -->
+            
+                <footer class="page-footer" id="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div style="text-align: center;">
+                                <h5>follow #IPL</h5>
+                                <a href="https://www.facebook.com/IPL/" class="socials"><i class="fa fa-facebook-official"></i></a>
+                                <a href="https://www.instagram.com/iplt20/" class="socials"><i class="fa fa-instagram"></i></a>
+                                <a href="https://twitter.com/IPL" class="socials"><i class="fa fa-twitter-square"></i></a>
+                            </div>
+                            <div class="col l3 offset-l1 s6">
+                                <h5 class="white-text">Quick Links</h5>
+                                <ul>
+                                    <li><a class="grey-text text-lighten-3" href="/videos">Videos</a></li>
+                                    <li><a class="grey-text text-lighten-3" href="/standings">Points Table</a></li>
+                                    <li><a class="grey-text text-lighten-3" href="/schedule">Schedule</a></li>
+                                    <li><a class="grey-text text-lighten-3" href="/info">Player Wise Data</a></li>
+                                    <li><a class="grey-text text-lighten-3" href="/updates">News</a></li>
+                                </ul>
+                            </div>
+                            <div class="col l3 offset-l1 s6">
+                                <h5 class="white-text">Teams</h5>
+                                <ul>
+                                    <li><a class="grey-text text-lighten-3" href="/csk">Chennai Super Kings</a></li>
+                                    <li><a class="grey-text text-lighten-3" href="/dc">Delhi Capitals</a></li>
+                                    <li><a class="grey-text text-lighten-3" href="/kxip">Kings XI Punjab</a></li>
+                                    <li><a class="grey-text text-lighten-3" href="/kkr">Kolkata Knight Riders</a></li>
+                                    <li><a class="grey-text text-lighten-3" href="/mi">Mumbai Indians</a></li>
+                                    <li><a class="grey-text text-lighten-3" href="/rr">Rajasthan Royals</a></li>
+                                    <li><a class="grey-text text-lighten-3" href="/rcb">Royal Challengers Bangalore</a></li>
+                                    <li><a class="grey-text text-lighten-3" href="/srh">Sunrisers Hyderabad</a></li>
+                                </ul>
+                            </div>
+                            <div class="col l3 offset-l1 s6">
+                                <h5 class="white-text">Contact</h5>
+                                <ul>
+                                    <li><a class="grey-text text-lighten-3" href="/contact">Contact Us</a></li>
+                                    <li><a class="grey-text text-lighten-3" href="/contact#team">Our Team</a></li>
+                                    <li><a class="grey-text text-lighten-3" href="/feedback">Feedback</a></li>
+                                </ul>
+                            </div>
+            
+                        </div>
+                    </div>
+                    <div class="footer-copyright">
+                        <div class="container">
+                            <span>© &nbsp; iplfeverr.herokuapp.com &nbsp; 2020</span>
+                            <a class="grey-text text-lighten-4 right" href="/credits">Content Credits</a>
+                        </div>
+                    </div>
+                </footer>
+            
+                <script>
+                    // JS for floating buuton
+            
+                    document.addEventListener('DOMContentLoaded', function () {
+                        var elems = document.querySelectorAll('.fixed-action-btn');
+                        var instances = M.FloatingActionButton.init(elems);
+                    });
+            
+                    document.addEventListener('DOMContentLoaded', function () {
+                        var elems = document.querySelectorAll('.sidenav');
+                        var instances = M.Sidenav.init(elems);
+                    });
+            
+            
+                </script>
+            
+            </body>
+            
+            </html>`;
 
             res.write(test);
 
@@ -1199,24 +1411,16 @@ app.post("/playerInfo", (req, res) => {
 
             <style>
                    body{
-                    background-color:#9dab86;
-                   }
-                   #close{
-                    float: right;
-                    font-size:2rem;
-                    color:black;
-                   }
-                   #close:hover{
-                       color:purple;
+                    background-color:black;
                    }
                    #container{
-                    background-color:#c9d1d3;
+                    background-color:#c8d5b9;
                     text-align:center;
-                    border:2px solid black;
+                    border:2px solid white;
                     border-radius:10px;
                     padding:15px;
                     margin: 20px auto;
-                    width:40%;
+                    width:45%;
                     font-size:1.5rem;
                    }
                    #details{
@@ -1231,11 +1435,11 @@ app.post("/playerInfo", (req, res) => {
                         border:2px solid #40407a;
                         background-color: #ffda79;
                    }
-           @media screen and (max-width:600px){
-                     #container{
-                        width:75%;
-                     }
-                   }
+                   @media screen and (max-width:600px) {
+                    #container {
+                        width: 75%;
+                    }
+                }
             </style>
 
         </head>
@@ -1292,109 +1496,320 @@ app.post("/playerInfo", (req, res) => {
 
                         var detail = `<!DOCTYPE html>
                         <html lang="en">
-                    <head>
-                    <meta charset="UTF-8">
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>IplFeverr | Ipl Teams</title>
-
-                        <!--Font Awesome-->
-                        <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
-
-                        <style>
-                        body{
-                            background-color: black;
-                            // background: url('https://wallpapercave.com/wp/wp3049846.jpg') no-repeat center center/cover;
-                            background: url('https://wallpaperhd.wiki/wp-content/uploads/baseball-stadium-backgrounds-wallpaper.wiki-baseball-stadium-full-hd-wallpaper-pic-wpb008756.jpg') no-repeat center center/cover;
-                            }
-                            #close{
-                                position:absolute;
-                                right:0px;
-                                top:10px;
-                                font-size:2rem;
-                                color:white;
-                                margin-right:45px;
-                            }
-                            #close:hover{
-                                color:crimson;
-                            }
-                            #container{
-                                position:relative;
-                                border-radius:12px;
-                                display: flex;
-                                flex-direction: column;
-                                justify-content:center;
-                                align-items:center;
-                                width:45%;
-                                margin: 40px auto;
-                                padding: 75px 60px;
-                                color:white;
-                                background-color:black;
-                               }
-                               img{
-                                   box-shadow: 0px 0px 10px 0px white;
-                               }
-           @media screen and (max-width:600px){
-                     #container{
-                        width:75%;
-                     }
-                   }
-                        </style>
-
-                    </head>
-                    <body>
-                    <div id="container" >
-                    <a href ='info.html'><i class="fa fa-times" id="close"></i></a>
-                            <div id="section1" style="text-align:center;">
-                              <img src=${img} alt="">
-                              <h2 id="name">${name}</h2>
-                              <h2 id="fullName" style="color:#0a3d62;">${fullName}</h2>
+                        
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        
+                            <!-- Compiled and minified CSS -->
+                            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+                        
+                            <link href="https://fonts.googleapis.com/css2?family=Cabin+Condensed&display=swap" rel="stylesheet">
+                            <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+                            <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+                        
+                            <!-- Compiled and minified JavaScript -->
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+                        
+                            <!--Font Awesome-->
+                            <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
+                        
+                            <link rel="icon" href="./basic/favicon.png" type="image/x-icon">
+                            <title>Iplfeverr | Chennai SuperKings</title>
+                        
+                            <style>
+                                body {
+                                    font-family: 'Cabin Condensed', sans-serif;
+                                    background-color: black;
+                                }
+                        
+                                #navbar {
+                                    font-family: 'Arvo', serif;
+                                    font-weight: 600;
+                                    position: fixed;
+                                    top: 0px;
+                                    z-index: 10;
+                                }
+                        
+                                #navbar ul li a:hover {
+                                    color: #c7edee;
+                                    background-color: black;
+                                }
+                        
+                                .myFloat:hover {
+                                    filter: saturate(2);
+                                }
+                        
+                                a {
+                                    color: black;
+                                }
+                        
+                                #float:hover {
+                                    transform: rotateY(180deg);
+                                }
+                        
+                                #footer {
+                                    margin-top: 90px;
+                                    background-color: #4b5d67;
+                                    font-family: 'Cairo', sans-serif;
+                                    /* text-align: center; */
+                                }
+                        
+                                .socials {
+                                    font-size: 2rem;
+                                    margin: 10px;
+                                }
+                        
+                                .socials:hover,
+                                #footer ul li a:hover {
+                                    color: darkgoldenrod !important;
+                                }
+                        
+                                @media screen and (max-width: 650px) {
+                                    #logoText {
+                                        display: none;
+                                    }
+                                }
+                        
+                                #close {
+                                    position: absolute;
+                                    right: 0px;
+                                    top: 10px;
+                                    font-size: 2rem;
+                                    color: white;
+                                    margin-right: 5px;
+                                }
+                        
+                                #close:hover {
+                                    color: crimson;
+                                }
+                        
+                                #container {
+                                    position: relative;
+                                    border-radius: 12px;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    align-items: center;
+                                    width: 60%; 
+                                    margin: 75px auto;
+                                    /* padding: 75px 60px; */
+                                    color: white;
+                                }
+                        
+                                @media screen and (max-width:600px) {
+                                    #container {
+                                        width: 75%;
+                                    }
+                                    #section2{
+                                        flex-direction: column;
+                                    }
+                                }
+                                table{
+                                    width:200px;
+                                }
+                        
+                            </style>
+                        
+                        </head>
+                        
+                        <body>
+                        
+                            <!-- navbar -->
+                        
+                            <nav id="navbar" style="background-color:#1b2a49;">
+                                <div class="nav-wrapper">
+                                    <a href="/" class="brand-logo"><img src="basic/logo.png" alt="" style="width:70px;filter:invert(100%);"></a>
+                                    <a href="/" class="brand-logo" id="logoText" style="margin-left: 75px;font-size: 2rem;">Iplfeverr</a>
+                                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                                    <ul id="main-menu" class="right hide-on-med-and-down">
+                                        <li><a href="/schedule">Schedule</a></li>
+                                        <li><a href="/standings">Standings</a></li>
+                                        <li><a href="/videos">Videos</a></li>
+                                        <li><a href="/fantasy">Fantasy</a></li>
+                                        <li><a href="/trivia">Trivia</a></li>
+                                        <li><a href="/info">Player Info</a></li>
+                                        <li><a href="/updates">News</a></li>
+                                        <li><a href="/teams">Teams</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        
+                            <ul class="sidenav" id="mobile-demo" style="background-color:#1b2a49;color:white">
+                                <br>
+                                <li><a href="/schedule" style="color:white;">Schedule</a></li>
+                                <li><a href="/standings" style="color:white;">Standings</a></li>
+                                <li><a href="/videos" style="color:white">Videos</a></li>
+                                <li><a href="/fantasy" style="color:white">Fantasy</a></li>
+                                <li><a href="/trivia" style="color:white">Trivia</a></li>
+                                <li><a href="/info" style="color:white">Player Info</a></li>
+                                <li><a href="/updates" style="color:white">News</a></li>
+                                <li><a href="/teams" style="color:white">Teams</a></li>
+                            </ul>
+                        
+                        
+                            <div id="container">
+                                <a href='info.html'><i class="fa fa-times" id="close"></i></a>
+                                <div id="section1" style="text-align:center;">
+                                    <img src=${img} alt="">
+                                    <span>
+                                    <h2 id="name">${name}</h2>
+                                    <h2 id="fullName" style="color:#0a3d62;">${fullName}</h2>
+                                    <h2 id="country">${country}</h2>
+                                    </span>
+                                </div>
+                                <div id="section2" style="display: flex;">
+                                    
+                                    <table style="margin-right: 30px;">
+                                        <tr>
+                                            <th>Country</th>
+                                            <td style="padding-left:25px;">${country}</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="padding-left:25px;">Age</th>
+                                            <td style="padding-left:25px;">${age}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Born</th>
+                                            <td style="padding-left:25px;">${born}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Batting Style</th>
+                                            <td style="padding-left:25px;">${battingStyle}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Bowling Style</th>
+                                            <td style="padding-left:25px;">${bowlingStyle}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Playing Role</th>
+                                            <td style="padding-left:25px;">${playingRole}</td>
+                                        </tr>
+                                    </table>
+                        
+                                    <div>
+                                    <p style="color:cyan;margin-left:20px;font-size:1.2rem;">${profile}</p>
+                                    
+                                    <p style="padding-left:25px;margin-top:45px;font-size:1.3rem;color:orange;">Major Teams</p>
+                                    <p style="padding-left:25px;font-size:1.2rem;">${majorTeams}</p>
+                                    </div>
+                                </tr>
+                                </div>
                             </div>
-                            <div id="section2">
-                                <table>
-
-                                    <tr>
-                                        <th>Country</th>
-                                        <td  style="padding-left:25px;">${country}</td>
-                                    </tr>
-
-                                    <tr>
-                                        <th  style="padding-left:25px;">Age</th>
-                                        <td  style="padding-left:25px;">${age}</td>
-                                    </tr>
-
-                                    <tr>
-                                        <th>Born</th>
-                                        <td  style="padding-left:25px;">${born}</td>
-                                    </tr>
-
-                                    <tr>
-                                        <th>Batting Style</th>
-                                        <td  style="padding-left:25px;">${battingStyle}</td>
-                                    </tr>
-
-                                    <tr>
-                                        <th>Bowling Style</th>
-                                        <td  style="padding-left:25px;">${bowlingStyle}</td>
-                                    </tr>
-
-                                    <tr>
-                                        <th>Major Teams</th>
-                                        <td  style="padding-left:25px;">${majorTeams}</td>
-                                    </tr>
-
-                                    <tr>
-                                        <th>Playing Role</th>
-                                        <td  style="padding-left:25px;">${playingRole}</td>
-                                    </tr>
-
-
-                                </table>
-                                <p style="text-align:center;color:cyan;font-size:1.2rem;">${profile}</p>
-                            </div>                         
-
-                        </div>
-            </body>
-            </html>`;
+                        
+                        
+                            <!-- Floating button -->
+                        
+                            <div class="fixed-action-btn">
+                                <a class="btn-floating btn-large white" style="box-shadow: 0px 0px 0px 1px black;">
+                                    <img src="basic/logo.png" id="float" alt="" style="width:60px;">
+                                </a>
+                                <ul>
+                                    <li><a href="https://www.facebook.com/IPL/" class="btn-floating blue myFloat"><i
+                                                class="fa fa-facebook"></i></a>
+                                    </li>
+                                    <li><a href="https://www.instagram.com/iplt20/" class="btn-floating pink myFloat"><i
+                                                class="fa fa-instagram"></i></a></li>
+                                    <li><a href="https://twitter.com/IPL" class="btn-floating blue myFloat"><i class="fa fa-twitter"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        
+                        
+                        
+                            <!-- Floating button -->
+                        
+                            <div class="fixed-action-btn">
+                                <a class="btn-floating btn-large white" style="box-shadow: 0px 0px 0px 1px black;">
+                                    <img src="basic/logo.png" id="float" alt="" style="width:60px;">
+                                </a>
+                                <ul>
+                                    <li><a href="/contact#team" class="btn-floating green myFloat">Team</a>
+                                    </li>
+                                    <li><a href="https://www.facebook.com/IPL/" class="btn-floating blue myFloat"><i
+                                                class="fa fa-facebook"></i></a>
+                                    </li>
+                                    <li><a href="https://www.instagram.com/iplt20/" class="btn-floating pink myFloat"><i
+                                                class="fa fa-instagram"></i></a></li>
+                                    <li><a href="https://twitter.com/IPL" class="btn-floating blue myFloat"><i class="fa fa-twitter"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        
+                        
+                            <!-- Footer -->
+                        
+                            <footer class="page-footer" id="footer">
+                                <div class="container">
+                                    <div class="row">
+                                        <div style="text-align: center;">
+                                            <h5>follow #IPL</h5>
+                                            <a href="https://www.facebook.com/IPL/" class="socials"><i class="fa fa-facebook-official"></i></a>
+                                            <a href="https://www.instagram.com/iplt20/" class="socials"><i class="fa fa-instagram"></i></a>
+                                            <a href="https://twitter.com/IPL" class="socials"><i class="fa fa-twitter-square"></i></a>
+                                        </div>
+                                        <div class="col l3 offset-l1 s6">
+                                            <h5 class="white-text">Quick Links</h5>
+                                            <ul>
+                                                <li><a class="grey-text text-lighten-3" href="/videos">Videos</a></li>
+                                                <li><a class="grey-text text-lighten-3" href="/standings">Points Table</a></li>
+                                                <li><a class="grey-text text-lighten-3" href="/schedule">Schedule</a></li>
+                                                <li><a class="grey-text text-lighten-3" href="/info">Player Wise Data</a></li>
+                                                <li><a class="grey-text text-lighten-3" href="/updates">News</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col l3 offset-l1 s6">
+                                            <h5 class="white-text">Teams</h5>
+                                            <ul>
+                                                <li><a class="grey-text text-lighten-3" href="/csk">Chennai Super Kings</a></li>
+                                                <li><a class="grey-text text-lighten-3" href="/dc">Delhi Capitals</a></li>
+                                                <li><a class="grey-text text-lighten-3" href="/kxip">Kings XI Punjab</a></li>
+                                                <li><a class="grey-text text-lighten-3" href="/kkr">Kolkata Knight Riders</a></li>
+                                                <li><a class="grey-text text-lighten-3" href="/mi">Mumbai Indians</a></li>
+                                                <li><a class="grey-text text-lighten-3" href="/rr">Rajasthan Royals</a></li>
+                                                <li><a class="grey-text text-lighten-3" href="/rcb">Royal Challengers Bangalore</a></li>
+                                                <li><a class="grey-text text-lighten-3" href="/srh">Sunrisers Hyderabad</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col l3 offset-l1 s6">
+                                            <h5 class="white-text">Contact</h5>
+                                            <ul>
+                                                <li><a class="grey-text text-lighten-3" href="/contact">Contact Us</a></li>
+                                                <li><a class="grey-text text-lighten-3" href="/contact#team">Our Team</a></li>
+                                                <li><a class="grey-text text-lighten-3" href="/feedback">Feedback</a></li>
+                                            </ul>
+                                        </div>
+                        
+                                    </div>
+                                </div>
+                                <div class="footer-copyright">
+                                    <div class="container">
+                                        <span>© &nbsp; iplfeverr.herokuapp.com &nbsp; 2020</span>
+                                        <a class="grey-text text-lighten-4 right" href="/credits">Content Credits</a>
+                                    </div>
+                                </div>
+                            </footer>
+                        
+                            <script>
+                                // JS for floating buuton
+                        
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    var elems = document.querySelectorAll('.fixed-action-btn');
+                                    var instances = M.FloatingActionButton.init(elems);
+                                });
+                        
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    var elems = document.querySelectorAll('.sidenav');
+                                    var instances = M.Sidenav.init(elems);
+                                });
+                        
+                        
+                            </script>
+                        
+                        </body>
+                        
+                        </html>`;
 
 
 
@@ -1415,7 +1830,6 @@ app.post("/playerInfo", (req, res) => {
     console.log("Error: " + err.message);
 });
 });
-
 
 
 
