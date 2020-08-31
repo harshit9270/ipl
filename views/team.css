@@ -105,7 +105,10 @@ body{
 }
 
 .myFloat:hover{
-    filter: saturate(10);
+    filter: saturate(2);
+}
+a{
+    color: black;
 }
 
 #footer{
