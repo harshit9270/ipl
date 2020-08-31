@@ -133,7 +133,10 @@ app.post("/cbatsman", function (req, res) {
             
             <style>
                    body{
-                    background-color:grey;
+                    background-color:#889e81;
+                   }
+                   #card1,#card2{
+                   background-color:#e5e4cc;
                    }
                    #close{
                     float: right;
@@ -318,9 +321,12 @@ app.post("/ubatsman",(req, res) =>{
              <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
                   
             <style>
-            body{
-             background-color:grey;
-            }
+                   body{
+                    background-color:#ffe8d6;
+                   }
+                   #card1,#card2{
+                   background-color:#f9f6f7;
+                   }
             #close{
              float: right;
              font-size:2rem;
@@ -480,7 +486,10 @@ app.post("/cbowler",  (req, res) => {
            
             <style>
                    body{
-                    background-color:grey;
+                    background-color:#fab696;
+                   }
+                   #card1,#card2{
+                   background-color:#fbe3b9;
                    }
                    #close{
                     float: right;
@@ -662,7 +671,10 @@ app.post("/ubowler", (req, res)=> {
            
             <style>
                    body{
-                    background-color:grey;
+                    background-color:#a3f7bf;
+                   }
+                   #card1,#card2{
+                   background-color:#e5dfdf;
                    }
                    #close{
                     float: right;
@@ -822,7 +834,10 @@ app.post("/callRounder", (req, res)=> {
            
             <style>
                    body{
-                    background-color:grey;
+                    background-color:#a3f7bf;
+                   }
+                   #card1,#card2{
+                   background-color:#e5dfdf;
                    }
                    #close{
                     float: right;
@@ -1007,7 +1022,10 @@ app.post("/uallRounder", (req, res)=> {
            
             <style>
                    body{
-                    background-color:grey;
+                    background-color:#c2b0c9;
+                   }
+                   #card1,#card2{
+                   background-color:#cccccc;
                    }
                    #close{
                     float: right;
@@ -1181,7 +1199,7 @@ app.post("/playerInfo", (req, res) => {
 
             <style>
                    body{
-                    background-color:gray;
+                    background-color:#9dab86;
                    }
                    #close{
                     float: right;
@@ -1192,7 +1210,7 @@ app.post("/playerInfo", (req, res) => {
                        color:purple;
                    }
                    #container{
-                    background-color:aliceblue;
+                    background-color:#c9d1d3;
                     text-align:center;
                     border:2px solid black;
                     border-radius:10px;
