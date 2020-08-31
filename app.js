@@ -149,7 +149,12 @@ app.post("/cbatsman", function (req, res) {
                     justify-content:center;
                     align-items:center;
                    }
-
+                   @media screen and (max-width:600px){
+                     #section3{
+                          flex-direction:column;
+                     }
+                   }
+                 
             </style>
 
          </head>
@@ -330,7 +335,11 @@ app.post("/ubatsman",(req, res) =>{
              justify-content:center;
              align-items:center;
             }
-
+           @media screen and (max-width:600px){
+                     #section3{
+                          flex-direction:column;
+                     }
+                   }
      </style>
 
          </head>
@@ -487,7 +496,11 @@ app.post("/cbowler",  (req, res) => {
                     justify-content:center;
                     align-items:center;
                    }
-
+           @media screen and (max-width:600px){
+                     #section3{
+                          flex-direction:column;
+                     }
+                   }
             </style>
 
         </head>
@@ -665,7 +678,11 @@ app.post("/ubowler", (req, res)=> {
                     justify-content:center;
                     align-items:center;
                    }
-
+           @media screen and (max-width:600px){
+                     #section3{
+                          flex-direction:column;
+                     }
+                   }
             </style>
 
         </head>
@@ -821,7 +838,11 @@ app.post("/callRounder", (req, res)=> {
                     justify-content:center;
                     align-items:center;
                    }
-
+           @media screen and (max-width:600px){
+                     #section3{
+                          flex-direction:column;
+                     }
+                   }
             </style>
 
         </head>
@@ -1002,7 +1023,11 @@ app.post("/uallRounder", (req, res)=> {
                     justify-content:center;
                     align-items:center;
                    }
-
+           @media screen and (max-width:600px){
+                     #section3{
+                          flex-direction:column;
+                     }
+                   }
             </style>
 
         </head>
@@ -1188,6 +1213,11 @@ app.post("/playerInfo", (req, res) => {
                         border:2px solid #40407a;
                         background-color: #ffda79;
                    }
+           @media screen and (max-width:600px){
+                     #container{
+                        width:75%;
+                     }
+                   }
             </style>
 
         </head>
@@ -1285,7 +1315,11 @@ app.post("/playerInfo", (req, res) => {
                                img{
                                    box-shadow: 0px 0px 10px 0px white;
                                }
-
+           @media screen and (max-width:600px){
+                     #container{
+                        width:75%;
+                     }
+                   }
                         </style>
 
                     </head>
