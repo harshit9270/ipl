@@ -50,6 +50,9 @@ app.get("/trivia", function (req, res) {
 app.get("/feedback", function (req, res) {
     res.sendFile(__dirname + "/views/feedback.html");
 });
+app.get("/credits", function (req, res) {
+    res.sendFile(__dirname + "/views/credits.html");
+});
 app.get("/mi", function (req, res) {
     res.sendFile(__dirname + "/views/MI.html");
 });
@@ -143,7 +146,7 @@ app.post("/cbatsman", function (req, res) {
                 <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
             
                 <link rel="icon" href="./basic/favicon.png" type="image/x-icon">
-                <title>Iplfeverr | Chennai SuperKings</title>
+                <title>Iplfeverr | Batsman</title>
             
                 <style>
                     body {
@@ -527,7 +530,7 @@ app.post("/ubatsman",(req, res) =>{
                 <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
             
                 <link rel="icon" href="./basic/favicon.png" type="image/x-icon">
-                <title>Iplfeverr | Chennai SuperKings</title>
+                <title>Iplfeverr | Batsman</title>
             
                 <style>
                     body {
@@ -882,7 +885,7 @@ app.post("/cbowler",  (req, res) => {
                 <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
             
                 <link rel="icon" href="./basic/favicon.png" type="image/x-icon">
-                <title>Iplfeverr | Chennai SuperKings</title>
+                <title>Iplfeverr | Bowlers</title>
             
                 <style>
                     body {
@@ -1257,7 +1260,7 @@ app.post("/ubowler", (req, res)=> {
                 <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
             
                 <link rel="icon" href="./basic/favicon.png" type="image/x-icon">
-                <title>Iplfeverr | Chennai SuperKings</title>
+                <title>Iplfeverr | Bowlers</title>
             
                 <style>
                     body {
@@ -1611,7 +1614,7 @@ app.post("/callRounder", (req, res)=> {
                 <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
             
                 <link rel="icon" href="./basic/favicon.png" type="image/x-icon">
-                <title>Iplfeverr | Chennai SuperKings</title>
+                <title>Iplfeverr | AllRounders</title>
             
                 <style>
                     body {
@@ -1991,7 +1994,7 @@ app.post("/uallRounder", (req, res)=> {
                 <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
             
                 <link rel="icon" href="./basic/favicon.png" type="image/x-icon">
-                <title>Iplfeverr | Chennai SuperKings</title>
+                <title>Iplfeverr | AllRounders</title>
             
                 <style>
                     body {
@@ -2455,7 +2458,7 @@ app.post("/playerInfo", (req, res) => {
                             <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
                         
                             <link rel="icon" href="./basic/favicon.png" type="image/x-icon">
-                            <title>Iplfeverr | Chennai SuperKings</title>
+                            <title>Iplfeverr | Player Info</title>
                         
                             <style>
                                 body {
