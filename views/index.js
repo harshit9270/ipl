@@ -36,7 +36,7 @@ setTimeout(()=>{
   ballC.style.display="none";
   main.style.display="block";
   navbar.style.display="block";
-},3000);
+},2000);
 
 
 next.addEventListener('click',()=>{
