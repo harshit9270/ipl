@@ -151,6 +151,7 @@ app.post("/cbatsman", function (req, res) {
                 <style>
                     body {
                         font-family: 'Cabin Condensed', sans-serif;
+                        background-color:#e0ece4;
                     }
             
                     #navbar {
@@ -534,6 +535,7 @@ app.post("/ubatsman",(req, res) =>{
                 <style>
                     body {
                         font-family: 'Cabin Condensed', sans-serif;
+                        background-color:#e0ece4;
                     }
             
                     #navbar {
@@ -888,6 +890,7 @@ app.post("/cbowler",  (req, res) => {
                 <style>
                     body {
                         font-family: 'Cabin Condensed', sans-serif;
+                        background-color:#e0ece4;
                     }
             
                     #navbar {
@@ -1262,6 +1265,7 @@ app.post("/ubowler", (req, res)=> {
                 <style>
                     body {
                         font-family: 'Cabin Condensed', sans-serif;
+                        background-color:#e0ece4;
                     }
             
                     #navbar {
@@ -1615,6 +1619,7 @@ app.post("/callRounder", (req, res)=> {
                 <style>
                     body {
                         font-family: 'Cabin Condensed', sans-serif;
+                        background-color:#e0ece4;
                     }
             
                     #navbar {
@@ -1994,6 +1999,7 @@ app.post("/uallRounder", (req, res)=> {
                 <style>
                     body {
                         font-family: 'Cabin Condensed', sans-serif;
+                        background-color:#e0ece4;
                     }
             
                     #navbar {
@@ -2346,9 +2352,9 @@ app.post("/playerInfo", (req, res) => {
             <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
 
             <style>
-//                    body{
-//                     background-color:black;
-//                    }
+                    body{
+                        background-color:#e0ece4;
+                    }
                    #container{
                     background-color:#c8d5b9;
                     text-align:center;
@@ -2457,7 +2463,7 @@ app.post("/playerInfo", (req, res) => {
                             <style>
                                 body {
                                     font-family: 'Cabin Condensed', sans-serif;
-//                                     background-color: black;
+                                    background-color:#e0ece4;
                                 }
                         
                                 #navbar {
