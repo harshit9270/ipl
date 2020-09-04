@@ -217,7 +217,7 @@ app.post("/cbatsman", function (req, res) {
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
-                        color: white;
+//                         color: white;
                         margin-top: 72px;
                         text-align:center;
                     }
@@ -334,7 +334,7 @@ app.post("/cbatsman", function (req, res) {
                             </table>
                         </div>
                         <div id="card2" style="margin:30px;padding:40px;">
-                            <h3 style="color:cyan;">ODI Career:</h3>
+                            <h3 style="color:#52575d;">ODI Career:</h3>
                             <table>
                                 <tr>
                                     <th>Matches</th>
@@ -601,7 +601,7 @@ app.post("/ubatsman",(req, res) =>{
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
-                        color: white;
+//                         color: white;
                         margin-top: 72px;
                         text-align:center;
                     }
@@ -956,7 +956,7 @@ app.post("/cbowler",  (req, res) => {
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
-                        color: white;
+//                         color: white;
                         margin-top: 72px;
                         text-align:center;
                     }
@@ -1071,7 +1071,7 @@ app.post("/cbowler",  (req, res) => {
                     </table>
                  </div>
                  <div id="card2" style="margin:30px;padding:40px;">
-                    <h3 style="color:cyan;">ODI Career:</h3>
+                    <h3 style="color:#52575d;">ODI Career:</h3>
                     <table>
                         <tr>
                             <th>Matches</th>
@@ -1331,7 +1331,7 @@ app.post("/ubowler", (req, res)=> {
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
-                        color: white;
+//                         color: white;
                         margin-top: 72px;
                         text-align:center;
                     }
@@ -1685,7 +1685,7 @@ app.post("/callRounder", (req, res)=> {
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
-                        color: white;
+//                         color: white;
                         margin-top: 72px;
                         text-align:center;
                     }
@@ -1799,7 +1799,7 @@ app.post("/callRounder", (req, res)=> {
                     </table>
                  </div>
                  <div id="card2" style="margin:30px;padding:40px;">
-                    <h3 style="color:cyan;">T20 Bowling Career:</h3>
+                    <h3 style="color:#52575d;">T20 Bowling Career:</h3>
                     <table>
                         <tr>
                             <th>Matches</th>
@@ -2065,7 +2065,7 @@ app.post("/uallRounder", (req, res)=> {
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
-                        color: white;
+//                         color: white;
                         margin-top: 72px;
                         text-align:center;
                     }
@@ -2537,7 +2537,7 @@ app.post("/playerInfo", (req, res) => {
                                     width: 60%; 
                                     margin: 75px auto;
                                     /* padding: 75px 60px; */
-                                    color: white;
+//                                     color: white;
                                 }
                         
                                 @media screen and (max-width:600px) {
@@ -2631,7 +2631,7 @@ app.post("/playerInfo", (req, res) => {
                                     </table>
                         
                                     <div>
-                                    <p style="color:cyan;margin-left:20px;font-size:1.2rem;">${profile}</p>
+                                    <p style="color:#557571;margin-left:20px;font-size:1.2rem;">${profile}</p>
                                     
                                     <p style="padding-left:25px;margin-top:45px;font-size:1.3rem;color:orange;">Major Teams</p>
                                     <p style="padding-left:25px;font-size:1.2rem;">${majorTeams}</p>
