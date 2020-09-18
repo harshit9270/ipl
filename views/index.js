@@ -11,7 +11,17 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// Modal JS
 
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems);
+});
+
+setTimeout(() => {
+  var button = document.getElementById('clickButton');
+  button.click();
+}, 12000)
 
 
 

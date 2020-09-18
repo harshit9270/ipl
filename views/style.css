@@ -76,7 +76,14 @@ a{
 }
 
 #topSection{
-    background-color: #4b5d67;
+    /* background-color: #4b5d67; */
+ 
+background: #1D2B64;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F8CDDA, #1D2B64);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #4b5d67, #1D2B64); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background:linear-gradient(to top right,rgb(27, 42, 73) 45%,#4b5d67 30%);
+background-attachment: fixed;
+
 }
 
 #top{
@@ -298,7 +305,7 @@ a{
     margin-right:20px;
     height:25rem;
 }
-.smallContent7{t
+.smallContent7{
     border-radius: 10px;
     margin-right: 10px;
     margin-left:5px;
