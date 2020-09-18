@@ -404,22 +404,22 @@ function resetAll(){
     SY.innerHTML= "";
 }
 
-const down = document.querySelectorAll(".down");
+const myDown = document.querySelectorAll(".myDown");
 
-down[0].addEventListener('click', () => {
+myDown[0].addEventListener('click', () => {
     if (LWK.style.display == "none") {
-        down[0].style.transform = "rotateX(180deg)"
+        myDown[0].style.transform = "rotateX(180deg)"
         LWK.style.display = "block";
         LB.style.display = "none";
         LAR.style.display = "none";
         LBW.style.display = "none";
         LY.style.display = "none";
     } else {
-        down[0].style.transform = "rotateX(360deg)"
-        down[1].style.transform = "rotateX(360deg)"
-        down[2].style.transform = "rotateX(360deg)"
-        down[3].style.transform = "rotateX(360deg)"
-        down[4].style.transform = "rotateX(360deg)"
+        myDown[0].style.transform = "rotateX(360deg)"
+        myDown[1].style.transform = "rotateX(360deg)"
+        myDown[2].style.transform = "rotateX(360deg)"
+        myDown[3].style.transform = "rotateX(360deg)"
+        myDown[4].style.transform = "rotateX(360deg)"
         LWK.style.display = "none";
         LB.style.display = "none";
         LAR.style.display = "none";
@@ -427,20 +427,20 @@ down[0].addEventListener('click', () => {
         LY.style.display = "none";
     }
 });
-down[1].addEventListener('click', () => {
+myDown[1].addEventListener('click', () => {
     if (LB.style.display == "none") {
-        down[1].style.transform = "rotateX(180deg)"
+        myDown[1].style.transform = "rotateX(180deg)"
         LB.style.display = "block";
         LWK.style.display = "none";
         LAR.style.display = "none";
         LBW.style.display = "none";
         LY.style.display = "none";
     } else {
-        down[1].style.transform = "rotateX(360deg)"
-        down[0].style.transform = "rotateX(360deg)"
-        down[2].style.transform = "rotateX(360deg)"
-        down[3].style.transform = "rotateX(360deg)"
-        down[4].style.transform = "rotateX(360deg)"
+        myDown[1].style.transform = "rotateX(360deg)"
+        myDown[0].style.transform = "rotateX(360deg)"
+        myDown[2].style.transform = "rotateX(360deg)"
+        myDown[3].style.transform = "rotateX(360deg)"
+        myDown[4].style.transform = "rotateX(360deg)"
         LB.style.display = "none";
         LWK.style.display = "none";
         LAR.style.display = "none";
@@ -448,20 +448,20 @@ down[1].addEventListener('click', () => {
         LY.style.display = "none";
     }
 });
-down[2].addEventListener('click', () => {
+myDown[2].addEventListener('click', () => {
     if (LAR.style.display == "none") {
-        down[2].style.transform = "rotateX(180deg)"
+        myDown[2].style.transform = "rotateX(180deg)"
         LAR.style.display = "block";
         LWK.style.display = "none";
         LB.style.display = "none";
         LBW.style.display = "none";
         LY.style.display = "none";
     } else {
-        down[2].style.transform = "rotateX(360deg)"
-        down[1].style.transform = "rotateX(360deg)"
-        down[0].style.transform = "rotateX(360deg)"
-        down[3].style.transform = "rotateX(360deg)"
-        down[4].style.transform = "rotateX(360deg)"
+        myDown[2].style.transform = "rotateX(360deg)"
+        myDown[1].style.transform = "rotateX(360deg)"
+        myDown[0].style.transform = "rotateX(360deg)"
+        myDown[3].style.transform = "rotateX(360deg)"
+        myDown[4].style.transform = "rotateX(360deg)"
         LAR.style.display = "none";
         LWK.style.display = "none";
         LB.style.display = "none";
@@ -469,20 +469,20 @@ down[2].addEventListener('click', () => {
         LY.style.display = "none";
     }
 });
-down[3].addEventListener('click', () => {
+myDown[3].addEventListener('click', () => {
     if (LBW.style.display == "none") {
-        down[3].style.transform = "rotateX(180deg)"
+        myDown[3].style.transform = "rotateX(180deg)"
         LBW.style.display = "block";
         LWK.style.display = "none";
         LB.style.display = "none";
         LAR.style.display = "none";
         LY.style.display = "none";
     } else {
-        down[3].style.transform = "rotateX(360deg)"
-        down[1].style.transform = "rotateX(360deg)"
-        down[2].style.transform = "rotateX(360deg)"
-        down[0].style.transform = "rotateX(360deg)"
-        down[4].style.transform = "rotateX(360deg)"
+        myDown[3].style.transform = "rotateX(360deg)"
+        myDown[1].style.transform = "rotateX(360deg)"
+        myDown[2].style.transform = "rotateX(360deg)"
+        myDown[0].style.transform = "rotateX(360deg)"
+        myDown[4].style.transform = "rotateX(360deg)"
         LBW.style.display = "none";
         LWK.style.display = "none";
         LB.style.display = "none";
@@ -490,20 +490,20 @@ down[3].addEventListener('click', () => {
         LY.style.display = "none";
     }
 });
-down[4].addEventListener('click', () => {
+myDown[4].addEventListener('click', () => {
     if (LY.style.display == "none") {
-        down[4].style.transform = "rotateX(180deg)"
+        myDown[4].style.transform = "rotateX(180deg)"
         LY.style.display = "block";
         LWK.style.display = "none";
         LB.style.display = "none";
         LAR.style.display = "none";
         LBW.style.display = "none";
     } else {
-        down[4].style.transform = "rotateX(360deg)"
-        down[1].style.transform = "rotateX(360deg)"
-        down[2].style.transform = "rotateX(360deg)"
-        down[3].style.transform = "rotateX(360deg)"
-        down[0].style.transform = "rotateX(360deg)"
+        myDown[4].style.transform = "rotateX(360deg)"
+        myDown[1].style.transform = "rotateX(360deg)"
+        myDown[2].style.transform = "rotateX(360deg)"
+        myDown[3].style.transform = "rotateX(360deg)"
+        myDown[0].style.transform = "rotateX(360deg)"
         LY.style.display = "none";
         LWK.style.display = "none";
         LB.style.display = "none";
