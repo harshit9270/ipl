@@ -309,7 +309,7 @@ app.post("/livescore", (req, res) => {
              </button>
                 <div id="scoreBox">
                 <h5 id="todayDate"></h5>
-                <h6 id="nowTime" style="color:#ed6663;">Starts at 19:00 hrs IST</h6>
+                <h6 id="nowTime" style="color:#ed6663;">Starts at 19:30 hrs IST</h6>
                 <p id="status" style="color:#68b0ab;font-size:1.2rem;"></p>
                 <h5 style="color:orangered;">${cricketData.stat}</h5>
                 <h3>${cricketData['team-1']} <span style="color:blue;font-size:1.5rem;"> VS</span> <br> ${cricketData['team-2']}</h3>
