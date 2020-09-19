@@ -17,6 +17,8 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+    <link rel="stylesheet" href="dropdown.css">
+    
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
 
@@ -203,35 +205,43 @@ a{
 
     <!-- navbar -->
 
-    <nav id="navbar" style="background-color:#1b2a49;">
-        <div class="nav-wrapper">
-          <a href="/" class="brand-logo"><img src="basic/logo.png" alt="" style="width:70px;filter:invert(100%);"></a>
-          <a href="/" class="brand-logo" id="logoText" style="margin-left: 75px;font-size: 2rem;">Iplheat</a>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-          <ul id="main-menu" class="right hide-on-med-and-down">
-            <li><a href="/schedule">Schedule</a></li>
-            <li><a href="/standings">Standings</a></li>
-            <li><a href="/videos">Videos</a></li>
-            <li><a href="/fantasy">Fantasy</a></li>
-            <li><a href="/trivia">Trivia</a></li>
-            <li><a href="/info">Player Info</a></li>
-            <li><a href="/updates">News</a></li>
-            <li><a href="/teams">Teams</a></li>
-          </ul>
-        </div>
-      </nav>
     
-      <ul class="sidenav" id="mobile-demo" style="background-color:#1b2a49;color:white">
-        <br>
-        <li><a href="/schedule" style="color:white;">Schedule</a></li>
-        <li><a href="/standings" style="color:white;">Standings</a></li>
-        <li><a href="/videos" style="color:white">Videos</a></li>
-        <li><a href="/fantasy" style="color:white">Fantasy</a></li>
-        <li><a href="/trivia" style="color:white">Trivia</a></li>
-        <li><a href="/info" style="color:white">Player Info</a></li>
-        <li><a href="/updates" style="color:white">News</a></li>
-        <li><a href="/teams" style="color:white">Teams</a></li>
+  <nav id="navbar" style="background-color:#1b2a49;">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo"><img src="basic/logo.png" alt="" style="width:70px;filter:invert(100%);"></a>
+      <a href="/" class="brand-logo" id="logoText" style="margin-left: 75px;font-size: 2rem;">Iplheat</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="main-menu" class="right hide-on-med-and-down">
+        <li><a href="/score">Live Score</a></li>
+        <li><a href="/schedule">Schedule</a></li>
+        <li><a href="/standings">Standings</a></li>
+        <li><a href="/fantasy">Fantasy</a></li>
+        <li><a href="/info">Player Info</a></li>
+        <li><a href="/teams">Teams</a></li>
+        <li class="down">
+          <a href="javascript:void(0)" class="downbtn">More<i class="material-icons right">arrow_drop_down</i></a>
+          <div class="down-content">
+            <a href="/videos">Videos</a>
+            <a href="/updates">News</a>
+            <a href="/trivia">Trivia</a>
+          </div>
+        </li>
       </ul>
+    </div>
+  </nav>
+  
+  <ul class="sidenav" id="mobile-demo" style="background-color:#1b2a49;color:white">
+    <br>
+    <li><a href="/score" style="color:white;">Live Score</a></li>
+    <li><a href="/schedule" style="color:white;">Schedule</a></li>
+    <li><a href="/standings" style="color:white;">Standings</a></li>
+    <li><a href="/videos" style="color:white">Videos</a></li>
+    <li><a href="/fantasy" style="color:white">Fantasy</a></li>
+    <li><a href="/trivia" style="color:white">Trivia</a></li>
+    <li><a href="/info" style="color:white">Player Info</a></li>
+    <li><a href="/updates" style="color:white">News</a></li>
+    <li><a href="/teams" style="color:white">Teams</a></li>
+  </ul>
       
     <div id="container">
         <div id="left">
