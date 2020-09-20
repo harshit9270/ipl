@@ -313,8 +313,8 @@ app.post("/livescore", (req, res) => {
                 <p id="status" style="color:#68b0ab;font-size:1.2rem;"></p>
                 <h5 style="color:orangered;">${cricketData.stat}</h5>
                 <h3>${cricketData['team-1']} <span style="color:blue;font-size:1.5rem;"> VS</span> <br> ${cricketData['team-2']}</h3>
-                <hr>
                 <div id="currentScore">
+                <hr>
                 <h5>${cricketData.description}</h5>
                 </div>
                 </div>
