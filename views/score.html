@@ -170,6 +170,8 @@
             
             <div id="scoreBox">
                 <h5 id="todayDate"></h5>
+                <h5 id="todayVenue"></h5>
+                <hr>
                 <h4 id="team1">Team1 </h4>
                 <img src="" alt="" id="img1">
                 <p style="font-size: 1.5rem;margin: 15px;color: orangered;">VS<br></p>
@@ -294,6 +296,7 @@
         
                  //   getting Date
                  let todayDate = document.getElementById("todayDate");
+                 let todayVenue = document.getElementById("todayVenue");
                     let today = new Date();
         
                     var dd = today.getDate(); 
@@ -309,7 +312,8 @@
                     var myDate = dd + '/' + mm + '/' + yyyy; 
                     todayDate.innerHTML = myDate;
                     // console.log(myDate);
-                    team1.innerHTML = data[i].team1; 
+                    team1.innerHTML = data[i].team1;                 
+                    todayVenue.innerHTML = data[i].centre; 
                     team2.innerHTML = data[i].team2; 
                     img1.setAttribute("src",data[i].team1Img);
                     img2.setAttribute("src",data[i].team2Img);
