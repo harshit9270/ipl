@@ -18,6 +18,8 @@
 3.IPL videos <br>
 4.IPL news <br>
 5.Fantasy IPL <br>
+6.IPL based Trivia <br>
+7.IPL schedule <br>
 
 
 ### Tools and Technologies Used:
